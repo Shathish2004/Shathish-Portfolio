@@ -1,0 +1,25 @@
+.container {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  letter-spacing: 2px;
+}
+
+.icon-shadow {
+  text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
+    -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.container .card:nth-child(1):hover {
+  background: #b4f8c8;
+}
+
+.container .card:nth-child(2):hover {
+  background: #fdfd96;
+}
+
+.container .card:nth-child(3):hover {
+  background: #a0e7e5;
+}
+
+.container .card:nth-child(4):hover {
+  background: #ffadad;
+}
