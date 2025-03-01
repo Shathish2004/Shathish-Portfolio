@@ -37,7 +37,6 @@ const ContactMe = () => {
   return (
     <div className="w-full h-auto pt-5 mx-auto md:w-[60%] lg:w-[40%] flex flex-col items-center mt-10 border-1 border-black dark:border-white rounded-sm p-5">
       <h2 className="text-3xl font-bold mb-4 text-center text-black dark:text-white">Let&apos;s Connect</h2>
-
       {responseMessage && (
         <p className={`text-center pb-3 ${responseMessage.includes("Failed") ? "text-red-600 dark:text-red-400" : "text-green-600 dark:text-green-400"}`}>
           {responseMessage}
@@ -79,6 +78,12 @@ const ContactMe = () => {
           {isSubmitting ? "Sending..." : "Send Message"}
         </button>
       </form>
+      <p className="mt-5 text-lg text-center text-gray-600 dark:text-gray-300">
+        You can <span className="font-semibold text-blue-500">directly email me</span> by clicking the email in the footer (bottom).  <br />
+        <span className="text-red-400 font-medium">Note:</span> The backend server might take a few seconds to respond if it&apos;s been inactive due to free-tier hosting limits. Thanks for your patience!
+      </p>
+
+
     </div>
   );
 };
