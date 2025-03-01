@@ -52,7 +52,7 @@ const Footer = () => {
 
         <a
           href="mailto:satheesh12072004@gmail.com"
-          className="text-[15px] sm:text-[20px] hover:text-blue-600 cursor-pointer font-light"
+          className="text-[15px] sm:text-[20px] hover:text-blue-600 cursor-pointer font-medium"
         >
           satheesh12072004@gmail.com
         </a>
