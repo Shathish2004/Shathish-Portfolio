@@ -31,7 +31,7 @@ const About = () => {
           <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
             Always exploring, always learning. Let&apos;s create something amazing together!
           </p>
-          <p className="mt-5 text-lg sm:text-xl  font-bold text-gray-600 dark:text-gray-300 hover:text-blue-500"><a href="mailto:satheesh12072004@gmail.com" >
+          <p className="mt-5 text-lg sm:text-xl hover:underline  font-bold text-gray-600 dark:text-gray-300 hover:text-blue-500"><a href="mailto:satheesh12072004@gmail.com" >
             satheesh12072004@gmail.com
           </a></p>
         </div>
@@ -66,13 +66,13 @@ const About = () => {
         <div className="mt-6 ">
           <h1 className="text-2xl font-bold text-blue-600 dark:text-blue-500">College</h1>
           <p className="text-gray-700 dark:text-gray-300 text-lg">
-            Bachelor of Engineering in Computer Science and Engineering (2022-2026)
+            B.E. in Computer Science and Engineering (2022-2026)
           </p>
           <p className="text-gray-800 dark:text-gray-300 font-medium text-lg mt-1 md:pl-6">
             {Date.now() > new Date("2026-06-01")
-              ? "I have completed my Bachelor of Engineering (B.E.) in Computer Science and Engineering at Dhirajlal Gandhi College of Technology, Salem, Tamil Nadu, India."
+              ? "I have completed my B.E. in Computer Science and Engineering at Dhirajlal Gandhi College of Technology, Salem, Tamil Nadu, India."
               : `I am currently pursuing my ${Date.now() > new Date("2025-06-01") ? "fourth" : "third"
-              } year of Bachelor of Engineering (B.E.) in Computer Science and Engineering at Dhirajlal Gandhi College of Technology, Salem, Tamil Nadu, India.`}
+              } year of B.E. in Computer Science and Engineering at Dhirajlal Gandhi College of Technology, Salem, Tamil Nadu, India.`}
           </p>
           <p className="text-blue-500 dark:text-gray-100 font-semibold text-xl mt-2 md:pl-6">Current CGPA: 8.05</p>
         </div>

@@ -54,7 +54,7 @@ export default function ExperienceTimeline() {
             "title": "Explore My Achievements",
             "subtitle": null,
             "description": "Browse through my certifications.",
-            "date": "certificates",
+            "date": null,
             "navigate": true
         }
     ];
