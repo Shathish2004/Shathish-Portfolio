@@ -60,7 +60,6 @@ const AboutHome = () => {
         {[
           { href: "https://www.linkedin.com/in/shathish-kumaran-05a298325/", icon: "fab fa-linkedin", color: "hover:text-blue-600" },
           { href: "https://github.com/SHATHISH-07", icon: "fab fa-github", color: "hover:text-gray-500" },
-          { href: "https://x.com/Shathish_07", icon: "fab fa-x-twitter", color: "hover:text-gray-500" },
           { href: "https://www.instagram.com/shathish_07/", icon: "fab fa-instagram", color: "hover:text-pink-500" }
         ].map(({ href, icon, color }) => (
           <a

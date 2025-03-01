@@ -39,7 +39,6 @@ const Footer = () => {
         {/* Right Section - Social Links */}
         <div className="flex text-[15px] sm:text-[20px] space-x-4 mt-2 sm:mt-0">
           {[
-            { href: "https://x.com/Shathish_07", icon: "fa-x-twitter", color: "hover:text-gray-600" },
             { href: "https://www.linkedin.com/in/shathish-kumaran-05a298325/", icon: "fa-linkedin", color: "hover:text-blue-600" },
             { href: "https://github.com/SHATHISH-07", icon: "fa-github", color: "hover:text-gray-400" },
             { href: "https://www.instagram.com/shathish_07/", icon: "fa-instagram", color: "hover:text-pink-500" },
