@@ -1,13 +1,27 @@
-import { useLayoutEffect } from "react";
+import { useLayoutEffect, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import myImage from "../assets/PersonalImg/myImage.png";
 import bgImage from "../assets/PersonalImg/bgImage.png";
 
 const AboutHome = () => {
   const navigate = useNavigate();
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const [bgLoaded, setBgLoaded] = useState(false);
 
+  // Scroll to top on load
   useLayoutEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
+  // Preload images
+  useEffect(() => {
+    const img = new Image();
+    img.src = myImage;
+    img.onload = () => setImageLoaded(true);
+
+    const bg = new Image();
+    bg.src = bgImage;
+    bg.onload = () => setBgLoaded(true);
   }, []);
 
   return (
@@ -17,9 +31,8 @@ const AboutHome = () => {
         <div className="md:w-[55%] text-center md:text-left">
           <h1 className="text-3xl sm:text-5xl font-bold leading-snug">
             Hi, I&apos;m Shathish Kumaran, a
-            <span className="text-blue-600"> Full-Stack MERN Developer</span>
+            <span className="text-blue-600 dark:text-blue-500"> Full-Stack MERN Developer</span>
           </h1>
-
           <p className="mt-4 text-xl text-gray-700 dark:text-white">
             Driven by code, curiosity, and innovation. Passionate about
             <span className="text-blue-500 font-medium"> Generative AI </span>
@@ -28,7 +41,7 @@ const AboutHome = () => {
           </p>
           <p
             onClick={() => navigate("/about")}
-            className="mt-4 text-2xl sm:text-3xl hover:text-blue-600 hover:underline font-semibold cursor-pointer"
+            className="mt-4 text-2xl sm:text-3xl hover:text-blue-500  hover:underline font-semibold cursor-pointer"
           >
             Learn More About Me.
           </p>
@@ -37,10 +50,18 @@ const AboutHome = () => {
         {/* Image Section */}
         <div className="md:w-[45%] flex justify-center">
           <div
-            className="relative w-56 h-56 md:w-[80%] md:h-full flex items-center justify-center bg-contain bg-center bg-no-repeat"
+            className={`relative w-56 h-56 md:w-[80%] md:h-full flex items-center justify-center bg-contain bg-center bg-no-repeat transition-opacity duration-500 ${bgLoaded ? "opacity-100" : "opacity-0"
+              }`}
             style={{ backgroundImage: `url(${bgImage})` }}
           >
-            <img src={myImage} alt="Shathish Kumaran" className="w-full h-full object-contain" />
+            {imageLoaded && (
+              <img
+                src={myImage}
+                alt="Shathish Kumaran"
+                className="w-full h-full object-cover transition-opacity duration-500"
+                loading="eager"
+              />
+            )}
           </div>
         </div>
       </div>
