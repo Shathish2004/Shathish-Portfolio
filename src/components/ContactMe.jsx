@@ -21,7 +21,7 @@ const ContactMe = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await axios.post("https://portfolio-backend-st2t.onrender.com/contact", formData);
+      const response = await axios.post("https://portfolio-contact-backend.up.railway.app/contact", formData);
 
       if (response.status === 200) {
         setResponseMessage(response.data.message);
