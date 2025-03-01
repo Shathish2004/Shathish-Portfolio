@@ -1,15 +1,18 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import useLazyLoad from "../hooks/useLazyLoad";
-import certificates from "../data/certificatesData"
-
+import certificates from "../data/certificatesData";
 
 const CertificateCard = ({ certificate }) => {
   const { isVisible, elementRef } = useLazyLoad();
+  const [imageLoaded, setImageLoaded] = useState(false);
 
+  // Preload image
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" })
-  }, [])
+    const img = new Image();
+    img.src = certificate.image;
+    img.onload = () => setImageLoaded(true);
+  }, [certificate.image]);
 
   return (
     <div
@@ -19,12 +22,12 @@ const CertificateCard = ({ certificate }) => {
       transition-all duration-700 ease-in-out
       ${certificate.index % 2 === 0 ? "sm:flex-row" : "sm:flex-row-reverse"}`}
     >
-      {isVisible && (
+      {imageLoaded && (
         <img
           src={certificate.image}
           alt={certificate.name}
-          className="sm:w-[40%] sm:h-[70%] pr-5"
-          loading="lazy"
+          className="sm:w-[40%] sm:h-[70%] pr-5 transition-opacity duration-500 opacity-100"
+          loading={window.innerWidth > 768 ? "lazy" : "eager"} // Lazy load only on desktop
         />
       )}
       <div className="flex flex-col items-center justify-center space-y-8">
@@ -52,8 +55,12 @@ CertificateCard.propTypes = {
   }).isRequired,
 };
 
-
 const Certificates = () => {
+  // Scroll to top when the component mounts
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
   return (
     <div className="grid grid-cols-1 gap-4">
       <h1 className="text-center text-4xl font-bold mt-10">Certificates</h1>

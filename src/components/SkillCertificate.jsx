@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import Skills from "./Skills";
-import Certificates from "./Certificates";
 
 const SkillCertificate = () => {
   useEffect(() => {
@@ -10,7 +9,6 @@ const SkillCertificate = () => {
   return (
     <div className="mt-10 max-w-6xl mx-auto">
       <Skills />
-      <Certificates />
     </div>
   );
 };
