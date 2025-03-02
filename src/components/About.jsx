@@ -68,7 +68,7 @@ const About = () => {
           <p className="text-gray-700 dark:text-gray-300 text-lg">
             B.E. in Computer Science and Engineering (2022-2026)
           </p>
-          <p className="text-gray-800 dark:text-gray-300 font-medium text-lg mt-1 md:pl-6">
+          <p className="text-gray-800 dark:text-gray-200 font-medium text-lg mt-1 md:pl-6">
             {Date.now() > new Date("2026-06-01")
               ? "I have completed my B.E. in Computer Science and Engineering at Dhirajlal Gandhi College of Technology, Salem, Tamil Nadu, India."
               : `I am currently pursuing my ${Date.now() > new Date("2025-06-01") ? "fourth" : "third"
@@ -80,7 +80,7 @@ const About = () => {
         {/* Schooling Section */}
         <div className="mt-6">
           <h1 className="text-2xl font-bold text-blue-600 dark:text-blue-500">Schooling</h1>
-          <p className="text-gray-700 dark:text-gray-400 text-lg md:pl-6">
+          <p className="text-gray-700 dark:text-gray-200 text-lg md:pl-6">
             I have completed my schooling at <span className="font-semibold">St Paul&apos;s Higher Secondary School</span>, Salem, Tamil Nadu, India.
           </p>
           <p className="text-blue-500 dark:text-gray-100 text-xl font-medium md:pl-6">SSLC Percentage: 74.6%</p>
@@ -90,7 +90,7 @@ const About = () => {
         {/* Professional Summary */}
         <div className="mt-6 ">
           <h1 className="text-2xl font-bold text-blue-600 dark:text-blue-500">Professional Summary</h1>
-          <ul className="list-disc text-lg ml-6 mt-2 text-gray-700 dark:text-gray-400 md:p-6">
+          <ul className="list-disc text-lg ml-6 mt-2 text-gray-700 dark:text-gray-200 md:p-6">
             <li>MERN Stack Developer with hands-on project experience.</li>
             <li>
               Completed <span className="font-semibold">FullStackOpen</span> - University of Helsinki.
@@ -104,7 +104,7 @@ const About = () => {
         {/* Future Goals */}
         <div className="mt-6 ">
           <h1 className="text-2xl font-bold text-blue-600 dark:text-blue-500">Future Goals</h1>
-          <p className="text-gray-700 dark:text-gray-400 text-lg mt-2 md:p-6">
+          <p className="text-gray-700 dark:text-gray-200 text-lg mt-2 md:p-6">
             My future goal is to <span className="font-semibold">dive deep into Cybersecurity and Generative AI</span>, exploring advanced security mechanisms and AI-driven innovations.
           </p>
         </div>
@@ -168,19 +168,19 @@ const About = () => {
           {/* Hobby Card - Music */}
           <div className="p-4 ">
             <h2 className="text-xl font-bold text-blue-600 dark:text-blue-500"> Listening to Music</h2>
-            <p className="text-gray-700 dark:text-gray-400 mt-1">I enjoy exploring different genres and discovering new artists.</p>
+            <p className="text-gray-700 dark:text-gray-200 mt-1">I enjoy exploring different genres and discovering new artists.</p>
           </div>
 
           {/* Hobby Card - Movies */}
           <div className="p-4 ">
             <h2 className="text-xl font-bold text-blue-600 dark:text-blue-500"> Watching Movies</h2>
-            <p className="text-gray-700 dark:text-gray-400 mt-1">I love watching sci-fi, thrillers, and classic movies.</p>
+            <p className="text-gray-700 dark:text-gray-200 mt-1">I love watching sci-fi, thrillers, and classic movies.</p>
           </div>
 
           {/* Hobby Card - Cooking */}
           <div className="p-4 ">
             <h2 className="text-xl font-bold text-blue-600 dark:text-blue-500"> Cooking</h2>
-            <p className="text-gray-700 dark:text-gray-400 mt-1">Experimenting with new recipes and flavors is something I truly enjoy.</p>
+            <p className="text-gray-700 dark:text-gray-200 mt-1">Experimenting with new recipes and flavors is something I truly enjoy.</p>
           </div>
         </div>
       </div>
