@@ -40,6 +40,7 @@ const AboutHome = () => {
           >
             Learn More About Me.
           </p>
+          <button onClick={() => navigate("/contact")} className="border-1 my-5 py-2 px-6 cursor-pointer button-shadow hover:bg-blue-600 hover:text-white ">Hire Me</button>
         </div>
 
         {/* Image Section */}
