@@ -10,6 +10,7 @@ import ScalerReactJsCert from "../assets/certificateImg/REACT SCALER CERTIFICATE
 import ScalerJavaScriptCert from "../assets/certificateImg/Scaler JavaScript Course Certificate.png";
 import GooglCyberSecurityCert from "../assets/certificateImg/cyberSecurityCertificate-1.png";
 import AiEssentialsCert from "../assets/certificateImg/AI-Essentials Certificate-1.png";
+import FullStackOpenCICDCert from "../assets/certificateImg/FullstackOPen_CI_CD_certificate.png";
 
 const certificates = [
   {
@@ -34,11 +35,18 @@ const certificates = [
       "AI Essentials (Coursera) – A foundational course covering key AI concepts, machine learning basics, and real-world applications. It introduced core AI techniques, ethical considerations, and industry use cases, providing a solid starting point for deeper exploration in AI development.",
   },
   {
-    name: "GraphQL",
+    name: "Full Stack Open GraphQL",
     image: FullStackOpenGraphQLCert,
     link: "https://studies.cs.helsinki.fi/stats/api/certificate/fs-graphql/en/df48667bbea50625d29e380c989bef59",
     description:
       "Gain expertise in GraphQL, the modern API query language. This certification validates knowledge of efficient data fetching, schema design, and backend integration.",
+  },
+  {
+    name: "Full Stack Open CI/CD",
+    image: FullStackOpenCICDCert,
+    link: "https://studies.cs.helsinki.fi/stats/api/certificate/fs-cicd/en/67d31a5fd5c5abea6e2895a1bff46d67",
+    description:
+      "This certification demonstrates proficiency in Continuous Integration and Continuous Delivery (CI/CD) practices, enabling efficient and reliable software delivery processes.",
   },
   {
     name: "Meta Front End Development",
