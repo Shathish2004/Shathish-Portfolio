@@ -15,6 +15,8 @@ import graphQlIcon from "../assets/skillIcons/icons8-graphql.svg";
 import figmaIcon from "../assets/skillIcons/icons8-figma.svg";
 import tailwindIcon from "../assets/skillIcons/icons8-tailwindcss.svg";
 import bootstrapIcon from "../assets/skillIcons/icons8-bootstrap.svg";
+import DockerIcon from "../assets/skillIcons/icons8-docker.svg";
+import CICDIcon from "../assets/skillIcons/CICD.svg";
 
 const skillsData = [
   {
@@ -64,21 +66,21 @@ const skillsData = [
     alt: "Redux",
     color: "bg-[#bca2eb]",
     description:
-      "As part of the University of Helsinki's Full Stack Open course, I have completed the Redux Toolkit module, enhancing my state management skills in React. Also through hands-on experience with Redux Toolkit in real-world projects.",
+      "As part of the University of Helsinki's Full Stack Open course, I have completed the Redux Toolkit module, enhancing my state management skills in React. Also through hands-on experience with Redux Toolkit in  projects.",
   },
   {
     icon: nodeJsIcon,
     alt: "Node.js",
     color: "bg-[#cbe9a8]",
     description:
-      "I have gained proficiency in Node.js by completing courses from the University of Helsinki FullStack open certification, Scaler and also I have gained proficiency in Node.js real-world projects.",
+      "I have gained proficiency in Node.js by completing courses from the University of Helsinki FullStack open certification, Scaler and also I have gained proficiency in Node.js  projects.",
   },
   {
     icon: expressJsIcon,
     alt: "Express.js",
     color: "bg-[#aab4bd]",
     description:
-      "My expertise in Express.js comes from completing a part of the University of Helsinki's Full Stack Open course and applying it in real-world projects.",
+      "My expertise in Express.js comes from completing a part of the University of Helsinki's Full Stack Open course and applying it in  projects.",
   },
   {
     icon: mongoDbIcon,
@@ -109,6 +111,13 @@ const skillsData = [
       "Experienced in managing dependencies and package scripts using npm for efficient project workflow.",
   },
   {
+    icon: DockerIcon,
+    alt: "Docker",
+    color: "bg-[#1d99ee]",
+    description:
+      "Proficient in Docker for containerization and deployment of applications, reinforced through hands-on experience in  projects.",
+  },
+  {
     icon: gitIcon,
     alt: "Git",
     color: "bg-[#fab7a1]",
@@ -116,11 +125,18 @@ const skillsData = [
       "Built expertise in Git through the Meta Front-End Developer version control certification and hands-on learning via YouTube tutorials.",
   },
   {
+    icon: CICDIcon,
+    alt: "CI/CD",
+    color: "bg-[#a1a1a1]",
+    description:
+      "Proficient in Continuous Integration and Continuous Delivery (CI/CD) practices, reinforced through hands-on experience in  projects.",
+  },
+  {
     icon: gitHubIcon,
     alt: "GitHub",
     color: "bg-[#a0a0a0]",
     description:
-      "Proficient in GitHub for version control, collaboration, and repository management, reinforced through Meta’s certification and real-world projects.",
+      "Proficient in GitHub for version control, collaboration, and repository management, reinforced through Meta’s certification and  projects.",
   },
   {
     icon: postmanIcon,
