@@ -19,7 +19,7 @@ const AboutHome = () => {
   }, []);
 
   return (
-    <div className="mt-10 max-w-6xl mx-auto px-6">
+    <div className="mt-10 max-w-6xl lg:max-w-7xl mx-auto  px-6">
       <div className="flex flex-col-reverse md:flex-row items-center gap-8">
         {/* Text Section */}
         <div className="md:w-[55%] text-center md:text-left">
@@ -40,7 +40,26 @@ const AboutHome = () => {
           >
             Learn More About Me.
           </p>
-          <button onClick={() => navigate("/contact")} className="border-1 my-5 py-2 px-6 cursor-pointer button-shadow hover:bg-blue-600 hover:text-white ">Hire Me</button>
+
+          <button onClick={() => navigate("/contact")} className="border-1 my-10 py-3 px-8 cursor-pointer button-shadow hover:bg-blue-600 hover:text-white ">Hire Me</button>
+
+          <div className="flex mb-10 justify-center md:justify-start space-x-6 sm:space-x-10">
+            {[
+              { href: "https://www.linkedin.com/in/shathish-kumaran-05a298325/", icon: "fab fa-linkedin", color: "hover:text-blue-600" },
+              { href: "https://github.com/SHATHISH-07", icon: "fab fa-github", color: "hover:text-gray-500" },
+              { href: "https://www.instagram.com/shathish_07/", icon: "fab fa-instagram", color: "hover:text-pink-500" }
+            ].map(({ href, icon, color }) => (
+              <a
+                key={href}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`text-gray-900 dark:text-gray-200 text-4xl ${color} transition`}
+              >
+                <i className={icon}></i>
+              </a>
+            ))}
+          </div>
         </div>
 
         {/* Image Section */}
@@ -54,25 +73,6 @@ const AboutHome = () => {
             )}
           </div>
         </div>
-      </div>
-
-      {/* Social Links */}
-      <div className="flex mt-5 md:mt-5 lg:mt-0 mb-20 justify-center md:justify-start space-x-6 sm:space-x-10">
-        {[
-          { href: "https://www.linkedin.com/in/shathish-kumaran-05a298325/", icon: "fab fa-linkedin", color: "hover:text-blue-600" },
-          { href: "https://github.com/SHATHISH-07", icon: "fab fa-github", color: "hover:text-gray-500" },
-          { href: "https://www.instagram.com/shathish_07/", icon: "fab fa-instagram", color: "hover:text-pink-500" }
-        ].map(({ href, icon, color }) => (
-          <a
-            key={href}
-            href={href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`text-gray-900 dark:text-gray-200 text-2xl ${color} transition`}
-          >
-            <i className={icon}></i>
-          </a>
-        ))}
       </div>
     </div>
   );

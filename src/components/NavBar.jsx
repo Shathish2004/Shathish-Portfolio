@@ -27,7 +27,7 @@ const NavBar = () => {
   ];
 
   return (
-    <nav className="flex items-center font-extrabold justify-between max-w-6xl mx-auto border-b border-gray-900 dark:border-white px-5 py-4">
+    <nav className="flex items-center font-extrabold justify-between max-w-6xl lg:max-w-7xl mx-auto border-b border-gray-900 dark:border-white px-5 py-4">
       {/* Logo */}
       <button
         className="cursor-pointer text-[20px] hover:text-blue-600 md:text-2xl"

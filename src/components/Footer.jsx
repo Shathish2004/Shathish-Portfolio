@@ -13,7 +13,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="max-w-6xl mx-auto border-t-1 font-medium border-gray-900 dark:border-white py-6 px-4 mt-10">
+    <footer className="max-w-6xl lg:max-w-7xl mx-auto border-t-1 font-semibold sm:font-medium border-gray-900 dark:border-white py-6 px-4 mt-10">
       <div className="container mx-auto flex flex-col gap-y-5 justify-between items-center">
         {/* Center Section - Navigation */}
         <ul className="grid grid-cols-2 text-center space-y-3 sm:flex space-x-4 mt-2 text-[15px] sm:text-[20px] cursor-pointer sm:mt-0">
@@ -37,7 +37,7 @@ const Footer = () => {
         </button>
 
         {/* Right Section - Social Links */}
-        <div className="flex text-[15px] sm:text-[20px] space-x-4 mt-2 sm:mt-0">
+        <div className="flex text-[20px] sm:text-[25px] space-x-4 mt-2 sm:mt-0">
           {[
             { href: "https://www.linkedin.com/in/shathish-kumaran-05a298325/", icon: "fa-linkedin", color: "hover:text-blue-600" },
             { href: "https://github.com/SHATHISH-07", icon: "fa-github", color: "hover:text-gray-400" },
