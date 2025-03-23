@@ -50,10 +50,10 @@ const Footer = () => {
         </div>
 
         <a
-          href="mailto:satheesh12072004@gmail.com"
+          href="mailto:shathishkumaran07@gmail.com"
           className="text-[15px] sm:text-[20px] hover:text-blue-600 cursor-pointer font-medium"
         >
-          satheesh12072004@gmail.com
+          shathishkumaran07@gmail.com
         </a>
 
         {/* Left Section - Copyright */}

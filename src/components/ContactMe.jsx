@@ -79,7 +79,7 @@ const ContactMe = () => {
         </button>
       </form>
       <p className="mt-5 text-lg text-center text-gray-600 dark:text-gray-300">
-        You can <a href="mailto:satheesh12072004@gmail.com" className="font-semibold cursor-pointer underline text-blue-500">directly email me</a> by clicking the email in the footer (bottom).  <br />
+        You can <a href="mailto:shathishkumaran07@gmail.com" className="font-semibold cursor-pointer underline text-blue-500">directly email me</a> by clicking the email in the footer (bottom).  <br />
         <span className="text-red-400 font-medium">Note:</span> The backend server might take a few seconds to respond if it&apos;s been inactive due to free-tier hosting limits. Thanks for your patience!
       </p>
 

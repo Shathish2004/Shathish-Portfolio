@@ -31,8 +31,8 @@ const About = () => {
           <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
             Always exploring, always learning. Let&apos;s create something amazing together!
           </p>
-          <p className="mt-5 text-lg sm:text-xl hover:underline  font-bold text-gray-600 dark:text-gray-300 hover:text-blue-500"><a href="mailto:satheesh12072004@gmail.com" >
-            satheesh12072004@gmail.com
+          <p className="mt-5 text-lg sm:text-2xl hover:underline  font-bold text-gray-600 dark:text-gray-300 hover:text-blue-500"><a href="mailto:shathishkumaran07@gmail.com" >
+            shathishkumaran07@gmail.com
           </a></p>
         </div>
       </div>

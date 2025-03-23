@@ -39,9 +39,9 @@ const NavBar = () => {
       {/* Email (visible on larger screens) */}
       <a
         className="hidden lg:block text-[11px] sm:text-lg hover:text-blue-600"
-        href="mailto:satheesh12072004@gmail.com"
+        href="mailto:shathishkumaran07@gmail.com"
       >
-        satheesh12072004@gmail.com
+        shathishkumaran07@gmail.com
       </a>
 
       {/* Mobile Menu Toggle */}
