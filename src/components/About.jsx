@@ -40,7 +40,7 @@ const About = () => {
       {/* Resume Button */}
       <div className="flex justify-center md:justify-start mt-6 mb-5">
         <a
-          className="text-lg px-3 py-3 border border-gray-700 hover:bg-blue-600 hover:text-white 
+          className="text-lg px-3 py-3 border-1  border-black dark:border-white hover:border-white hover:bg-blue-600 hover:text-white 
             button-shadow
                transform hover:scale-105"
           target="_blank"
