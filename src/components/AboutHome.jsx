@@ -41,9 +41,26 @@ const AboutHome = () => {
             Learn More About Me.
           </p>
 
-          <button onClick={() => navigate("/contact")} className="border-1 my-10 py-3 px-8 cursor-pointer button-shadow hover:bg-blue-600 hover:text-white ">Hire Me</button>
+          <div className="flex flex-wrap items-center justify-center md:justify-start gap-5 mt-8">
+            <button
+              onClick={() => navigate("/contact")}
+              className="border-1 py-3 px-8 cursor-pointer button-shadow hover:bg-blue-600 hover:text-white"
+            >
+              Hire Me
+            </button>
 
-          <div className="flex mb-10 justify-center md:justify-start space-x-6 sm:space-x-10">
+            <a
+              className="border-1 py-3 px-8 cursor-pointer button-shadow hover:bg-blue-600 hover:text-white"
+              target="_blank"
+              href="https://drive.google.com/file/d/1D7-g0N3uOJIAfTsJOsjQRm92pQGx9qMI/view?usp=sharing"
+              rel="noopener noreferrer"
+            >
+              Resume
+            </a>
+          </div>
+
+
+          <div className="flex  mt-10 justify-center md:justify-start space-x-6 sm:space-x-10">
             {[
               { href: "https://www.linkedin.com/in/shathish-kumaran-05a298325/", icon: "fab fa-linkedin", color: "hover:text-blue-600" },
               { href: "https://github.com/SHATHISH-07", icon: "fab fa-github", color: "hover:text-gray-500" },

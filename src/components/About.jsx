@@ -37,8 +37,23 @@ const About = () => {
         </div>
       </div>
 
+      {/* Resume Button */}
+      <div className="flex justify-center md:justify-start mt-6 mb-5">
+        <a
+          className="text-lg px-3 py-3 border border-gray-700 hover:bg-blue-600 hover:text-white 
+            button-shadow
+               transform hover:scale-105"
+          target="_blank"
+          href="https://drive.google.com/file/d/1D7-g0N3uOJIAfTsJOsjQRm92pQGx9qMI/view?usp=sharing"
+          rel="noopener noreferrer"
+        >
+          View Resume
+        </a>
+      </div>
+
+
       {/* Social Links */}
-      <div className="flex mt-5 md:mt-5 lg:mt-5 mb-15 justify-center md:justify-start space-x-6 sm:space-x-10">
+      <div className="flex mt-10 mb-15 justify-center md:justify-start space-x-6 sm:space-x-10">
         {[
           { href: "https://www.linkedin.com/in/shathish-kumaran-05a298325/", icon: "fab fa-linkedin", color: "hover:text-blue-600" },
           { href: "https://github.com/SHATHISH-07", icon: "fab fa-github", color: "hover:text-gray-600" },
@@ -159,6 +174,52 @@ const About = () => {
         <ExperienceTimeline />
       </div>
 
+      {/* ExtraCurricular Activities  */}
+      <div className="text-center md:text-left my-10">
+        <h1 className="text-4xl font-bold inline-block pb-2">Extra Curricular Activities</h1>
+
+        <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="p-4 ">
+            <h2 className="text-xl font-bold text-blue-600 dark:text-blue-500">KRIYA 2025</h2>
+            <p className="text-gray-700 dark:text-gray-200 mt-1">Attended a workshop on AI-Driven Resilient Cybersecurity at PSG College of Technology.
+            </p>
+          </div>
+
+          <div className="p-4 ">
+            <h2 className="text-xl font-bold text-blue-600 dark:text-blue-500">KNOWMEET 2K24</h2>
+            <p className="text-gray-700 dark:text-gray-200 mt-1">Attended a workshop on AWS Cloud at Knowledge Institute of Technology.
+            </p>
+          </div>
+          <div className="p-4 ">
+            <h2 className="text-xl font-bold text-blue-600 dark:text-blue-500">KNOWMEET 2K23</h2>
+            <p className="text-gray-700 dark:text-gray-200 mt-1">Secured 3rd place in the 2023 Incognito Tech Challenge at Knowledge Institute of Technology, which featured two rounds: Canva design in the first round and programming in the second round.
+            </p>
+          </div>
+
+          <div className="p-4 ">
+            <h2 className="text-xl font-bold text-blue-600 dark:text-blue-500">SAMHITA&apos;24</h2>
+            <p className="text-gray-700 dark:text-gray-200 mt-1">Attended a workshop on Deep Learning with Quantum Computing at Madras Institute of Technology.
+            </p>
+          </div>
+
+          <div className="p-4 ">
+            <h2 className="text-xl font-bold text-blue-600 dark:text-blue-500">GENIO 2K23</h2>
+            <p className="text-gray-700 dark:text-gray-200 mt-1">Participated in a symposium at Anna University Regional Campus, Coimbatore, engaging in various technical and non-technical events.
+            </p>
+          </div>
+
+          <div className="p-4 ">
+            <h2 className="text-xl font-bold text-blue-600 dark:text-blue-500">TIETSYMPO 2K23</h2>
+            <p className="text-gray-700 dark:text-gray-200 mt-1">Secured 1st place in the 2023 Paper Presentation at Tagore Institute of Engineering and Technology for presenting a paper on Intelligent Automation.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+
+
+      {/* Hobbies */}
       <div className="text-center md:text-left my-10 ">
         <h1 className="text-4xl font-bold  inline-block pb-2">
           Hobbies & Interests
