@@ -52,7 +52,7 @@ const AboutHome = () => {
             <a
               className="border-1 py-3 px-8 cursor-pointer button-shadow hover:bg-blue-600 hover:text-white"
               target="_blank"
-              href="https://drive.google.com/file/d/1VnVE800FZsbB97eBK7q7dxcT7q9kG-EH/view?usp=sharing"
+              href="https://drive.google.com/file/d/1ud_tXYf-XgeKyo7ooug6sH6lDnKyqAzk/view?usp=sharing"
               rel="noopener noreferrer"
             >
               Resume

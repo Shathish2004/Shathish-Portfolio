@@ -15,8 +15,6 @@ import graphQlIcon from "../assets/skillIcons/icons8-graphql.svg";
 import figmaIcon from "../assets/skillIcons/icons8-figma.svg";
 import tailwindIcon from "../assets/skillIcons/icons8-tailwindcss.svg";
 import bootstrapIcon from "../assets/skillIcons/icons8-bootstrap.svg";
-import DockerIcon from "../assets/skillIcons/icons8-docker.svg";
-import CICDIcon from "../assets/skillIcons/CICD.svg";
 
 const skillsData = [
   {
@@ -111,25 +109,11 @@ const skillsData = [
       "Experienced in managing dependencies and package scripts using npm for efficient project workflow.",
   },
   {
-    icon: DockerIcon,
-    alt: "Docker",
-    color: "bg-[#1d99ee]",
-    description:
-      "Proficient in Docker for containerization and deployment of applications, reinforced through hands-on experience in  projects.",
-  },
-  {
     icon: gitIcon,
     alt: "Git",
     color: "bg-[#fab7a1]",
     description:
       "Built expertise in Git through the Meta Front-End Developer version control certification and hands-on learning via YouTube tutorials.",
-  },
-  {
-    icon: CICDIcon,
-    alt: "CI/CD",
-    color: "bg-[#a1a1a1]",
-    description:
-      "Proficient in Continuous Integration and Continuous Delivery (CI/CD) practices, reinforced through hands-on experience in  projects.",
   },
   {
     icon: gitHubIcon,
