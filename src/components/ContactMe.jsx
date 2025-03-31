@@ -88,9 +88,6 @@ const ContactMe = () => {
           {isSubmitting ? "Sending..." : "Send Message"}
         </button>
       </form>
-      <p className="mt-5 text-lg text-center text-gray-600 dark:text-gray-300">
-        You can <a href="mailto:shathishkumaran07@gmail.com" className="font-semibold cursor-pointer underline text-blue-500">directly email me</a> by clicking the email in the footer (bottom).
-      </p>
     </div>
   );
 };
