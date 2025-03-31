@@ -145,12 +145,12 @@ const About = () => {
         <div className="ml-0 md:ml-6 mt-4">
           <button
             onClick={() => navigate("/skills")}
-            className="mt-4 px-6 py-3 border-1 button-shadow hover:text-white  hover:bg-blue-600 transition transform hover:scale-105">
+            className="mt-4 px-6 py-3 border-1 button-shadow cursor-pointer hover:text-white  hover:bg-blue-600 transition transform hover:scale-105">
             View My Skills
           </button>
           <button
             onClick={() => navigate("/projects")}
-            className="mt-4 mx-5 px-6 py-3 border-1 button-shadow hover:text-white  hover:bg-blue-600 transition transform hover:scale-105">
+            className="mt-4 mx-5 px-6 py-3 border-1 button-shadow cursor-pointer hover:text-white  hover:bg-blue-600 transition transform hover:scale-105">
             View Projects
           </button>
         </div>
