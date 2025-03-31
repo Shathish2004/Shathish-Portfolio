@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import axios from "axios";
+import emailjs from "@emailjs/browser";
 import "../assets/css/contactMe.css";
 
 const ContactMe = () => {
@@ -21,14 +21,24 @@ const ContactMe = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await axios.post("https://portfolio-contact-backend.up.railway.app/contact", formData);
+      await emailjs.send(
+        "service_blq2tcm",
+        "template_s1hqcgk",
+        {
+          title: "New Portfolio Message Received",
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          time: new Date().toLocaleString(),
+        },
+        "yov2TlFE5U8pYuSRL"
+      );
 
-      if (response.status === 200) {
-        setResponseMessage(response.data.message);
-        setFormData({ name: "", email: "", message: "" });
-      }
+      setResponseMessage("Message sent successfully!");
+      setFormData({ name: "", email: "", message: "" });
     } catch (error) {
-      setResponseMessage(error.response?.data?.message || "Failed to send message. Try again later.");
+      setResponseMessage("Failed to send message. Try again later.");
+      console.error("Error sending email:", error);
     } finally {
       setIsSubmitting(false);
     }
@@ -79,11 +89,8 @@ const ContactMe = () => {
         </button>
       </form>
       <p className="mt-5 text-lg text-center text-gray-600 dark:text-gray-300">
-        You can <a href="mailto:shathishkumaran07@gmail.com" className="font-semibold cursor-pointer underline text-blue-500">directly email me</a> by clicking the email in the footer (bottom).  <br />
-        <span className="text-red-400 font-medium">Note:</span> The backend server might take a few seconds to respond if it&apos;s been inactive due to free-tier hosting limits. Thanks for your patience!
+        You can <a href="mailto:shathishkumaran07@gmail.com" className="font-semibold cursor-pointer underline text-blue-500">directly email me</a> by clicking the email in the footer (bottom).
       </p>
-
-
     </div>
   );
 };
