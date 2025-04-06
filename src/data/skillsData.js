@@ -15,6 +15,7 @@ import graphQlIcon from "../assets/skillIcons/icons8-graphql.svg";
 import figmaIcon from "../assets/skillIcons/icons8-figma.svg";
 import tailwindIcon from "../assets/skillIcons/icons8-tailwindcss.svg";
 import bootstrapIcon from "../assets/skillIcons/icons8-bootstrap.svg";
+import typeScriptIcon from "../assets/skillIcons/icons8-typescript.svg";
 
 const skillsData = [
   {
@@ -37,6 +38,13 @@ const skillsData = [
     color: "bg-[#fcf3b2]",
     description:
       "Completing the JavaScript Data Structures and Algorithms course on freeCodeCamp has equipped me with strong JavaScript skills.",
+  },
+  {
+    icon: typeScriptIcon,
+    alt: "TypeScript",
+    color: "bg-[#1593d1]",
+    description:
+      "I gained hands-on experience and built projects using TypeScript, enhancing my skills in type safety and scalable application development. I also completed the TypeScript module of the Full Stack Open course by the University of Helsinki, solidifying my proficiency.",
   },
   {
     icon: tailwindIcon,

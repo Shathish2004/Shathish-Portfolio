@@ -10,7 +10,7 @@ import ScalerReactJsCert from "../assets/certificateImg/REACT SCALER CERTIFICATE
 import ScalerJavaScriptCert from "../assets/certificateImg/Scaler JavaScript Course Certificate.png";
 import GooglCyberSecurityCert from "../assets/certificateImg/cyberSecurityCertificate-1.png";
 import AiEssentialsCert from "../assets/certificateImg/AI-Essentials Certificate-1.png";
-import FullStackOpenCICDCert from "../assets/certificateImg/FullstackOPen_CI_CD_certificate.png";
+import FullStackOpenTypescriptCert from "../assets/certificateImg/Fullstackopen-Typescript-cert.png";
 
 const certificates = [
   {
@@ -42,11 +42,11 @@ const certificates = [
       "Gain expertise in GraphQL, the modern API query language. This certification validates knowledge of efficient data fetching, schema design, and backend integration.",
   },
   {
-    name: "Full Stack Open CI/CD",
-    image: FullStackOpenCICDCert,
-    link: "https://studies.cs.helsinki.fi/stats/api/certificate/fs-cicd/en/67d31a5fd5c5abea6e2895a1bff46d67",
+    name: "Full Stack Open TypeScript",
+    image: FullStackOpenTypescriptCert,
+    link: "https://studies.cs.helsinki.fi/stats/api/certificate/fs-typescript/en/7ea08dcfee9c28f7d82c0777405d2f0a",
     description:
-      "This certification demonstrates proficiency in Continuous Integration and Continuous Delivery (CI/CD) practices, enabling efficient and reliable software delivery processes.",
+      "This certification demonstrates proficiency in TypeScript, a statically typed programming language, by mastering its features and best practices.",
   },
   {
     name: "Meta Front End Development",
