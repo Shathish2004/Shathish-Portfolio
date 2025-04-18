@@ -39,11 +39,11 @@ const Footer = () => {
         {/* Right Section - Social Links */}
         <div className="flex text-[20px] sm:text-[25px] space-x-4 mt-2 sm:mt-0">
           {[
-            { href: "https://www.linkedin.com/in/shathish-kumaran-05a298325/", icon: "fa-linkedin", color: "hover:text-blue-600" },
-            { href: "https://github.com/SHATHISH-07", icon: "fa-github", color: "hover:text-gray-400" },
-            { href: "https://www.instagram.com/shathish_07/", icon: "fa-instagram", color: "hover:text-pink-500" },
-          ].map(({ href, icon, color }) => (
-            <a key={href} href={href} target="_blank" rel="noopener noreferrer" className={`${color}`} >
+            { href: "https://www.linkedin.com/in/shathish-kumaran-05a298325/", icon: "fab fa-linkedin", color: "text-blue-600", darkColor: "text-blue-300" },
+            { href: "https://github.com/SHATHISH-07", icon: "fab fa-github", color: "text-gray-800", darkColor: "text-white" },
+            { href: "https://www.instagram.com/shathish_07/", icon: "fab fa-instagram", color: "text-pink-500", darkColor: "text-pink-400" },
+          ].map(({ href, icon, color, darkColor }) => (
+            <a key={href} href={href} target="_blank" rel="noopener noreferrer" className={`${color} dark:${darkColor} hover:${color}`} >
               <i className={`fa-brands ${icon} `}></i>
             </a>
           ))}

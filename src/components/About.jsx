@@ -55,16 +55,16 @@ const About = () => {
       {/* Social Links */}
       <div className="flex mt-10 mb-15 justify-center md:justify-start space-x-6 sm:space-x-10">
         {[
-          { href: "https://www.linkedin.com/in/shathish-kumaran-05a298325/", icon: "fab fa-linkedin", color: "hover:text-blue-600" },
-          { href: "https://github.com/SHATHISH-07", icon: "fab fa-github", color: "hover:text-gray-600" },
-          { href: "https://www.instagram.com/shathish_07/", icon: "fab fa-instagram", color: "hover:text-pink-500" }
-        ].map(({ href, icon, color }) => (
+          { href: "https://www.linkedin.com/in/shathish-kumaran-05a298325/", icon: "fab fa-linkedin", color: "text-blue-600", darkColor: "text-blue-300" },
+          { href: "https://github.com/SHATHISH-07", icon: "fab fa-github", color: "text-gray-800", darkColor: "text-white" },
+          { href: "https://www.instagram.com/shathish_07/", icon: "fab fa-instagram", color: "text-pink-500", darkColor: "text-pink-400" },
+        ].map(({ href, icon, color, darkColor }) => (
           <a
             key={href}
             href={href}
             target="_blank"
             rel="noopener noreferrer"
-            className={`text-gray-900 dark:text-gray-200 text-3xl transition transform hover:scale-110 ${color}`}
+            className={` text-3xl transition transform hover:scale-110 ${color} dark:${darkColor}`}
           >
             <i className={icon}></i>
           </a>
