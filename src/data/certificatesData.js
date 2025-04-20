@@ -11,6 +11,7 @@ import ScalerJavaScriptCert from "../assets/certificateImg/Scaler JavaScript Cou
 import GooglCyberSecurityCert from "../assets/certificateImg/cyberSecurityCertificate-1.png";
 import AiEssentialsCert from "../assets/certificateImg/AI-Essentials Certificate-1.png";
 import FullStackOpenTypescriptCert from "../assets/certificateImg/Fullstackopen-Typescript-cert.png";
+import FullStackOpenReactNativeCert from "../assets/certificateImg/certificate-reactnative-fullstackOpen.png";
 
 const certificates = [
   {
@@ -19,6 +20,13 @@ const certificates = [
     link: "https://studies.cs.helsinki.fi/stats/api/certificate/fullstackopen/en/f34a9e582200b1904db94ba9b646caa8",
     description:
       "A prestigious certification in full-stack development, covering the MERN stack (MongoDB, Express, React, Node.js), REST APIs, Redux-toolkit, webpack, authentication, and scalable web applications.",
+  },
+  {
+    name: "Full Stack Open React Native",
+    image: FullStackOpenReactNativeCert,
+    link: "https://studies.cs.helsinki.fi/stats/api/certificate/fs-react-native-2020/en/a4a3a478bbf192085b78aad53abf636a",
+    description:
+      "In this course, I gained hands-on experience building mobile applications using React Native. I explored various core concepts such as navigation, state management, and building cross-platform applications with a focus on performance and responsiveness. Through practical exercises, I developed a deep understanding of using Expo for rapid development, managing components, and integrating with external APIs, enabling me to create efficient and user-friendly mobile applications.",
   },
   {
     name: "Google CyberSecurity",

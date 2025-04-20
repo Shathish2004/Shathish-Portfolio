@@ -16,6 +16,7 @@ import figmaIcon from "../assets/skillIcons/icons8-figma.svg";
 import tailwindIcon from "../assets/skillIcons/icons8-tailwindcss.svg";
 import bootstrapIcon from "../assets/skillIcons/icons8-bootstrap.svg";
 import typeScriptIcon from "../assets/skillIcons/icons8-typescript.svg";
+import reactNativeIcon from "../assets/skillIcons/icons8-react-native.svg";
 
 const skillsData = [
   {
@@ -40,11 +41,25 @@ const skillsData = [
       "Completing the JavaScript Data Structures and Algorithms course on freeCodeCamp has equipped me with strong JavaScript skills.",
   },
   {
+    icon: reactIcon,
+    alt: "React",
+    color: "bg-[#c2f7ff]",
+    description:
+      "I have gained in-depth knowledge in React by doing projects and completing courses from the University of Helsinki FullStack open certification, Scaler, freeCodeCamp's Frontend Libraries certification, and Meta's Frontend Developer certification.",
+  },
+  {
     icon: typeScriptIcon,
     alt: "TypeScript",
     color: "bg-[#1593d1]",
     description:
       "I gained hands-on experience and built projects using TypeScript, enhancing my skills in type safety and scalable application development. I also completed the TypeScript module of the Full Stack Open course by the University of Helsinki, solidifying my proficiency.",
+  },
+  {
+    icon: reactNativeIcon,
+    alt: "React Native",
+    color: "bg-[#c2f7ff]",
+    description:
+      "In this course, I gained hands-on experience building mobile applications using React Native. I explored various core concepts such as navigation, state management, and building cross-platform applications with a focus on performance and responsiveness.",
   },
   {
     icon: tailwindIcon,
@@ -59,13 +74,6 @@ const skillsData = [
     color: "bg-[#e8f6ff]",
     description:
       "I have gained proficiency in Bootstrap by doing projects and completed the Responsive Web Design course on freeCodeCamp.",
-  },
-  {
-    icon: reactIcon,
-    alt: "React",
-    color: "bg-[#c2f7ff]",
-    description:
-      "I have gained in-depth knowledge in React by doing projects and completing courses from the University of Helsinki FullStack open certification, Scaler, freeCodeCamp's Frontend Libraries certification, and Meta's Frontend Developer certification.",
   },
   {
     icon: reduxIcon,
