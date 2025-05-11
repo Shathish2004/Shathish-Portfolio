@@ -12,6 +12,15 @@ const projectsData = [
         description:
           "This full-stack MERN application is a movie and TV show exploration platform that provides users with access to trending, popular, top-rated, and now-playing movies and TV shows. Additionally, it features a section for popular actors. The app is built with MongoDB, Express.js, React, and Node.js, and it implements JWT authentication for secure user login and access control. The frontend is styled with Tailwind CSS, ensuring a modern and responsive design.Note: The backend is hosted on a free tier, so it may take a few seconds to wake up on the first request.",
       },
+      {
+        title: "Weather App",
+        link: "https://shathish-07.github.io/weatherapp-frontend/",
+        video:
+          "https://res.cloudinary.com/dylmrhy5h/video/upload/v1746963004/dk19jnbrednnhbebtuhy.mp4",
+        sourceCode: "https://github.com/SHATHISH-07/Weather-app",
+        description:
+          "This is a React-based frontend project that displays weather information for different locations. The app is designed with Tailwind CSS, ensuring a modern and responsive user interface. It uses Typescript, GraphQL, and Redux Toolkit to manage state and provide a seamless user experience.",
+      },
     ],
   },
   {
@@ -35,6 +44,14 @@ const projectsData = [
         sourceCode: "https://github.com/SHATHISH-07/notes-backend",
         description:
           "This backend is built using Node.js, Express.js, and MongoDB to provide a robust API for a Notes App. It allows users to create, read, update, and delete (CRUD) notes efficiently while ensuring secure data management. Start with '/api/notes/' to access the API endpoints.Note: The backend is hosted on a free tier, so it may take a few seconds to wake up on the first request.",
+      },
+      {
+        title: "Weatherapp Backend",
+        link: "https://weatherapp-backend-pdmu.onrender.com/",
+        video:
+          "https://res.cloudinary.com/dylmrhy5h/video/upload/v1746963005/enxtj4lrgiajuevd4gjq.mp4",
+        description:
+          "The project is done using Vite, TypeScript, and GraphQL. It uses GraphQL queries and mutations to fetch and update data from the backend, and it uses TypeScript to ensure type safety. Additionally, it uses Vite to optimize the development experience and improve the performance of the application.",
       },
     ],
   },
@@ -67,6 +84,15 @@ const projectsData = [
         sourceCode: "https://github.com/SHATHISH-07/JS-Calculator",
         description:
           "This is a pure frontend project built using HTML, CSS, and JavaScript, providing an interactive and dynamic user experience without requiring a backend. The project focuses on client-side functionality, making it lightweight and responsive.",
+      },
+      {
+        title: "Palindrome Checker",
+        link: "https://shathish-07.github.io/PalindromeChecker/",
+        video:
+          "https://res.cloudinary.com/dylmrhy5h/video/upload/v1746963323/Palindrome_Checker_eqeitg.mp4",
+        sourceCode: "https://github.com/SHATHISH-07/PalindromeChecker",
+        description:
+          "This is a frontend project built using HTML, CSS, and JavaScript that checks if a given string is a palindrome or not. The app is designed with CSS.",
       },
       {
         title: "ToDo List",
