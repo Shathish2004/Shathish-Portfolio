@@ -29,11 +29,13 @@ const ProjectCard = ({ project, index }) => {
                 <p className="mt-2">{project.description}</p>
 
                 <div className="mt-4 flex flex-wrap justify-center gap-4">
-                    <a href={project.link} target="_blank" rel="noopener noreferrer">
-                        <button className="border py-2 px-4 cursor-pointer button-shadow hover:bg-blue-600 hover:text-white">
-                            View Project
-                        </button>
-                    </a>
+                    {project.link && (
+                        <a href={project.link} target="_blank" rel="noopener noreferrer">
+                            <button className="border py-2 px-4 cursor-pointer button-shadow hover:bg-blue-600 hover:text-white">
+                                View Project
+                            </button>
+                        </a>
+                    )}
                     <a href={project.sourceCode} target="_blank" rel="noopener noreferrer">
                         <button className="border py-2 px-4 cursor-pointer button-shadow hover:bg-blue-600 hover:text-white">
                             Source Code

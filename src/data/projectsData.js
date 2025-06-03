@@ -4,7 +4,6 @@ const projectsData = [
     projects: [
       {
         title: "IMDB Clone Project",
-        link: "https://imdb-clone.up.railway.app/",
         video:
           "https://res.cloudinary.com/dylmrhy5h/video/upload/v1740552320/IMDB-Clone_acq37h.mp4",
         sourceCode:
@@ -14,7 +13,6 @@ const projectsData = [
       },
       {
         title: "Weather App",
-        link: "https://shathish-07.github.io/weatherapp-frontend/",
         video:
           "https://res.cloudinary.com/dylmrhy5h/video/upload/v1746963004/dk19jnbrednnhbebtuhy.mp4",
         sourceCode: "https://github.com/SHATHISH-07/Weather-app",
@@ -28,7 +26,6 @@ const projectsData = [
     projects: [
       {
         title: "IMDB Clone Backend",
-        link: "https://imdb-backend-rore.onrender.com/",
         video:
           "https://res.cloudinary.com/dylmrhy5h/video/upload/v1740552241/IMDB-Clone-Backend_wwxoai.mp4",
         sourceCode:
@@ -38,7 +35,6 @@ const projectsData = [
       },
       {
         title: "Notes Backend",
-        link: "https://notes-backend-rblb.onrender.com",
         video:
           "https://res.cloudinary.com/dylmrhy5h/video/upload/v1740551674/NotesBackend_ymw9qo.mp4",
         sourceCode: "https://github.com/SHATHISH-07/notes-backend",
@@ -47,7 +43,6 @@ const projectsData = [
       },
       {
         title: "Weatherapp Backend",
-        link: "https://weatherapp-backend-pdmu.onrender.com/",
         video:
           "https://res.cloudinary.com/dylmrhy5h/video/upload/v1746963005/enxtj4lrgiajuevd4gjq.mp4",
         description:

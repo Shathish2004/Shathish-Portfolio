@@ -72,29 +72,26 @@ const About = () => {
       </div>
 
 
-      <div className="text-center md:text-left my-10 ">
+      <div className="text-center md:text-left my-15 ">
         <h1 className="text-4xl font-bold  inline-block pb-2">
           Education
         </h1>
 
         {/* College Section */}
         <div className="mt-6 ">
-          <h1 className="text-2xl font-bold text-blue-600 dark:text-blue-500">College</h1>
+          <h1 className="text-3xl font-bold text-blue-600 dark:text-blue-500">College</h1>
           <p className="text-gray-700 dark:text-gray-300 text-lg">
             B.E. in Computer Science and Engineering (2022-2026)
           </p>
           <p className="text-gray-800 dark:text-gray-200 font-medium text-lg mt-1 md:pl-6">
-            {Date.now() > new Date("2026-06-01")
-              ? "I have completed my B.E. in Computer Science and Engineering at Dhirajlal Gandhi College of Technology, Salem, Tamil Nadu, India."
-              : `I am currently pursuing my ${Date.now() > new Date("2025-06-01") ? "fourth" : "third"
-              } year of B.E. in Computer Science and Engineering at Dhirajlal Gandhi College of Technology, Salem, Tamil Nadu, India.`}
+            I am currently in my final year of Bachelor of Engineering in Computer Science and Engineering at Dhirajlal Gandhi College of Technology, Salem, TamilNadu, India.
           </p>
-          <p className="text-blue-500 dark:text-gray-100 font-semibold text-xl mt-2 md:pl-6">Current CGPA: 8.05</p>
+          <p className="text-blue-500 dark:text-gray-100 font-semibold text-xl mt-2 md:pl-6">Current CGPA: 8.24</p>
         </div>
 
         {/* Schooling Section */}
         <div className="mt-6">
-          <h1 className="text-2xl font-bold text-blue-600 dark:text-blue-500">Schooling</h1>
+          <h1 className="text-3xl font-bold text-blue-600 dark:text-blue-500">Schooling</h1>
           <p className="text-gray-700 dark:text-gray-200 text-lg md:pl-6">
             I have completed my schooling at <span className="font-semibold">St Paul&apos;s Higher Secondary School</span>, Salem, Tamil Nadu, India.
           </p>
@@ -104,7 +101,7 @@ const About = () => {
 
         {/* Professional Summary */}
         <div className="mt-6 ">
-          <h1 className="text-2xl font-bold text-blue-600 dark:text-blue-500">Professional Summary</h1>
+          <h1 className="text-3xl font-bold text-blue-600 dark:text-blue-500">Professional Summary</h1>
           <ul className="list-disc text-lg ml-6 mt-2 text-gray-700 dark:text-gray-200 md:p-6">
             <li>MERN Stack Developer with hands-on project experience.</li>
             <li>
@@ -118,7 +115,7 @@ const About = () => {
 
         {/* Future Goals */}
         <div className="mt-6 ">
-          <h1 className="text-2xl font-bold text-blue-600 dark:text-blue-500">Future Goals</h1>
+          <h1 className="text-3xl font-bold text-blue-600 dark:text-blue-500">Future Goals</h1>
           <p className="text-gray-700 dark:text-gray-200 text-lg mt-2 md:p-6">
             My future goal is to <span className="font-semibold">dive deep into Cybersecurity and Generative AI</span>, exploring advanced security mechanisms and AI-driven innovations.
           </p>
@@ -132,7 +129,7 @@ const About = () => {
 
       {/* Skills Section */}
       <div className="text-center md:text-left">
-        <h1 className="text-3xl font-bold pb-6">Skills</h1>
+        <h1 className="text-4xl font-bold pb-6">Skills</h1>
         <h1 className="text-2xl sm:text-3xl text-gray-600 dark:text-gray-200 md:pl-6">
           Proficient in
           <span className="text-green-500"> MongoDB</span>,
@@ -158,7 +155,7 @@ const About = () => {
 
       {/* Experience & Certifications */}
       <div className="mt-15 text-center md:text-left">
-        <h1 className="mb-5 text-3xl  font-bold">Certifications</h1>
+        <h1 className="mb-5 text-4xl  font-bold">Certifications</h1>
         <p className="mb-10 text-lg text-gray-600 dark:text-gray-300 md:p-6">
           I have successfully completed the <span className="text-blue-600 dark:text-blue-500 font-medium">FullStack Open course (7 ECTS)</span> from the
           <span className="font-semibold text-blue-600 dark:text-blue-500"> University of Helsinki</span>, gaining in-depth knowledge of modern web development with the
@@ -180,36 +177,36 @@ const About = () => {
 
         <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="p-4 ">
-            <h2 className="text-xl font-bold text-blue-600 dark:text-blue-500">KRIYA 2025</h2>
+            <h2 className="text-2xl font-bold text-blue-600 dark:text-blue-500">KRIYA 2025</h2>
             <p className="text-gray-700 dark:text-gray-200 mt-1">Attended a workshop on AI-Driven Resilient Cybersecurity at PSG College of Technology.
             </p>
           </div>
 
           <div className="p-4 ">
-            <h2 className="text-xl font-bold text-blue-600 dark:text-blue-500">KNOWMEET 2K24</h2>
+            <h2 className="text-2xl font-bold text-blue-600 dark:text-blue-500">KNOWMEET 2K24</h2>
             <p className="text-gray-700 dark:text-gray-200 mt-1">Attended a workshop on AWS Cloud at Knowledge Institute of Technology.
             </p>
           </div>
           <div className="p-4 ">
-            <h2 className="text-xl font-bold text-blue-600 dark:text-blue-500">KNOWMEET 2K23</h2>
+            <h2 className="text-2xl font-bold text-blue-600 dark:text-blue-500">KNOWMEET 2K23</h2>
             <p className="text-gray-700 dark:text-gray-200 mt-1">Secured 3rd place in the 2023 Incognito Tech Challenge at Knowledge Institute of Technology, which featured two rounds: Canva design in the first round and programming in the second round.
             </p>
           </div>
 
           <div className="p-4 ">
-            <h2 className="text-xl font-bold text-blue-600 dark:text-blue-500">SAMHITA&apos;24</h2>
+            <h2 className="text-2xl font-bold text-blue-600 dark:text-blue-500">SAMHITA&apos;24</h2>
             <p className="text-gray-700 dark:text-gray-200 mt-1">Attended a workshop on Deep Learning with Quantum Computing at Madras Institute of Technology.
             </p>
           </div>
 
           <div className="p-4 ">
-            <h2 className="text-xl font-bold text-blue-600 dark:text-blue-500">GENIO 2K23</h2>
+            <h2 className="text-2xl font-bold text-blue-600 dark:text-blue-500">GENIO 2K23</h2>
             <p className="text-gray-700 dark:text-gray-200 mt-1">Participated in a symposium at Anna University Regional Campus, Coimbatore, engaging in various technical and non-technical events.
             </p>
           </div>
 
           <div className="p-4 ">
-            <h2 className="text-xl font-bold text-blue-600 dark:text-blue-500">TIETSYMPO 2K23</h2>
+            <h2 className="text-2xl font-bold text-blue-600 dark:text-blue-500">TIETSYMPO 2K23</h2>
             <p className="text-gray-700 dark:text-gray-200 mt-1">Secured 1st place in the 2023 Paper Presentation at Tagore Institute of Engineering and Technology for presenting a paper on Intelligent Automation.
             </p>
           </div>
@@ -228,19 +225,19 @@ const About = () => {
         <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
           {/* Hobby Card - Music */}
           <div className="p-4 ">
-            <h2 className="text-xl font-bold text-blue-600 dark:text-blue-500"> Listening to Music</h2>
+            <h2 className="text-2xl font-bold text-blue-600 dark:text-blue-500"> Listening to Music</h2>
             <p className="text-gray-700 dark:text-gray-200 mt-1">I enjoy exploring different genres and discovering new artists.</p>
           </div>
 
           {/* Hobby Card - Movies */}
           <div className="p-4 ">
-            <h2 className="text-xl font-bold text-blue-600 dark:text-blue-500"> Watching Movies</h2>
+            <h2 className="text-2xl font-bold text-blue-600 dark:text-blue-500"> Watching Movies</h2>
             <p className="text-gray-700 dark:text-gray-200 mt-1">I love watching sci-fi, thrillers, and classic movies.</p>
           </div>
 
           {/* Hobby Card - Cooking */}
           <div className="p-4 ">
-            <h2 className="text-xl font-bold text-blue-600 dark:text-blue-500"> Cooking</h2>
+            <h2 className="text-2xl font-bold text-blue-600 dark:text-blue-500"> Cooking</h2>
             <p className="text-gray-700 dark:text-gray-200 mt-1">Experimenting with new recipes and flavors is something I truly enjoy.</p>
           </div>
         </div>
