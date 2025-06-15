@@ -17,6 +17,7 @@ import tailwindIcon from "../assets/skillIcons/icons8-tailwindcss.svg";
 import bootstrapIcon from "../assets/skillIcons/icons8-bootstrap.svg";
 import typeScriptIcon from "../assets/skillIcons/icons8-typescript.svg";
 import reactNativeIcon from "../assets/skillIcons/icons8-react-native.svg";
+import nextjsIcon from "../assets/skillIcons/icons8-next.js.svg";
 
 const skillsData = [
   {
@@ -41,8 +42,15 @@ const skillsData = [
       "Completing the JavaScript Data Structures and Algorithms course on freeCodeCamp has equipped me with strong JavaScript skills.",
   },
   {
+    icon: nextjsIcon,
+    alt: "Next.js",
+    color: "bg-[#f8f8f8]",
+    description:
+      "I have completed the Next.js course on Youtube at js Mastery, where I learned and became proficient in Next.js.Also done projects using Next.js",
+  },
+  {
     icon: reactIcon,
-    alt: "React",
+    alt: "React.js",
     color: "bg-[#c2f7ff]",
     description:
       "I have gained in-depth knowledge in React by doing projects and completing courses from the University of Helsinki FullStack open certification, Scaler, freeCodeCamp's Frontend Libraries certification, and Meta's Frontend Developer certification.",
