@@ -3,6 +3,14 @@ const projectsData = [
     category: "Full Stack Project",
     projects: [
       {
+        title: "Learn With AI",
+        video:
+          "https://res.cloudinary.com/dylmrhy5h/video/upload/v1749996960/Saas_App_gbyugs.mp4",
+        sourceCode: "https://github.com/SHATHISH-07/ai-saas-app",
+        description:
+          "A voice AI-powered learning platform where an intelligent tutor teaches you through natural conversation. Powered by Vapi and built with Next.js, TypeScript, Tailwind CSS, Supabase, Clerk, and Sentry for a seamless and secure experience.",
+      },
+      {
         title: "IMDB Clone Project",
         video:
           "https://res.cloudinary.com/dylmrhy5h/video/upload/v1740552320/IMDB-Clone_acq37h.mp4",
@@ -11,6 +19,7 @@ const projectsData = [
         description:
           "This full-stack MERN application is a movie and TV show exploration platform that provides users with access to trending, popular, top-rated, and now-playing movies and TV shows. Additionally, it features a section for popular actors. The app is built with MongoDB, Express.js, React, and Node.js, and it implements JWT authentication for secure user login and access control. The frontend is styled with Tailwind CSS, ensuring a modern and responsive design.Note: The backend is hosted on a free tier, so it may take a few seconds to wake up on the first request.",
       },
+
       {
         title: "Weather App",
         video:
