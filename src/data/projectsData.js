@@ -3,7 +3,7 @@ const projectsData = [
     category: "Full Stack Project",
     projects: [
       {
-        title: "Learn With AI",
+        title: "Learn With AI Saas App",
         video:
           "https://res.cloudinary.com/dylmrhy5h/video/upload/v1749996960/Saas_App_gbyugs.mp4",
         sourceCode: "https://github.com/SHATHISH-07/ai-saas-app",
