@@ -15,8 +15,8 @@ const About = () => {
       <div className="flex items-center justify-center">
         <div className="text-center md:text-left">
           <h1 className="text-3xl sm:text-4xl font-bold leading-snug">
-            Hey there, I&apos;m <span className="text-blue-600 dark:text-blue-500">Shathish Kumaran</span>,
-            <br /> a passionate
+            Hey there, I&apos;m <br className="sm:hidden" /><span className="text-blue-600 dark:text-blue-500">Shathish Kumaran</span>,
+            <br />a passionate
             <span className="text-blue-600 dark:text-blue-500"> Full-Stack MERN Developer</span>
           </h1>
 
@@ -80,10 +80,10 @@ const About = () => {
         {/* College Section */}
         <div className="mt-6 ">
           <h1 className="text-3xl font-bold text-blue-600 dark:text-blue-500">College</h1>
-          <p className="text-gray-700 dark:text-gray-300 text-lg">
+          <p className="text-gray-700 dark:text-gray-300 text-lg md:text-xl">
             B.E. in Computer Science and Engineering (2022-2026)
           </p>
-          <p className="text-gray-800 dark:text-gray-200 font-medium text-lg mt-1 md:pl-6">
+          <p className="text-gray-800 dark:text-gray-200 font-medium text-lg md:text-xl mt-1 md:pl-6">
             I am currently in my final year of Bachelor of Engineering in Computer Science and Engineering at Dhirajlal Gandhi College of Technology, Salem, TamilNadu, India.
           </p>
           <p className="text-blue-500 dark:text-gray-100 font-semibold text-xl mt-2 md:pl-6">Current CGPA: 8.24</p>
@@ -92,7 +92,7 @@ const About = () => {
         {/* Schooling Section */}
         <div className="mt-6">
           <h1 className="text-3xl font-bold text-blue-600 dark:text-blue-500">Schooling</h1>
-          <p className="text-gray-700 dark:text-gray-200 text-lg md:pl-6">
+          <p className="text-gray-700 dark:text-gray-200 text-lg md:text-xl md:pl-6">
             I have completed my schooling at <span className="font-semibold">St Paul&apos;s Higher Secondary School</span>, Salem, Tamil Nadu, India.
           </p>
           <p className="text-blue-500 dark:text-gray-100 text-xl font-medium md:pl-6">SSLC Percentage: 74.6%</p>
@@ -102,7 +102,7 @@ const About = () => {
         {/* Professional Summary */}
         <div className="mt-6 ">
           <h1 className="text-3xl font-bold text-blue-600 dark:text-blue-500">Professional Summary</h1>
-          <ul className="list-disc text-lg ml-6 mt-2 text-gray-700 dark:text-gray-200 md:p-6">
+          <ul className="list-disc text-lg md:text-xl ml-6 mt-2 text-gray-700 dark:text-gray-200 md:p-6">
             <li>MERN Stack Developer with hands-on project experience.</li>
             <li>
               Completed <span className="font-semibold">FullStackOpen</span> - University of Helsinki.
@@ -116,7 +116,7 @@ const About = () => {
         {/* Future Goals */}
         <div className="mt-6 ">
           <h1 className="text-3xl font-bold text-blue-600 dark:text-blue-500">Future Goals</h1>
-          <p className="text-gray-700 dark:text-gray-200 text-lg mt-2 md:p-6">
+          <p className="text-gray-700 dark:text-gray-200 text-lg md:text-xl mt-2 md:p-6">
             My future goal is to <span className="font-semibold">dive deep into Cybersecurity and Generative AI</span>, exploring advanced security mechanisms and AI-driven innovations.
           </p>
         </div>
@@ -156,7 +156,7 @@ const About = () => {
       {/* Experience & Certifications */}
       <div className="mt-15 text-center md:text-left">
         <h1 className="mb-5 text-4xl  font-bold">Certifications</h1>
-        <p className="mb-10 text-lg text-gray-600 dark:text-gray-300 md:p-6">
+        <p className="mb-10 text-lg md:text-xl text-gray-600 dark:text-gray-300 md:p-6">
           I have successfully completed the <span className="text-blue-600 dark:text-blue-500 font-medium">FullStack Open course (7 ECTS)</span> from the
           <span className="font-semibold text-blue-600 dark:text-blue-500"> University of Helsinki</span>, gaining in-depth knowledge of modern web development with the
           MERN stack. Additionally, I have completed
