@@ -7,7 +7,7 @@ const useLazyLoad = (externalRef = null) => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => setIsVisible(entry.isIntersecting),
-      { threshold: 0.3 }
+      { threshold: 0.2 }
     );
 
     if (elementRef.current) observer.observe(elementRef.current);

@@ -41,7 +41,7 @@ const Cards = ({ cardData }) => {
   const memoizedCards = useMemo(() => cardData, [cardData]);
 
   return (
-    <div className="container cursor-pointer max-w-6xl lg:max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 my-5 sm:my-20 px-5 ">
+    <div className="container cursor-pointer max-w-6xl lg:max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 my-5 sm:my-15 px-5 opacity-80 hover:opacity-100 ">
       {memoizedCards.map((card) => (
         <CardItem key={card.id} card={card} />
       ))}

@@ -63,7 +63,7 @@ const Certificates = () => {
 
   return (
     <div className="grid grid-cols-1 gap-4">
-      <h1 className="text-center text-4xl font-bold mt-10">Certificates</h1>
+      <h1 className="text-center text-4xl font-bold mt-20">Certificates</h1>
       {certificates.map((certificate, index) => (
         <CertificateCard key={index} certificate={{ ...certificate, index }} />
       ))}

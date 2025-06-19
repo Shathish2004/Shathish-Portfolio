@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom"
 
 export default function ExperienceTimeline() {
     const [isDarkMode, setIsDarkMode] = useState(false);
+    const [enableAnimation, setEnableAnimation] = useState(true);
+
     const navigate = useNavigate();
 
     useLayoutEffect(() => {
@@ -16,8 +18,20 @@ export default function ExperienceTimeline() {
 
         observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
 
-        return () => observer.disconnect();
+
+        const handleResize = () => {
+            setEnableAnimation(window.innerWidth >= 768);
+        };
+
+        handleResize();
+        window.addEventListener("resize", handleResize);
+
+        return () => {
+            observer.disconnect();
+            window.removeEventListener("resize", handleResize);
+        };
     }, []);
+
 
     const darkModeStyles = {
         contentBg: isDarkMode ? "#000" : "#fff",
@@ -60,7 +74,8 @@ export default function ExperienceTimeline() {
     ];
 
     return (
-        <VerticalTimeline lineColor={darkModeStyles.borderColor}>
+        <VerticalTimeline lineColor={darkModeStyles.borderColor} animate={enableAnimation}
+        >
             {experiences.map((exp, index) => (
                 <VerticalTimelineElement
                     key={index}

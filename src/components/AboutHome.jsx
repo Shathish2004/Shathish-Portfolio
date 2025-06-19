@@ -19,7 +19,7 @@ const AboutHome = () => {
   }, []);
 
   return (
-    <div className="mt-10 max-w-6xl lg:max-w-7xl mx-auto  px-6">
+    <div className="mt-20 max-w-6xl lg:max-w-7xl mx-auto  px-6">
       <div className="flex flex-col-reverse md:flex-row items-center gap-8">
         {/* Text Section */}
         <div className="md:w-[55%] text-center md:text-left">
@@ -60,7 +60,7 @@ const AboutHome = () => {
           </div>
 
 
-          <div className="flex  mt-10 justify-center md:justify-start space-x-6 sm:space-x-10">
+          <div className="flex  mt-10 justify-center md:justify-start space-x-6 sm:space-x-10 ">
             {[
               { href: "https://www.linkedin.com/in/shathish-kumaran-05a298325/", icon: "fab fa-linkedin", color: "text-blue-600", darkColor: "text-blue-300" },
               { href: "https://github.com/SHATHISH-07", icon: "fab fa-github", color: "text-gray-800", darkColor: "text-white" },

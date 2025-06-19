@@ -27,7 +27,7 @@ const NavBar = () => {
   ];
 
   return (
-    <nav className="flex items-center font-extrabold justify-between max-w-6xl lg:max-w-7xl mx-auto border-b border-gray-900 dark:border-white px-5 py-4">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white dark:bg-black flex items-center font-extrabold justify-between max-w-6xl lg:max-w-7xl mx-auto  border-b border-gray-900 dark:border-white px-5 py-4 opacity-90">
       {/* Logo */}
       <button
         className="cursor-pointer text-[20px] hover:text-blue-600 md:text-2xl"
@@ -55,7 +55,7 @@ const NavBar = () => {
 
       {/* Navigation Links */}
       <div
-        className={`absolute md:static tracking-wider bg-white dark:bg-black border md:border-none top-15 left-0 w-full md:w-auto md:bg-transparent md:flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-10 p-7 md:p-0 z-20 ${menuOpen ? "block" : "hidden"
+        className={`fixed sm:absolute md:static tracking-wider bg-white dark:bg-black border md:border-none top-15 left-0 w-full md:w-auto md:bg-transparent md:flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-10 p-7 md:p-0 z-20 ${menuOpen ? "block" : "hidden"
           }`}
       >
         {navLinks.map(({ name, path }) => (
