@@ -4,6 +4,7 @@ const projectsData = [
     projects: [
       {
         title: "Learn With AI Saas App",
+        link: "https://ai-saas-app-bice-one.vercel.app/",
         video:
           "https://res.cloudinary.com/dylmrhy5h/video/upload/v1749996960/Saas_App_gbyugs.mp4",
         sourceCode: "https://github.com/SHATHISH-07/ai-saas-app",
@@ -12,6 +13,7 @@ const projectsData = [
       },
       {
         title: "IMDB Clone Project",
+        link: "https://shathish-07.github.io/IMDB-frontend/",
         video:
           "https://res.cloudinary.com/dylmrhy5h/video/upload/v1740552320/IMDB-Clone_acq37h.mp4",
         sourceCode:
@@ -22,6 +24,7 @@ const projectsData = [
 
       {
         title: "Weather App",
+        link: "https://shathish-07.github.io/weatherapp-frontend/#/",
         video:
           "https://res.cloudinary.com/dylmrhy5h/video/upload/v1746963004/dk19jnbrednnhbebtuhy.mp4",
         sourceCode: "https://github.com/SHATHISH-07/Weather-app",
@@ -35,6 +38,7 @@ const projectsData = [
     projects: [
       {
         title: "IMDB Clone Backend",
+        link: "https://imdb-backend-rore.onrender.com/",
         video:
           "https://res.cloudinary.com/dylmrhy5h/video/upload/v1740552241/IMDB-Clone-Backend_wwxoai.mp4",
         sourceCode:
@@ -42,16 +46,17 @@ const projectsData = [
         description:
           "This backend is built using Node.js, Express.js, MongoDB, and JWT authentication to support a Movie & TV Show Explorer application. It provides a secure and scalable API that serves movie, TV show, and actor data while implementing authentication and user management.Note: The backend is hosted on a free tier, so it may take a few seconds to wake up on the first request.",
       },
-      {
-        title: "Notes Backend",
-        video:
-          "https://res.cloudinary.com/dylmrhy5h/video/upload/v1740551674/NotesBackend_ymw9qo.mp4",
-        sourceCode: "https://github.com/SHATHISH-07/notes-backend",
-        description:
-          "This backend is built using Node.js, Express.js, and MongoDB to provide a robust API for a Notes App. It allows users to create, read, update, and delete (CRUD) notes efficiently while ensuring secure data management. Start with '/api/notes/' to access the API endpoints.Note: The backend is hosted on a free tier, so it may take a few seconds to wake up on the first request.",
-      },
+      // {
+      //   title: "Notes Backend",
+      //   video:
+      //     "https://res.cloudinary.com/dylmrhy5h/video/upload/v1740551674/NotesBackend_ymw9qo.mp4",
+      //   sourceCode: "https://github.com/SHATHISH-07/notes-backend",
+      //   description:
+      //     "This backend is built using Node.js, Express.js, and MongoDB to provide a robust API for a Notes App. It allows users to create, read, update, and delete (CRUD) notes efficiently while ensuring secure data management. Start with '/api/notes/' to access the API endpoints.Note: The backend is hosted on a free tier, so it may take a few seconds to wake up on the first request.",
+      // },
       {
         title: "Weatherapp Backend",
+        link: "https://weatherapp-backend-pdmu.onrender.com",
         video:
           "https://res.cloudinary.com/dylmrhy5h/video/upload/v1746963005/enxtj4lrgiajuevd4gjq.mp4",
         description:
