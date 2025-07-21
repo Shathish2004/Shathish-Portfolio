@@ -10,7 +10,7 @@ const About = () => {
   }, []);
 
   return (
-    <div className="mt-20 max-w-6xl lg:max-w-7xl mx-auto px-6">
+    <div className="mt-20 md:mt-30 max-w-6xl lg:max-w-7xl mx-auto px-6">
       {/* Introduction Section */}
       <div className="flex items-center justify-center">
         <div className="text-center md:text-left">

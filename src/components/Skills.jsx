@@ -54,7 +54,7 @@ const Skills = () => {
   const memoizedSkills = useMemo(() => skillsData, []);
 
   return (
-    <div className="mt-20">
+    <div className="mt-20 md:mt-30">
       <p className="text-2xl md:text-3xl lg:text-4xl text-center font-bold">
         SKILLS
       </p>

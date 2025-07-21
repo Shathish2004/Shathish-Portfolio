@@ -45,7 +45,7 @@ const ContactMe = () => {
   };
 
   return (
-    <div className="w-full h-auto pt-5 mx-auto md:w-[60%] lg:w-[40%] flex flex-col items-center mt-20 border-1 border-black dark:border-white rounded-sm p-5">
+    <div className="w-full h-auto pt-5 mx-auto md:w-[60%] lg:w-[40%] flex flex-col items-center mt-25 md:mt-30 border-1 border-black dark:border-white rounded-sm p-5">
       <h2 className="text-3xl font-bold mb-4 text-center text-black dark:text-white">Let&apos;s Connect</h2>
       {responseMessage && (
         <p className={`text-center pb-3 ${responseMessage.includes("Failed") ? "text-red-600 dark:text-red-400" : "text-green-600 dark:text-green-400"}`}>

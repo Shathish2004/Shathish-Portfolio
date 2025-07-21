@@ -19,15 +19,16 @@ const NavBar = () => {
   );
 
   const navLinks = [
-    { name: "HOME", path: "/" },
+    // { name: "HOME", path: "/" },
     { name: "ABOUT", path: "/about" },
-    { name: "PROJECT", path: "/projects" },
+    { name: "PROJECTS", path: "/projects" },
     { name: "SKILLS", path: "/skills" },
+    { name: "CERTIFICATES", path: "/certificates" },
     { name: "CONTACT", path: "/contact" },
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white dark:bg-black flex items-center font-extrabold justify-between max-w-6xl lg:max-w-7xl mx-auto  border-b border-gray-900 dark:border-white px-5 py-4 opacity-90">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white dark:bg-black flex items-center font-extrabold justify-between max-w-6xl lg:max-w-7xl mx-auto  border-b border-gray-900 dark:border-white px-5 py-4 md:py-6 opacity-90">
       {/* Logo */}
       <button
         className="cursor-pointer text-[20px] hover:text-blue-600 md:text-2xl"
@@ -38,7 +39,7 @@ const NavBar = () => {
 
       {/* Email (visible on larger screens) */}
       <a
-        className="hidden lg:block text-[11px] sm:text-lg hover:text-blue-600"
+        className="hidden lg:block text-[11px] sm:text-xl hover:text-blue-600"
         href="mailto:shathishkumaran07@gmail.com"
       >
         shathishkumaran07@gmail.com

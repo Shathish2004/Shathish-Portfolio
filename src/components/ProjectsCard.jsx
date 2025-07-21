@@ -61,7 +61,7 @@ ProjectCard.propTypes = {
 
 const ProjectsCard = ({ projects, title }) => {
     return (
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-6xl mx-auto mt-20 md:mt-30">
             {/* Title Section */}
             <div className="text-center mt-15 mb-4">
                 <h1 className="text-3xl p-5 font-bold">{title}</h1>

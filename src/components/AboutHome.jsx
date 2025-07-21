@@ -19,7 +19,7 @@ const AboutHome = () => {
   }, []);
 
   return (
-    <div className="mt-20 max-w-6xl lg:max-w-7xl mx-auto  px-6">
+    <div className="mt-30 max-w-6xl lg:max-w-7xl mx-auto  px-6">
       <div className="flex flex-col-reverse md:flex-row items-center gap-8">
         {/* Text Section */}
         <div className="md:w-[55%] text-center md:text-left">
