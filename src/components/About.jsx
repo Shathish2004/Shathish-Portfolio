@@ -44,7 +44,7 @@ const About = () => {
             button-shadow
                transform hover:scale-105"
           target="_blank"
-          href="https://drive.google.com/file/d/16Fc80xA6h2qOFrTp9dFRk3ic5V9ww4q3/view?usp=sharing"
+          href="https://drive.google.com/file/d/1O849HIpJ87mUOTywrR39KAm61y71y3CH/view?usp=sharing"
           rel="noopener noreferrer"
         >
           View Resume
@@ -86,7 +86,7 @@ const About = () => {
           <p className="text-gray-800 dark:text-gray-200 font-medium text-lg md:text-xl mt-1 md:pl-6">
             I am currently in my final year of Bachelor of Engineering in Computer Science and Engineering at Dhirajlal Gandhi College of Technology, Salem, TamilNadu, India.
           </p>
-          <p className="text-blue-500 dark:text-gray-100 font-semibold text-xl mt-2 md:pl-6">Current CGPA: 8.24</p>
+          <p className="text-blue-500 dark:text-gray-100 font-semibold text-xl mt-2 md:pl-6">Current CGPA: 8.18</p>
         </div>
 
         {/* Schooling Section */}
