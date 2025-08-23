@@ -39,7 +39,7 @@ const Footer = () => {
         {/* Right Section - Social Links */}
         <div className="flex text-[20px] sm:text-[25px] space-x-4 mt-2 sm:mt-0">
           {[
-            { href: "https://www.linkedin.com/in/shathish-kumaran-05a298325/", icon: "fab fa-linkedin", color: "text-blue-600", darkColor: "text-blue-300" },
+            { href: "https://www.linkedin.com/in/shathish-kumaran/", icon: "fab fa-linkedin", color: "text-blue-600", darkColor: "text-blue-300" },
             { href: "https://github.com/SHATHISH-07", icon: "fab fa-github", color: "text-gray-800", darkColor: "text-white" },
             { href: "https://www.instagram.com/shathish_07/", icon: "fab fa-instagram", color: "text-pink-500", darkColor: "text-pink-400" },
           ].map(({ href, icon, color, darkColor }) => (

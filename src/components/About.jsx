@@ -44,7 +44,7 @@ const About = () => {
             button-shadow
                transform hover:scale-105"
           target="_blank"
-          href="https://drive.google.com/file/d/1giZKOOosNltc7lc2vbxncLmnfAHnQNB-/view?usp=sharing"
+          href="https://drive.google.com/file/d/1DdglC38fjpg3uVOzA79RGPagPDlZnxSC/view?usp=sharing"
           rel="noopener noreferrer"
         >
           View Resume
@@ -55,7 +55,7 @@ const About = () => {
       {/* Social Links */}
       <div className="flex mt-10 mb-15 justify-center md:justify-start space-x-6 sm:space-x-10">
         {[
-          { href: "https://www.linkedin.com/in/shathish-kumaran-05a298325/", icon: "fab fa-linkedin", color: "text-blue-600", darkColor: "text-blue-300" },
+          { href: "https://www.linkedin.com/in/shathish-kumaran/", icon: "fab fa-linkedin", color: "text-blue-600", darkColor: "text-blue-300" },
           { href: "https://github.com/SHATHISH-07", icon: "fab fa-github", color: "text-gray-800", darkColor: "text-white" },
           { href: "https://www.instagram.com/shathish_07/", icon: "fab fa-instagram", color: "text-pink-500", darkColor: "text-pink-400" },
         ].map(({ href, icon, color, darkColor }) => (
