@@ -3,6 +3,15 @@ const projectsData = [
     category: "Full Stack Project",
     projects: [
       {
+        title: "Ecommerce App",
+        link: "https://shathish-07.github.io/ecommerce-frontend/#/",
+        video:
+          "https://res.cloudinary.com/dylmrhy5h/video/upload/v1757128740/Ecommerce-App_wbpa49.mp4",
+        sourceCode: "https://github.com/SHATHISH-07/Ecommerce-App",
+        description:
+          "A full-stack e-commerce application built with GraphQL, TypeScript, and   MongoDB on the backend, and React, Tailwind CSS, TypeScript, and Redux Toolkit on the frontend.Features include product browsing, shopping cart, secure user authentication, OTP-verified orders, and responsive design for seamless desktop and mobile experiences.",
+      },
+      {
         title: "Learn With AI Saas App",
         link: "https://ai-saas-app-bice-one.vercel.app/",
         video:
