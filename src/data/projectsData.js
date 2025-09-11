@@ -3,6 +3,15 @@ const projectsData = [
     category: "Full Stack Project",
     projects: [
       {
+        title: "Ecommerce Admin Panel",
+        link: "https://shathish-07.github.io/ecommerce-frontend/#/",
+        video:
+          "https://res.cloudinary.com/dylmrhy5h/video/upload/v1757590952/AdminPanel_-_Made_with_Clipchamp_dploob.mp4",
+        sourceCode: "https://github.com/SHATHISH-07/Ecommerce-App",
+        description:
+          "Ecommerce Admin Panel to manage products, categories, and orders for an e-commerce platform.Features include product management, order management, and responsive design for seamless desktop and mobile experiences.",
+      },
+      {
         title: "Ecommerce App",
         link: "https://shathish-07.github.io/ecommerce-frontend/#/",
         video:
@@ -45,6 +54,15 @@ const projectsData = [
   {
     category: "Backend Project",
     projects: [
+      {
+        title: "Ecommerce Backend",
+        link: "https://ecommerce-backend-j210.onrender.com/",
+        video:
+          "https://res.cloudinary.com/dylmrhy5h/video/upload/v1757589785/Ecommerce-Backend_-_Made_with_Clipchamp_pr0dhl.mp4",
+        sourceCode: "https://github.com/SHATHISH-07/ecommerce-backend",
+        description:
+          "A  e-commerce application built with GraphQL, TypeScript, and   MongoDB on the backend.Features include product browsing, shopping cart, secure user authentication, OTP-verified orders.",
+      },
       {
         title: "IMDB Clone Backend",
         link: "https://imdb-backend-rore.onrender.com/",
