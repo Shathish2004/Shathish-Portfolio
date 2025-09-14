@@ -27,6 +27,9 @@ const ProjectCard = ({ project, index }) => {
             <div className="w-full sm:max-w-[50%] text-center">
                 <h2 className="text-2xl font-bold">{project.title}</h2>
                 <p className="mt-2">{project.description}</p>
+                {project.note && (
+                    <p className="mt-2 text-blue-600 dark:text-blue-500 font-medium">{project.note}</p>
+                )}
 
                 <div className="mt-4 flex flex-wrap justify-center gap-4">
                     {project.link && (
@@ -52,6 +55,7 @@ ProjectCard.propTypes = {
         id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
         title: PropTypes.string.isRequired,
         description: PropTypes.string.isRequired,
+        note: PropTypes.string,
         video: PropTypes.string,
         link: PropTypes.string.isRequired,
         sourceCode: PropTypes.string.isRequired,

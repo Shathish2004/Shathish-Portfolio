@@ -10,6 +10,7 @@ const projectsData = [
         sourceCode: "https://github.com/SHATHISH-07/Ecommerce-App",
         description:
           "Ecommerce Admin Panel to manage products, categories, and orders for an e-commerce platform.Features include product management, order management, and responsive design for seamless desktop and mobile experiences.",
+        note: "TO VIEW THE ADMIN PANEL, YOU NEED TO LOGIN. PLEASE CONTACT ME FOR MORE DETAILS.",
       },
       {
         title: "Ecommerce App",
