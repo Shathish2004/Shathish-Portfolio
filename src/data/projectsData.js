@@ -2,16 +2,16 @@ const projectsData = [
   {
     category: "Full Stack Project",
     projects: [
-      {
-        title: "Ecommerce Admin Panel",
-        link: "https://shathish-07.github.io/ecommerce-frontend/#/",
-        video:
-          "https://res.cloudinary.com/dylmrhy5h/video/upload/v1757590952/AdminPanel_-_Made_with_Clipchamp_dploob.mp4",
-        sourceCode: "https://github.com/SHATHISH-07/Ecommerce-App",
-        description:
-          "Ecommerce Admin Panel to manage products, categories, and orders for an e-commerce platform.Features include product management, order management, and responsive design for seamless desktop and mobile experiences.",
-        note: "TO VIEW THE ADMIN PANEL, YOU NEED TO LOGIN. PLEASE CONTACT ME FOR MORE DETAILS.",
-      },
+      // {
+      //   title: "Ecommerce Admin Panel",
+      //   link: "https://shathish-07.github.io/ecommerce-frontend/#/",
+      //   video:
+      //     "https://res.cloudinary.com/dylmrhy5h/video/upload/v1757590952/AdminPanel_-_Made_with_Clipchamp_dploob.mp4",
+      //   sourceCode: "https://github.com/SHATHISH-07/Ecommerce-App",
+      //   description:
+      //     "Ecommerce Admin Panel to manage products, categories, and orders for an e-commerce platform.Features include product management, order management, and responsive design for seamless desktop and mobile experiences.",
+      //   note: "TO VIEW THE ADMIN PANEL, YOU NEED TO LOGIN. PLEASE CONTACT ME FOR MORE DETAILS.",
+      // },
       {
         title: "Ecommerce App",
         link: "https://shathish-07.github.io/ecommerce-frontend/#/",
@@ -19,7 +19,7 @@ const projectsData = [
           "https://res.cloudinary.com/dylmrhy5h/video/upload/v1757128740/Ecommerce-App_wbpa49.mp4",
         sourceCode: "https://github.com/SHATHISH-07/Ecommerce-App",
         description:
-          "A full-stack e-commerce application built with GraphQL, TypeScript, and   MongoDB on the backend, and React, Tailwind CSS, TypeScript, and Redux Toolkit on the frontend.Features include product browsing, shopping cart, secure user authentication, OTP-verified orders, and responsive design for seamless desktop and mobile experiences.",
+          "A full-stack e-commerce application with admin panel built with GraphQL, TypeScript, and   MongoDB on the backend, and React, Tailwind CSS, TypeScript, and Redux Toolkit on the frontend.Features include product browsing, shopping cart, secure user authentication, OTP-verified orders, and responsive design for seamless desktop and mobile experiences.",
       },
       {
         title: "Learn With AI Saas App",
