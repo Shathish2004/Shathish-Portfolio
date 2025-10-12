@@ -44,7 +44,7 @@ const About = () => {
             button-shadow
                transform hover:scale-105"
           target="_blank"
-          href="https://drive.google.com/file/d/1VmV_TgIgT-PLSERA3bp1SfYKoa9k0Oxh/view?usp=sharing"
+          href="https://drive.google.com/file/d/1f8w1m8QTBhLTGFU15jBSWo_RUaFxzUHF/view"
           rel="noopener noreferrer"
         >
           View Resume
