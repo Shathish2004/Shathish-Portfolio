@@ -51,17 +51,17 @@ export default function ExperienceTimeline() {
             navigate: false
         },
         {
-            title: "Google Cybersecurity Certificate",
-            subtitle: "Coursera",
-            description: "Security fundamentals, risk management, and threat analysis.",
-            date: "2024",
-            navigate: false
-        },
-        {
             title: "AI Essentials",
             subtitle: "Coursera",
             description: "Fundamentals of AI & Machine Learning applications.",
             date: "2024",
+            navigate: false
+        },
+        {
+            title: "Google Cybersecurity Certificate",
+            subtitle: "Coursera",
+            description: "Security fundamentals, risk management, and threat analysis.",
+            date: "2023",
             navigate: false
         },
         {
