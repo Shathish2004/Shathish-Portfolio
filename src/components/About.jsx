@@ -160,11 +160,11 @@ const About = () => {
                     >
                         <div className="about-text-reveal">
                             <div className="flex items-center gap-4 mb-6 opacity-60">
-                                <div className="w-12 h-[1px] bg-[#2a0878]"></div>
+                                <div className="w-12  bg-[#2a0878]"></div>
                                 <span className="text-[#2a0878] font-mono text-sm tracking-widest uppercase">01. About Me</span>
                             </div>
 
-                            <h2 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[0.9] mb-6">
+                            <h2 className="text-5xl md:text-7xl  xl:text-8xl font-black tracking-tighter leading-[0.9] mb-6">
                                 CRAFTING <br />
                                 <span className="text-[#2a0878]">DIGITAL</span> <br />
                                 REALITY
