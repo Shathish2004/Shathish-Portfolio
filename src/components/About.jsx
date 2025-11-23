@@ -19,12 +19,12 @@ gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
     const containerRef = useRef(null);
+    const contentWrapperRef = useRef(null); // 1. New Ref for the columns wrapper
     const leftColRef = useRef(null);
-    // const rightColRef = useRef(null);
     const marqueeRef1 = useRef(null);
     const marqueeRef2 = useRef(null);
 
-    // Data
+    // ... [Data Arrays stay the same] ...
     const skillsRow1 = [
         { name: "JAVASCRIPT", icon: <SiJavascript />, color: "#F7DF1E" },
         { name: "REACT", icon: <FaReact />, color: "#61DBFB" },
@@ -68,8 +68,7 @@ const About = () => {
 
     useEffect(() => {
         const ctx = gsap.context(() => {
-
-            // 1. Marquee Animation (Runs on all screens)
+            // 1. Marquee Animation
             const animateMarquee = (ref, direction) => {
                 const width = ref.current.scrollWidth;
                 gsap.to(ref.current, {
@@ -98,19 +97,17 @@ const About = () => {
             // 2. Responsive Logic using MatchMedia
             let mm = gsap.matchMedia();
 
-            // === DESKTOP ONLY (min-width: 1024px) ===
-            // Pinning ONLY happens here
             mm.add("(min-width: 1024px)", () => {
                 ScrollTrigger.create({
-                    trigger: containerRef.current,
+                    trigger: contentWrapperRef.current, // CHANGED: Trigger based on wrapper, not container
                     start: "top top",
                     end: "bottom bottom",
                     pin: leftColRef.current,
-                    // pinSpacing: false // Optional: depends on if you want space reserved
+                    // pinSpacing: true (default) handles the spacing
                 });
             });
 
-            // 3. Reveal Animations (Runs on all screens)
+            // 3. Reveal Animations
             gsap.from(".about-text-reveal", {
                 y: 50,
                 opacity: 0,
@@ -149,12 +146,12 @@ const About = () => {
                 id="about"
                 className="w-full bg-[#eaeaea] text-[#1a1a1a] relative overflow-hidden"
             >
-                <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 pt-28 pb-10 lg:py-0">
+                <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 pt-28 lg:py-0">
 
-                    <div className="flex flex-col lg:flex-row">
+                    {/* 2. Attach the new ref to this wrapper div */}
+                    <div ref={contentWrapperRef} className="flex flex-col lg:flex-row">
 
                         {/* === LEFT COLUMN === */}
-                        {/* Mobile: Height Auto (Flows naturally). Desktop: h-screen (Pinned). */}
                         <div
                             ref={leftColRef}
                             className="w-full lg:w-[40%] h-auto lg:h-screen flex flex-col justify-center lg:py-20 mb-16 lg:mb-0"
@@ -178,10 +175,9 @@ const About = () => {
                             </div>
                         </div>
 
-                        {/* === RIGHT COLUMN (Scrollable Content) === */}
+                        {/* === RIGHT COLUMN === */}
                         <div className="w-full lg:w-[60%] flex flex-col justify-center lg:py-32 gap-16 lg:gap-24">
-
-                            {/* 1. Intro Text */}
+                            {/* Intro Text */}
                             <div className="about-text-reveal">
                                 <p className="text-lg md:text-3xl leading-relaxed font-light text-gray-800">
                                     I transform complex problems into <strong className="text-[#2a0878] font-semibold">elegant solutions</strong>.
@@ -191,7 +187,7 @@ const About = () => {
                                 </p>
                             </div>
 
-                            {/* 2. Education Section */}
+                            {/* Education Section */}
                             <div className="about-text-reveal">
                                 <div className="mb-10 flex items-end gap-4">
                                     <h3 className="text-3xl md:text-4xl font-bold tracking-tight">Education</h3>
@@ -226,23 +222,20 @@ const About = () => {
                                     ))}
                                 </div>
                             </div>
-
-                            {/* 3. Skills Marquee */}
-
-
                         </div>
                     </div>
                 </div>
-            </section>
-            <div className="about-text-reveal -mx-6 md:-mx-12 lg:mx-0 ">
 
-                <div className="border-t-5 border-b-2 border-black/60 ">
-                    <MarqueeRow items={skillsRow1} reference={marqueeRef1} />
+                <div className="about-text-reveal -mx-6 md:-mx-12 lg:mx-0 relative z-10 bg-[#eaeaea]">
+                    <div className="border-t-5 border-b-2 border-black/60 ">
+                        <MarqueeRow items={skillsRow1} reference={marqueeRef1} />
+                    </div>
+                    <div className="border-b-5 border-t-2 border-black/60 ">
+                        <MarqueeRow items={skillsRow2} reference={marqueeRef2} />
+                    </div>
                 </div>
-                <div className="border-b-5 border-t-2 border-black/60 ">
-                    <MarqueeRow items={skillsRow2} reference={marqueeRef2} />
-                </div>
-            </div></>
+            </section>
+        </>
     );
 };
 
