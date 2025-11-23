@@ -121,7 +121,7 @@ const Contact = () => {
                     <div>
                         <div className="flex items-center gap-4 mb-8 opacity-60">
                             {/* <div className="w-12 h-[1px] bg-[#2a0878]"></div> */}
-                            <span className="text-[#2a0878] font-mono text-sm tracking-widest uppercase">07. Contact</span>
+                            <span className="text-[#2a0878] font-mono text-sm tracking-widest uppercase">06. Contact</span>
                         </div>
 
                         <h2 className="text-7xl md:text-8xl lg:text-[10rem] font-black leading-[0.85] tracking-tighter overflow-hidden select-none">

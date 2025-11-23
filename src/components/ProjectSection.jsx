@@ -1,13 +1,14 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ArrowUpRight, Code2, Calendar, Layers } from "lucide-react";
-import { FaGithub } from "react-icons/fa";
+import { ArrowUpRight, Github, Layers, Cpu, Globe } from "lucide-react";
+
+// Images
 import EcommerceAppImg from "/assets/projectImg/ecommerce-app.png";
 import AiSaasApp from "/assets/projectImg/ai-saas-app.png";
 import WeatherApp from "/assets/projectImg/weather-app.png";
 import IMDBApp from "/assets/projectImg/imdb-app.png";
-
+import { FaGithub } from "react-icons/fa";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -15,233 +16,217 @@ const projectsData = [
     {
         id: "01",
         year: "2025",
-        title: "E-Commerce Site",
+        title: "E-Commerce Site", // Restored
         category: "Full Stack",
-        description:
-            "A complete e-commerce application with secure OTP verification, real-time order tracking (Shipped, Delivered), and a smart return-management workflow. Includes a comprehensive Admin Dashboard.",
-        tech: "React, Node.js, MongoDB, Redux Toolkit, NodeMailer",
+        description: "A complete e-commerce application with secure OTP verification, real-time order tracking (Shipped, Delivered), and a smart return-management workflow. Includes a comprehensive Admin Dashboard.",
+        tech: ["React", "Node.js", "MongoDB", "Redux Toolkit", "NodeMailer"],
         image: EcommerceAppImg,
         github: "https://github.com/SHATHISH-07/Ecommerce-App",
         live: "https://shathish-07.github.io/ecommerce-frontend/#/",
-        color: "#2a0878",
+        color: "#2a0878"
     },
     {
         id: "02",
         year: "2025",
-        title: "ReactIQ AI Saas",
+        title: "ReactIQ AI Saas", // Restored
         category: "AI & Real-time",
-        description:
-            "A voice AI-powered learning platform where an intelligent tutor teaches through natural conversation. Features real-time voice communication, dynamic lesson generation, and progress tracking.",
-        tech: "Next.js, TypeScript, Supabase, Clerk, Vapi (Voice AI)",
+        description: "A voice AI-powered learning platform where an intelligent tutor teaches through natural conversation. Features real-time voice communication, dynamic lesson generation, and progress tracking.",
+        tech: ["Next.js", "TypeScript", "Supabase", "Clerk", "Vapi (Voice AI)"],
         image: AiSaasApp,
         github: "https://github.com/SHATHISH-07/ai-saas-app",
         live: "https://ai-saas-app-bice-one.vercel.app/",
-        color: "#1a1a1a",
+        color: "#1a1a1a"
     },
     {
         id: "03",
         year: "2025",
-        title: "Weather App",
+        title: "Weather App", // Restored
         category: "Data Visualization",
-        description:
-            "Dynamic weather application providing real-time temperature, conditions, and insights for any global location. Optimized for speed and handles complex API data integration seamlessly.",
-        tech: "React, TypeScript, Tailwind, LocationIQ API, Redux",
+        description: "Dynamic weather application providing real-time temperature, conditions, and insights for any global location. Optimized for speed and handles complex API data integration seamlessly.",
+        tech: ["React", "TypeScript", "Tailwind", "LocationIQ API", "Redux"],
         image: WeatherApp,
         github: "https://github.com/SHATHISH-07/Weather-app",
         live: "https://shathish-07.github.io/weatherapp-frontend/#/",
-        color: "#4a1d96",
+        color: "#4a1d96"
     },
     {
         id: "04",
         year: "2024",
-        title: "IMDB Clone",
+        title: "IMDB Clone", // Restored
         category: "Media Platform",
-        description:
-            "A movie exploration platform allowing users to browse trending titles and actor bios. Features secure authentication, protected routes, and a responsive browsing experience.",
-        tech: "MERN Stack, Tailwind CSS, JWT Auth, TMDB API",
+        description: "A movie exploration platform allowing users to browse trending titles and actor bios. Features secure authentication, protected routes, and a responsive browsing experience.",
+        tech: ["MERN Stack", "Tailwind CSS", "JWT Auth", "TMDB API"],
         image: IMDBApp,
         github: "https://github.com/SHATHISH-07/Projects/tree/main/FullStack_Project/IMDB-CLONE",
         live: "https://shathish-07.github.io/IMDB-frontend/#/",
-        color: "#0f172a",
+        color: "#0f172a"
     },
 ];
 
 const Projects = () => {
-    const sectionRef = useRef(null);
-    const triggerRef = useRef(null);
+    const containerRef = useRef(null);
+    const imagesRef = useRef([]);
 
     useEffect(() => {
         const ctx = gsap.context(() => {
-            const sections = gsap.utils.toArray(".project-panel");
-            let mm = gsap.matchMedia();
+            const textSections = gsap.utils.toArray(".project-text-section");
 
-            // === DESKTOP ANIMATION ===
-            mm.add("(min-width: 1024px)", () => {
-                const scrollTween = gsap.to(sections, {
-                    xPercent: -100 * (sections.length - 1),
-                    ease: "none",
-                    scrollTrigger: {
-                        trigger: triggerRef.current,
-                        pin: true,
-                        scrub: 1,
-                        snap: 1 / (sections.length - 1),
-                        end: () => "+=" + triggerRef.current.offsetWidth * 2,
-                    },
-                });
+            textSections.forEach((section, index) => {
+                const targetImage = imagesRef.current[index];
 
-                // Parallax Image Effect
-                sections.forEach((section) => {
-                    const img = section.querySelector(".project-image");
-                    gsap.fromTo(img,
-                        { xPercent: -10, scale: 1.1 },
-                        {
-                            xPercent: 10,
-                            ease: "none",
-                            scrollTrigger: {
-                                trigger: section,
-                                containerAnimation: scrollTween,
-                                start: "left right",
-                                end: "right left",
-                                scrub: true,
+                ScrollTrigger.create({
+                    trigger: section,
+                    start: "top center",
+                    end: "bottom center",
+                    onEnter: () => {
+                        gsap.to(targetImage, {
+                            clipPath: "inset(0% 0% 0% 0%)",
+                            duration: 0.8,
+                            ease: "power3.inOut",
+                            zIndex: 10
+                        });
+                        // Lower z-index of others
+                        imagesRef.current.forEach((img, i) => {
+                            if (i !== index) {
+                                gsap.to(img, { zIndex: 1, delay: 0.4 });
                             }
-                        }
-                    );
+                        });
+                    },
+                    onEnterBack: () => {
+                        gsap.to(targetImage, {
+                            clipPath: "inset(0% 0% 0% 0%)",
+                            duration: 0.8,
+                            ease: "power3.inOut",
+                            zIndex: 10
+                        });
+                    },
+                    onLeaveBack: () => {
+                        gsap.to(targetImage, {
+                            clipPath: "inset(100% 0% 0% 0%)",
+                            duration: 0.8,
+                            ease: "power3.inOut",
+                            zIndex: 1
+                        });
+                    }
                 });
             });
 
-            // === MOBILE ANIMATION ===
-            mm.add("(max-width: 1023px)", () => {
-                sections.forEach((section) => {
-                    gsap.from(section.querySelectorAll(".anim-text"), {
-                        y: 30, opacity: 0, duration: 0.8, stagger: 0.1,
-                        scrollTrigger: { trigger: section, start: "top 70%" }
-                    });
-                    gsap.from(section.querySelector(".project-image-container"), {
-                        y: 50, opacity: 0, scale: 0.95, duration: 1,
-                        scrollTrigger: { trigger: section, start: "top 60%" }
-                    });
-                });
-            });
-
-        }, sectionRef);
-
+        }, containerRef);
         return () => ctx.revert();
     }, []);
 
     return (
-        <section id="projects" style={{ backgroundColor: "#eaeaea" }} className="overflow-hidden relative">
+        <section ref={containerRef} id="projects" className="bg-[#eaeaea] relative">
 
-            {/* Header */}
-            <div className="max-w-7xl mx-auto px-6 md:px-8 pt-10 relative z-10">
-                <h4 className="text-[#2a0878] font-mono text-sm tracking-widest uppercase mb-4 opacity-80">
-                    04. Selected Works
-                </h4>
-                <h2 className="text-5xl md:text-7xl font-bold text-[#1a1a1a] mb-8">
-                    Featured <span className=" text-[#2a0878]">Projects</span>
-                </h2>
-            </div>
+            <div className="max-w-7xl mx-auto flex flex-col lg:flex-row">
 
-            {/* Scroll Container */}
-            <div ref={triggerRef} className="lg:h-screen lg:flex lg:items-center">
-                <div ref={sectionRef} className="lg:flex lg:flex-row w-full h-full px-6 md:px-8 lg:px-0">
+                {/* === LEFT COLUMN: SCROLLABLE TEXT === */}
+                <div className="w-full lg:w-1/2 px-6 md:px-12 lg:px-20 md:py-10 z-10">
 
-                    {projectsData.map((project, index) => (
-                        <div
-                            key={index}
-                            className="project-panel w-full lg:w-screen lg:h-screen flex-shrink-0 flex flex-col lg:flex-row justify-center items-center lg:px-20 gap-12 md:gap-24 mb-32 lg:mb-0 relative"
-                        >
-                            {/* === TEXT SIDE (REDESIGNED) === */}
-                            <div className="w-full lg:w-[45%] flex flex-col justify-center order-2 lg:order-1 relative z-10 pl-2">
+                    {/* Section Title */}
+                    <div className="mb-24">
+                        <h4 className="text-[#2a0878] font-mono text-sm tracking-widest uppercase mb-4 opacity-80">
+                            03. Selected Works
+                        </h4>
+                        <h2 className="text-5xl md:text-7xl font-bold text-[#1a1a1a] tracking-tight">
+                            Featured <br /><span className="text-[#2a0878]">Projects</span>
+                        </h2>
+                    </div>
 
-                                {/* 1. Top Meta Line */}
-                                <div className="anim-text flex items-center gap-4 mb-6 border-b border-gray-300 pb-4">
-                                    <span className="text-5xl font-light text-[#2a0878] leading-none">
+                    {/* Projects Loop */}
+                    <div className="flex flex-col gap-32 md:gap-48 pb-24">
+                        {projectsData.map((project, index) => (
+                            <div key={index} className="project-text-section flex flex-col justify-center min-h-[50vh]">
+
+                                {/* Header Line */}
+                                <div className="flex items-center gap-4 mb-6 border-b border-gray-300 pb-4">
+                                    <span className="text-4xl font-light text-[#2a0878]">
                                         {project.id}
                                     </span>
-                                    <div className="h-px bg-gray-400 flex-1"></div>
-                                    <span className="font-mono text-gray-500 text-sm">{project.category}</span>
+                                    <div className="h-px bg-gray-300 flex-1"></div>
+                                    <span className="font-mono text-xs text-gray-500">{project.category}</span>
                                 </div>
 
-                                {/* 2. Title */}
-                                <div className="anim-text mb-8">
-                                    <h3 className="text-4xl md:text-6xl font-black text-[#1a1a1a] leading-[1.1] tracking-tight">
-                                        {project.title}
-                                    </h3>
+                                {/* Title */}
+                                <h3 className="text-3xl md:text-5xl font-bold text-[#1a1a1a] mb-6 leading-tight">
+                                    {project.title}
+                                </h3>
+
+                                {/* Tech Tags */}
+                                <div className="flex flex-wrap gap-2 mb-8">
+                                    {project.tech.map((t, i) => (
+                                        <div key={i} className="px-3 py-1 rounded-lg border border-gray-300 text-xs font-medium text-gray-600 bg-white flex items-center gap-1">
+                                            <Cpu size={12} className="text-[#2a0878]" /> {t}
+                                        </div>
+                                    ))}
                                 </div>
 
-                                {/* 3. Project Specs Grid (Replacing Pills) */}
-                                <div className="anim-text grid grid-cols-2 gap-y-6 gap-x-4 mb-10 py-6 border-t border-b border-gray-200">
-                                    <div>
-                                        <h4 className="flex items-center gap-2 text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">
-                                            <Code2 size={14} /> Tech Stack
-                                        </h4>
-                                        <p className="text-sm font-medium text-gray-800 leading-relaxed">
-                                            {project.tech}
-                                        </p>
-                                    </div>
-                                    <div>
-                                        <h4 className="flex items-center gap-2 text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">
-                                            <Calendar size={14} /> Year
-                                        </h4>
-                                        <p className="text-sm font-medium text-gray-800">
-                                            {project.year}
-                                        </p>
-                                    </div>
-                                </div>
-
-                                {/* 4. Description */}
-                                <p className="text-base text-gray-600 mb-10 leading-relaxed max-w-md anim-text">
+                                {/* Desc */}
+                                <p className="text-gray-600 text-lg leading-relaxed mb-10 max-w-md">
                                     {project.description}
                                 </p>
 
-                                {/* 5. Buttons (Sleek) */}
-                                <div className="flex flex-wrap gap-4 anim-text">
+                                {/* Buttons */}
+                                <div className="flex items-center gap-4">
                                     <a
                                         href={project.live}
-                                        className="flex-1 sm:flex-none flex items-center justify-center gap-2 bg-[#1a1a1a] text-white px-8 py-4 rounded-xl font-semibold hover:bg-[#2a0878] transition-all duration-300 hover:-translate-y-1 shadow-lg"
                                         target="_blank"
+                                        className="flex items-center gap-2 px-6 py-3 bg-[#2a0878] text-white rounded-lg font-bold hover:bg-[#1a0550] transition-all shadow-md"
                                     >
-                                        View Project <ArrowUpRight size={18} />
+                                        <Globe size={18} /> View
                                     </a>
                                     <a
                                         href={project.github}
-                                        className="flex-1 sm:flex-none flex items-center justify-center gap-2 bg-white border border-gray-200 text-gray-900 px-8 py-4 rounded-xl font-semibold hover:border-[#2a0878] hover:text-[#2a0878] transition-all duration-300 hover:-translate-y-1"
                                         target="_blank"
+                                        className="flex items-center gap-2 px-6 py-3 bg-white text-[#1a1a1a] border border-gray-300 rounded-lg font-bold hover:border-[#2a0878] transition-all"
                                     >
-                                        Source Code <FaGithub size={18} />
+                                        <FaGithub size={18} /> Code
                                     </a>
                                 </div>
+
+                                {/* Mobile Image (Visible only on small screens) */}
+                                <div className="lg:hidden mt-10 w-full rounded-2xl overflow-hidden shadow-xl border-4 border-white">
+                                    <img src={project.image} alt={project.title} className="w-full h-auto" />
+                                </div>
                             </div>
+                        ))}
+                    </div>
+                </div>
 
-                            {/* === IMAGE SIDE === */}
-                            <div className="w-full lg:w-[50%] h-[40vh] md:h-[500px] lg:h-[500px] order-1 lg:order-2 project-image-container relative">
-                                <div className="w-full h-full rounded-[20px] overflow-hidden shadow-2xl relative group border-[8px] border-white bg-white">
-                                    {/* Overlay */}
-                                    <div className="absolute inset-0 bg-[#2a0878]/10 group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none"></div>
+                {/* === RIGHT COLUMN: PINNED IMAGES (Desktop Only) === */}
+                {/* Updated bg to #eaeaea to match user theme */}
+                <div className="hidden lg:block w-1/2 h-screen sticky top-0 right-0 overflow-hidden bg-[#eaeaea]">
+                    <div className="relative w-full h-full flex items-center justify-center p-12">
 
-                                    {/* Image */}
+                        {/* Image Stack */}
+                        <div className="relative w-full h-[70vh] max-w-[650px]">
+                            {projectsData.map((project, index) => (
+                                <div
+                                    key={index}
+                                    ref={(el) => (imagesRef.current[index] = el)}
+                                    // Initial State: First image visible, others clipped to top
+                                    className="absolute inset-0 w-full h-full overflow-hidden rounded-2xl bg-white border-8 border-white"
+                                    style={{
+                                        clipPath: index === 0 ? "inset(0% 0% 0% 0%)" : "inset(100% 0% 0% 0%)",
+                                        zIndex: projectsData.length - index
+                                    }}
+                                >
+                                    {/* Actual Image */}
                                     <img
                                         src={project.image}
                                         alt={project.title}
-                                        className="project-image w-full h-full object-cover transform scale-100 transition-transform duration-1000 group-hover:scale-110"
+                                        className="w-full h-full object-cover object-top"
                                     />
+
+                                    {/* Subtle Overlay for Depth */}
+                                    <div className="absolute inset-0 bg-linear-to-t from-black/10 to-transparent pointer-events-none"></div>
                                 </div>
-
-                                {/* Decorative Blur Effect Behind */}
-                                <div
-                                    className="absolute -inset-10 -z-10 rounded-full opacity-30 blur-[60px] transition-all duration-500"
-                                    style={{ backgroundColor: project.color }}
-                                ></div>
-
-                                {/* Floating Label */}
-                                <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-xl z-20 hidden md:block anim-text">
-                                    <Layers className="text-[#2a0878]" size={24} />
-                                </div>
-                            </div>
-
+                            ))}
                         </div>
-                    ))}
+
+                    </div>
                 </div>
+
             </div>
         </section>
     );

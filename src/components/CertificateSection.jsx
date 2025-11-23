@@ -1,9 +1,9 @@
 import { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ArrowUpRight, Award } from "lucide-react";
+import { ArrowUpRight, Award, ChevronDown, ExternalLink } from "lucide-react";
 
-// Image Imports
+// Image Imports (Keep your existing imports)
 import FSDCert from "/assets/certificateImg/certificate-fullstack.png";
 import FSReactNativeCert from "/assets/certificateImg/certificate-reactnative-fullstackOpen.png";
 import GCyberSecCert from "/assets/certificateImg/cyberSecurityCertificate-1.png";
@@ -36,9 +36,13 @@ const Certifications = () => {
     const sectionRef = useRef(null);
     const [activeIndex, setActiveIndex] = useState(null);
 
+    // Function to handle toggle on mobile
+    const handleMobileToggle = (index) => {
+        setActiveIndex(activeIndex === index ? null : index);
+    };
+
     useEffect(() => {
         const ctx = gsap.context(() => {
-            // Entrance Animation for List Items
             gsap.from(".cert-row", {
                 y: 50,
                 opacity: 0,
@@ -50,7 +54,6 @@ const Certifications = () => {
                 }
             });
         }, sectionRef);
-
         return () => ctx.revert();
     }, []);
 
@@ -58,23 +61,26 @@ const Certifications = () => {
         <section
             id="certifications"
             ref={sectionRef}
-            className="w-full relative bg-[#eaeaea] min-h-screen flex flex-col pt-0 md:pt-10"
+            className="w-full relative bg-[#eaeaea] min-h-screen flex flex-col pt-10 md:pt-10"
         >
-            <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10 w-full">
+            <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10 w-full">
 
                 {/* Header */}
-                <div className=" flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-gray-300 pb-8">
+                <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-gray-300 pb-8 mb-8">
                     <div>
                         <h4 className="text-[#2a0878] font-mono text-sm tracking-widest uppercase mb-4 opacity-80">
-                            05. Credentials
+                            04. Credentials
                         </h4>
-                        <h2 className="text-5xl md:text-7xl font-bold text-[#1a1a1a] tracking-tight">
+                        <h2 className="text-4xl md:text-7xl font-bold text-[#1a1a1a] tracking-tight">
                             Certifications
                         </h2>
                     </div>
                     <div className="hidden md:flex items-center gap-2 text-gray-500">
                         <Award className="text-[#2a0878]" />
                         <span className="font-mono text-sm">Hover to view credential</span>
+                    </div>
+                    <div className="md:hidden flex items-center gap-2 text-gray-500">
+                        <span className="font-mono text-xs">Tap to view details</span>
                     </div>
                 </div>
 
@@ -83,47 +89,99 @@ const Certifications = () => {
                     {/* === LEFT: THE LIST === */}
                     <div className="flex-1 flex flex-col w-full lg:w-[50%]">
                         {certifications.map((cert, index) => (
-                            <a
+                            <div
                                 key={cert.id}
-                                href={cert.link}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                onMouseEnter={() => setActiveIndex(index)}
-                                onMouseLeave={() => setActiveIndex(null)}
-                                className="cert-row group relative flex flex-col md:flex-row items-start md:items-center justify-between py-6 border-b border-gray-300 hover:border-[#2a0878] transition-colors duration-300"
+                                // On desktop: Hover logic
+                                onMouseEnter={() => window.innerWidth >= 768 && setActiveIndex(index)}
+                                onMouseLeave={() => window.innerWidth >= 768 && setActiveIndex(null)}
+                                // On mobile: Click logic
+                                onClick={() => handleMobileToggle(index)}
+                                className={`cert-row group relative flex flex-col border-b border-gray-300 transition-colors duration-300 cursor-pointer
+                                    ${activeIndex === index ? 'bg-white/40 md:bg-transparent' : ''}
+                                `}
                             >
-                                <div className="flex items-center gap-6 w-full md:w-auto">
-                                    <span className="hidden md:block text-gray-400 font-mono text-lg w-8 group-hover:text-[#2a0878] transition-colors">
-                                        {String(index + 1).padStart(2, '0')}
-                                    </span>
-                                    <div>
-                                        <h3 className="text-xl md:text-2xl font-bold text-[#1a1a1a] group-hover:text-[#2a0878] transition-colors">
-                                            {cert.title}
-                                        </h3>
-                                        <p className="text-gray-500 text-sm mt-1 md:hidden">{cert.issuer} • {cert.date}</p>
+                                {/* List Item Header (Always Visible) */}
+                                <div className="flex items-center justify-between py-6 px-2 md:px-0">
+                                    <div className="flex items-center gap-6">
+                                        {/* Number */}
+                                        <span className="hidden md:block text-gray-400 font-mono text-lg w-8 group-hover:text-[#2a0878] transition-colors">
+                                            {String(index + 1).padStart(2, '0')}
+                                        </span>
+
+                                        {/* Title & Mobile Subtitle */}
+                                        <div>
+                                            <h3 className={`text-lg md:text-2xl font-bold transition-colors ${activeIndex === index ? 'text-[#2a0878]' : 'text-[#1a1a1a] group-hover:text-[#2a0878]'}`}>
+                                                {cert.title}
+                                            </h3>
+                                            <p className="text-gray-500 text-xs md:hidden mt-1">
+                                                {cert.issuer} • {cert.date}
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    {/* Desktop: Arrow Icon / Mobile: Chevron */}
+                                    <div className="flex items-center">
+                                        {/* Desktop Link Arrow */}
+                                        <a
+                                            href={cert.link}
+                                            target="_blank"
+                                            rel="noreferrer"
+                                            className="hidden md:flex w-10 h-10 rounded-full border border-gray-300 items-center justify-center hover:bg-[#2a0878] hover:border-[#2a0878] group-hover:border-[#2a0878] transition-all duration-300"
+                                            onClick={(e) => e.stopPropagation()} // Prevent row click on desktop
+                                        >
+                                            <ArrowUpRight size={18} className="text-gray-400 hover:text-white group-hover:text-[#2a0878] " />
+                                        </a>
+
+                                        {/* Mobile Chevron */}
+                                        <div className={`md:hidden transform transition-transform duration-300 ${activeIndex === index ? 'rotate-180 text-[#2a0878]' : 'text-gray-400'}`}>
+                                            <ChevronDown size={20} />
+                                        </div>
                                     </div>
                                 </div>
 
-                                {/* Desktop Details */}
-                                <div className="hidden md:flex items-center gap-8">
-                                    <span className="text-gray-500 text-sm font-medium w-32 text-right">
-                                        {cert.issuer}
-                                    </span>
-                                    <div className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center group-hover:bg-[#2a0878] group-hover:border-[#2a0878] transition-all duration-300">
-                                        <ArrowUpRight size={18} className="text-gray-400 group-hover:text-white" />
+                                {/* === MOBILE ONLY: EXPANDABLE CONTENT === */}
+                                {/* Used a grid transition trick for smooth height animation */}
+                                <div
+                                    className={`md:hidden grid overflow-hidden transition-all duration-500 ease-in-out
+                                        ${activeIndex === index ? 'grid-rows-[1fr] opacity-100 pb-6' : 'grid-rows-[0fr] opacity-0'}
+                                    `}
+                                >
+                                    <div className="overflow-hidden px-2">
+                                        <div className="bg-white rounded-xl p-3 shadow-sm border border-gray-100">
+                                            {/* Image */}
+                                            <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-gray-100 mb-4 border border-gray-200">
+                                                <img
+                                                    src={cert.image}
+                                                    alt={cert.title}
+                                                    className="w-full h-full object-cover"
+                                                />
+                                            </div>
+
+                                            {/* Action Button */}
+                                            <a
+                                                href={cert.link}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="flex items-center justify-center gap-2 w-full py-3 bg-[#2a0878] text-white rounded-lg font-medium text-sm hover:bg-[#1a0550] transition-colors"
+                                            >
+                                                <span>View Credential</span>
+                                                <ExternalLink size={16} />
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
-                            </a>
+
+                            </div>
                         ))}
                     </div>
 
                     {/* === RIGHT: FIXED PREVIEW IMAGE (Desktop Only) === */}
+                    {/* Unchanged from your original code, just ensured hidden lg:flex is kept */}
                     <div className="hidden lg:flex w-[50%] h-[400px] sticky top-32 flex-col justify-center items-center">
                         <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-gray-200">
-
-                            {/* Placeholder / Default State */}
+                            {/* Placeholder */}
                             <div className={`absolute inset-0 flex items-center justify-center bg-gray-100 transition-opacity duration-500 ${activeIndex !== null ? 'opacity-0' : 'opacity-100'}`}>
-                                <img src={certifications[0].image} alt="FSD cert placeholder" />
+                                <img src={certifications[0].image} alt="placeholder" className="opacity-30" />
                             </div>
 
                             {/* Images */}
@@ -132,9 +190,7 @@ const Certifications = () => {
                                     key={cert.id}
                                     src={cert.image}
                                     alt={cert.title}
-                                    className={`absolute top-0 left-0 w-full h-full object-cover object-top transition-all duration-500 ease-in-out transform ${activeIndex === index
-                                        ? "opacity-100 scale-100"
-                                        : "opacity-0 scale-105"
+                                    className={`absolute top-0 left-0 w-full h-full object-cover object-top transition-all duration-500 ease-in-out transform ${activeIndex === index ? "opacity-100 scale-100" : "opacity-0 scale-105"
                                         }`}
                                 />
                             ))}

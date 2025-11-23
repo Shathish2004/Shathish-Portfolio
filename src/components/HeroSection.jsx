@@ -106,7 +106,7 @@ const HeroSection = () => {
                     <div className="hero-reveal mb-4 lg:mb-6 relative">
                         <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-[#1a1a1a] leading-[0.9] tracking-tighter">
                             SHATHISH <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2a0878] to-[#4a1d96] sm:pl-30">
+                            <span className="text-transparent bg-clip-text bg-linear-to-r from-[#2a0878] to-[#4a1d96] sm:pl-30">
                                 KUMARAN
                             </span>
                         </h1>
@@ -158,7 +158,7 @@ const HeroSection = () => {
                     <div ref={imageRef} className="relative w-full max-w-[380px] lg:max-w-[480px] h-[450px] lg:h-[65vh]">
 
                         {/* Main Image */}
-                        <div className="hero-img-reveal w-full h-full rounded-[2rem] overflow-hidden relative shadow-2xl z-10 border-[6px] lg:border-[8px] border-white bg-gray-200">
+                        <div className="hero-img-reveal w-full h-full rounded-4xl overflow-hidden relative shadow-2xl z-10 border-[6px] lg:border-8 border-white bg-gray-200">
                             <img
                                 src={myImage}
                                 alt="Shathish Kumaran"

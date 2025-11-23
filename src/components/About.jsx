@@ -128,14 +128,14 @@ const About = () => {
     }, []);
 
     const MarqueeRow = ({ items, reference }) => (
-        <div className="w-full overflow-hidden py-4 select-none">
-            <div ref={reference} className="flex w-max gap-8 md:gap-12 whitespace-nowrap items-center">
+        <div className="w-full overflow-hidden select-none">
+            <div ref={reference} className="flex w-max gap-8 md:gap-12 whitespace-nowrap items-center p-3 md:p-5 ">
                 {[...items, ...items, ...items, ...items].map((item, i) => (
-                    <div key={i} className="flex items-center gap-3 text-2xl md:text-3xl font-bold text-black/70 hover:text-[#2a0878] transition-colors duration-300 cursor-default group">
-                        <span className="text-2xl md:text-3xl group-hover:scale-110 transition-transform duration-300" style={{ color: item.color }}>
+                    <div key={i} className="flex items-center gap-3 text-2xl md:text-3xl font-bold text-black/70 hover:text-[#2a0878] transition-colors duration-300 cursor-default group ">
+                        <span className="text-5xl group-hover:scale-110 transition-transform duration-300" style={{ color: item.color }}>
                             {item.icon}
                         </span>
-                        <span className="uppercase tracking-tight text-lg md:text-2xl">{item.name}</span>
+                        <span className="uppercase tracking-tight text-xl md:text-3xl">{item.name}</span>
                     </div>
                 ))}
             </div>
@@ -143,101 +143,106 @@ const About = () => {
     );
 
     return (
-        <section
-            ref={containerRef}
-            id="about"
-            className="w-full bg-[#eaeaea] text-[#1a1a1a] relative overflow-hidden"
-        >
-            <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 pt-28 pb-10 lg:py-0">
+        <>
+            <section
+                ref={containerRef}
+                id="about"
+                className="w-full bg-[#eaeaea] text-[#1a1a1a] relative overflow-hidden"
+            >
+                <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 pt-28 pb-10 lg:py-0">
 
-                <div className="flex flex-col lg:flex-row">
+                    <div className="flex flex-col lg:flex-row">
 
-                    {/* === LEFT COLUMN === */}
-                    {/* Mobile: Height Auto (Flows naturally). Desktop: h-screen (Pinned). */}
-                    <div
-                        ref={leftColRef}
-                        className="w-full lg:w-[40%] h-auto lg:h-screen flex flex-col justify-center lg:py-20 mb-16 lg:mb-0"
-                    >
-                        <div className="about-text-reveal">
-                            <div className="flex items-center gap-4 mb-6 opacity-60">
-                                <div className="w-12  bg-[#2a0878]"></div>
-                                <span className="text-[#2a0878] font-mono text-sm tracking-widest uppercase">01. About Me</span>
+                        {/* === LEFT COLUMN === */}
+                        {/* Mobile: Height Auto (Flows naturally). Desktop: h-screen (Pinned). */}
+                        <div
+                            ref={leftColRef}
+                            className="w-full lg:w-[40%] h-auto lg:h-screen flex flex-col justify-center lg:py-20 mb-16 lg:mb-0"
+                        >
+                            <div className="about-text-reveal">
+                                <div className="pl-4 mb-6 opacity-60">
+                                    <div className="w-12  bg-[#2a0878]"></div>
+                                    <span className="text-[#2a0878] font-mono text-sm tracking-widest uppercase">01. About Me</span>
+                                </div>
+
+                                <h2 className="text-5xl md:text-7xl  xl:text-8xl font-black tracking-tighter leading-[0.9] mb-6">
+                                    CRAFTING <br />
+                                    <span className="text-[#2a0878]">DIGITAL</span> <br />
+                                    REALITY
+                                </h2>
+
+                                <p className="text-gray-500 font-mono text-sm max-w-xs leading-relaxed">
+                                    PASSIONATE FULL STACK ENGINEER <br />
+                                    BASED IN INDIA, TAMILNADU, SALEM
+                                </p>
                             </div>
-
-                            <h2 className="text-5xl md:text-7xl  xl:text-8xl font-black tracking-tighter leading-[0.9] mb-6">
-                                CRAFTING <br />
-                                <span className="text-[#2a0878]">DIGITAL</span> <br />
-                                REALITY
-                            </h2>
-
-                            <p className="text-gray-500 font-mono text-sm max-w-xs leading-relaxed">
-                                PASSIONATE FULL STACK ENGINEER <br />
-                                BASED IN INDIA
-                            </p>
-                        </div>
-                    </div>
-
-                    {/* === RIGHT COLUMN (Scrollable Content) === */}
-                    <div className="w-full lg:w-[60%] flex flex-col justify-center lg:py-32 gap-16 lg:gap-24">
-
-                        {/* 1. Intro Text */}
-                        <div className="about-text-reveal">
-                            <p className="text-lg md:text-3xl leading-relaxed font-light text-gray-800">
-                                I transform complex problems into <strong className="text-[#2a0878] font-semibold">elegant solutions</strong>.
-                                Specializing in the <span className="border-b-2 border-[#2a0878]/30">MERN Stack</span> and
-                                <span className="border-b-2 border-[#2a0878]/30 mx-2">TypeScript</span>,
-                                I build scalable, high-performance applications that live on the web.
-                            </p>
                         </div>
 
-                        {/* 2. Education Section */}
-                        <div className="about-text-reveal">
-                            <div className="mb-10 flex items-end gap-4">
-                                <h3 className="text-3xl md:text-4xl font-bold tracking-tight">Education</h3>
-                                <div className="h-[1px] bg-gray-300 flex-1 mb-2"></div>
+                        {/* === RIGHT COLUMN (Scrollable Content) === */}
+                        <div className="w-full lg:w-[60%] flex flex-col justify-center lg:py-32 gap-16 lg:gap-24">
+
+                            {/* 1. Intro Text */}
+                            <div className="about-text-reveal">
+                                <p className="text-lg md:text-3xl leading-relaxed font-light text-gray-800">
+                                    I transform complex problems into <strong className="text-[#2a0878] font-semibold">elegant solutions</strong>.
+                                    Specializing in the <span className="border-b-2 border-[#2a0878]/30">MERN Stack</span> and
+                                    <span className="border-b-2 border-[#2a0878]/30 mx-2">TypeScript</span>,
+                                    I build scalable, high-performance applications that live on the web.
+                                </p>
                             </div>
 
-                            <div className="flex flex-col">
-                                {educationData.map((edu, index) => (
-                                    <div
-                                        key={index}
-                                        className="group flex flex-col md:flex-row md:items-start justify-between py-8 border-b border-gray-300 hover:border-[#2a0878] transition-colors duration-300"
-                                    >
-                                        <div className="w-full md:w-1/3 mb-2 md:mb-0">
-                                            <span className="font-mono text-sm text-gray-500 group-hover:text-[#2a0878] transition-colors">
-                                                {edu.year}
-                                            </span>
-                                        </div>
-                                        <div className="w-full md:w-2/3">
-                                            <h4 className="text-xl md:text-2xl font-bold mb-2 md:mb-1 group-hover:translate-x-2 transition-transform duration-300">
-                                                {edu.degree}
-                                            </h4>
-                                            <div className="flex flex-wrap justify-between items-center gap-4">
-                                                <p className="text-base md:text-lg text-gray-600 group-hover:translate-x-2 transition-transform duration-300 delay-75">
-                                                    {edu.institution}
-                                                </p>
-                                                <span className="text-xs font-bold bg-[#1a1a1a] text-white px-3 py-1 rounded-full">
-                                                    {edu.score}
+                            {/* 2. Education Section */}
+                            <div className="about-text-reveal">
+                                <div className="mb-10 flex items-end gap-4">
+                                    <h3 className="text-3xl md:text-4xl font-bold tracking-tight">Education</h3>
+                                    <div className="bg-gray-300 flex-1 mb-2"></div>
+                                </div>
+
+                                <div className="flex flex-col">
+                                    {educationData.map((edu, index) => (
+                                        <div
+                                            key={index}
+                                            className="group flex flex-col md:flex-row md:items-start justify-between py-8 border-b border-gray-300 hover:border-[#2a0878] transition-colors duration-300"
+                                        >
+                                            <div className="w-full md:w-1/3 mb-2 md:mb-0">
+                                                <span className="font-mono text-sm text-gray-500 group-hover:text-[#2a0878] transition-colors">
+                                                    {edu.year}
                                                 </span>
                                             </div>
+                                            <div className="w-full md:w-2/3">
+                                                <h4 className="text-xl md:text-2xl font-bold mb-2 md:mb-1 group-hover:translate-x-2 transition-transform duration-300">
+                                                    {edu.degree}
+                                                </h4>
+                                                <div className="flex flex-wrap justify-between items-center gap-4">
+                                                    <p className="text-base md:text-lg text-gray-600 group-hover:translate-x-2 transition-transform duration-300 delay-75">
+                                                        {edu.institution}
+                                                    </p>
+                                                    <span className="text-xs font-bold bg-[#1a1a1a] text-white px-3 py-1 rounded-full">
+                                                        {edu.score}
+                                                    </span>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                ))}
+                                    ))}
+                                </div>
                             </div>
+
+                            {/* 3. Skills Marquee */}
+
+
                         </div>
-
-                        {/* 3. Skills Marquee */}
-
-
                     </div>
                 </div>
-                <div className="about-text-reveal -mx-6 md:-mx-12 lg:mx-0 pt-8 border-t border-gray-200">
+            </section>
+            <div className="about-text-reveal -mx-6 md:-mx-12 lg:mx-0 ">
 
+                <div className="border-t-5 border-b-2 border-black/60 ">
                     <MarqueeRow items={skillsRow1} reference={marqueeRef1} />
+                </div>
+                <div className="border-b-5 border-t-2 border-black/60 ">
                     <MarqueeRow items={skillsRow2} reference={marqueeRef2} />
                 </div>
-            </div>
-        </section>
+            </div></>
     );
 };
 

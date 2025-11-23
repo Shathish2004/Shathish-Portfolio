@@ -109,7 +109,7 @@ const Skills = () => {
                 <div className="mb-12 md:mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
                     <div>
                         <h4 className="text-[#2a0878] font-mono text-sm tracking-widest uppercase mb-4 opacity-80">
-                            03. My Expertise
+                            02. My Expertise
                         </h4>
                         <h2 className="text-5xl md:text-7xl font-bold text-[#1a1a1a] tracking-tight">
                             Technical <span className="text-[#2a0878] ">Arsenal</span>
