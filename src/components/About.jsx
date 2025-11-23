@@ -1,251 +1,244 @@
-import { useLayoutEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import ExperienceTimeline from "./ExperienceTImeLine";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { FaReact, FaNodeJs, FaGithub, FaJava } from "react-icons/fa";
+import { TbApi } from "react-icons/tb";
+import {
+    SiMongodb,
+    SiGraphql,
+    SiTypescript,
+    SiTailwindcss,
+    SiExpress,
+    SiNextdotjs,
+    SiHtml5,
+    SiCss3,
+    SiJavascript,
+} from "react-icons/si";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
-  const navigate = useNavigate();
+    const containerRef = useRef(null);
+    const leftColRef = useRef(null);
+    // const rightColRef = useRef(null);
+    const marqueeRef1 = useRef(null);
+    const marqueeRef2 = useRef(null);
 
-  useLayoutEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }, []);
+    // Data
+    const skillsRow1 = [
+        { name: "JAVASCRIPT", icon: <SiJavascript />, color: "#F7DF1E" },
+        { name: "REACT", icon: <FaReact />, color: "#61DBFB" },
+        { name: "NEXT", icon: <SiNextdotjs />, color: "#000000" },
+        { name: "TYPESCRIPT", icon: <SiTypescript />, color: "#3178C6" },
+        { name: "NODE", icon: <FaNodeJs />, color: "#68A063" },
+        { name: "TAILWIND", icon: <SiTailwindcss />, color: "#06B6D4" },
+        { name: "JAVA", icon: <FaJava />, color: "#F80000" },
+    ];
 
-  return (
-    <div className="mt-20 md:mt-30 max-w-6xl lg:max-w-7xl mx-auto px-6">
-      {/* Introduction Section */}
-      <div className="flex items-center justify-center">
-        <div className="text-center md:text-left">
-          <h1 className="text-3xl sm:text-4xl font-bold leading-snug">
-            Hey there, I&apos;m <br className="sm:hidden" /><span className="text-blue-600 dark:text-blue-500">Shathish Kumaran</span>,
-            <br />a passionate
-            <span className="text-blue-600 dark:text-blue-500"> Full-Stack MERN Developer</span>
-          </h1>
+    const skillsRow2 = [
+        { name: "MONGODB", icon: <SiMongodb />, color: "#10A37F" },
+        { name: "GRAPHQL", icon: <SiGraphql />, color: "#E535AB" },
+        { name: "EXPRESS", icon: <SiExpress />, color: "#000000" },
+        { name: "GITHUB", icon: <FaGithub />, color: "#181717" },
+        { name: "HTML", icon: <SiHtml5 />, color: "#E34F26" },
+        { name: "CSS", icon: <SiCss3 />, color: "#1572B6" },
+        { name: "REST API", icon: <TbApi />, color: "#000000" },
+    ];
 
-          <p className="mt-4 text-xl text-gray-700 dark:text-white">
-            Turning ideas into reality with clean code and creative problem-solving.
-            With a deep passion for
-            <span className="text-blue-500 font-medium"> Generative AI</span> &
-            <span className="text-blue-500 font-medium"> Cybersecurity</span>,
-            I thrive on building intelligent, secure, and seamless digital experiences.
-          </p>
+    const educationData = [
+        {
+            degree: "B.E. Computer Science",
+            institution: "Dhirajlal Gandhi College of Technology",
+            year: "2022 — 2026",
+            score: "CGPA: 8.18",
+        },
+        {
+            degree: "Higher Secondary (HSC)",
+            institution: "St. Pauls Higher Secondary School",
+            year: "2021 — 2022",
+            score: "78%",
+        },
+        {
+            degree: "Secondary School (SSLC)",
+            institution: "St. Pauls Higher Secondary School",
+            year: "2019 — 2020",
+            score: "74%",
+        },
+    ];
 
-          <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
-            Always exploring, always learning. Let&apos;s create something amazing together!
-          </p>
-          <p className="mt-5 text-lg sm:text-2xl hover:underline  font-bold text-gray-600 dark:text-gray-300 hover:text-blue-500"><a href="mailto:shathishkumaran07@gmail.com" >
-            shathishkumaran07@gmail.com
-          </a></p>
+    useEffect(() => {
+        const ctx = gsap.context(() => {
+
+            // 1. Marquee Animation (Runs on all screens)
+            const animateMarquee = (ref, direction) => {
+                const width = ref.current.scrollWidth;
+                gsap.to(ref.current, {
+                    x: direction === "left" ? -width / 2 : 0,
+                    duration: 40,
+                    ease: "none",
+                    repeat: -1,
+                    modifiers: {
+                        x: gsap.utils.unitize((x) => parseFloat(x) % (width / 2))
+                    }
+                });
+                if (direction === "right") {
+                    gsap.set(ref.current, { x: -width / 2 });
+                    gsap.to(ref.current, {
+                        x: 0,
+                        duration: 40,
+                        ease: "none",
+                        repeat: -1,
+                    });
+                }
+            };
+
+            animateMarquee(marqueeRef1, "left");
+            animateMarquee(marqueeRef2, "right");
+
+            // 2. Responsive Logic using MatchMedia
+            let mm = gsap.matchMedia();
+
+            // === DESKTOP ONLY (min-width: 1024px) ===
+            // Pinning ONLY happens here
+            mm.add("(min-width: 1024px)", () => {
+                ScrollTrigger.create({
+                    trigger: containerRef.current,
+                    start: "top top",
+                    end: "bottom bottom",
+                    pin: leftColRef.current,
+                    // pinSpacing: false // Optional: depends on if you want space reserved
+                });
+            });
+
+            // 3. Reveal Animations (Runs on all screens)
+            gsap.from(".about-text-reveal", {
+                y: 50,
+                opacity: 0,
+                duration: 1,
+                stagger: 0.1,
+                scrollTrigger: {
+                    trigger: containerRef.current,
+                    start: "top 70%",
+                }
+            });
+
+        }, containerRef);
+
+        return () => ctx.revert();
+    }, []);
+
+    const MarqueeRow = ({ items, reference }) => (
+        <div className="w-full overflow-hidden py-4 select-none">
+            <div ref={reference} className="flex w-max gap-8 md:gap-12 whitespace-nowrap items-center">
+                {[...items, ...items, ...items, ...items].map((item, i) => (
+                    <div key={i} className="flex items-center gap-3 text-2xl md:text-3xl font-bold text-black/70 hover:text-[#2a0878] transition-colors duration-300 cursor-default group">
+                        <span className="text-2xl md:text-3xl group-hover:scale-110 transition-transform duration-300" style={{ color: item.color }}>
+                            {item.icon}
+                        </span>
+                        <span className="uppercase tracking-tight text-lg md:text-2xl">{item.name}</span>
+                    </div>
+                ))}
+            </div>
         </div>
-      </div>
+    );
 
-      {/* Resume Button */}
-      <div className="flex justify-center md:justify-start mt-6 mb-5">
-        <a
-          className="text-lg px-3 py-3 border-1  border-black dark:border-white hover:border-white hover:bg-blue-600 hover:text-white 
-            button-shadow
-               transform hover:scale-105"
-          target="_blank"
-          href="https://drive.google.com/file/d/1nUkZgeLikk6TwoW643RsEzBzhnBP-AQO/view?usp=sharing"
-          rel="noopener noreferrer"
+    return (
+        <section
+            ref={containerRef}
+            id="about"
+            className="w-full bg-[#eaeaea] text-[#1a1a1a] relative overflow-hidden"
         >
-          View Resume
-        </a>
-      </div>
+            <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 pt-28 pb-10 lg:py-0">
+
+                <div className="flex flex-col lg:flex-row">
+
+                    {/* === LEFT COLUMN === */}
+                    {/* Mobile: Height Auto (Flows naturally). Desktop: h-screen (Pinned). */}
+                    <div
+                        ref={leftColRef}
+                        className="w-full lg:w-[40%] h-auto lg:h-screen flex flex-col justify-center lg:py-20 mb-16 lg:mb-0"
+                    >
+                        <div className="about-text-reveal">
+                            <div className="flex items-center gap-4 mb-6 opacity-60">
+                                <div className="w-12 h-[1px] bg-[#2a0878]"></div>
+                                <span className="text-[#2a0878] font-mono text-sm tracking-widest uppercase">01. About Me</span>
+                            </div>
+
+                            <h2 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[0.9] mb-6">
+                                CRAFTING <br />
+                                <span className="text-[#2a0878]">DIGITAL</span> <br />
+                                REALITY
+                            </h2>
+
+                            <p className="text-gray-500 font-mono text-sm max-w-xs leading-relaxed">
+                                PASSIONATE FULL STACK ENGINEER <br />
+                                BASED IN INDIA
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* === RIGHT COLUMN (Scrollable Content) === */}
+                    <div className="w-full lg:w-[60%] flex flex-col justify-center lg:py-32 gap-16 lg:gap-24">
+
+                        {/* 1. Intro Text */}
+                        <div className="about-text-reveal">
+                            <p className="text-lg md:text-3xl leading-relaxed font-light text-gray-800">
+                                I transform complex problems into <strong className="text-[#2a0878] font-semibold">elegant solutions</strong>.
+                                Specializing in the <span className="border-b-2 border-[#2a0878]/30">MERN Stack</span> and
+                                <span className="border-b-2 border-[#2a0878]/30 mx-2">TypeScript</span>,
+                                I build scalable, high-performance applications that live on the web.
+                            </p>
+                        </div>
+
+                        {/* 2. Education Section */}
+                        <div className="about-text-reveal">
+                            <div className="mb-10 flex items-end gap-4">
+                                <h3 className="text-3xl md:text-4xl font-bold tracking-tight">Education</h3>
+                                <div className="h-[1px] bg-gray-300 flex-1 mb-2"></div>
+                            </div>
+
+                            <div className="flex flex-col">
+                                {educationData.map((edu, index) => (
+                                    <div
+                                        key={index}
+                                        className="group flex flex-col md:flex-row md:items-start justify-between py-8 border-b border-gray-300 hover:border-[#2a0878] transition-colors duration-300"
+                                    >
+                                        <div className="w-full md:w-1/3 mb-2 md:mb-0">
+                                            <span className="font-mono text-sm text-gray-500 group-hover:text-[#2a0878] transition-colors">
+                                                {edu.year}
+                                            </span>
+                                        </div>
+                                        <div className="w-full md:w-2/3">
+                                            <h4 className="text-xl md:text-2xl font-bold mb-2 md:mb-1 group-hover:translate-x-2 transition-transform duration-300">
+                                                {edu.degree}
+                                            </h4>
+                                            <div className="flex flex-wrap justify-between items-center gap-4">
+                                                <p className="text-base md:text-lg text-gray-600 group-hover:translate-x-2 transition-transform duration-300 delay-75">
+                                                    {edu.institution}
+                                                </p>
+                                                <span className="text-xs font-bold bg-[#1a1a1a] text-white px-3 py-1 rounded-full">
+                                                    {edu.score}
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* 3. Skills Marquee */}
 
 
-      {/* Social Links */}
-      <div className="flex mt-10 mb-15 justify-center md:justify-start space-x-6 sm:space-x-10">
-        {[
-          { href: "https://www.linkedin.com/in/shathish-kumaran/", icon: "fab fa-linkedin", color: "text-blue-600", darkColor: "text-blue-300" },
-          { href: "https://github.com/SHATHISH-07", icon: "fab fa-github", color: "text-gray-800", darkColor: "text-white" },
-          { href: "https://www.instagram.com/shathish_07/", icon: "fab fa-instagram", color: "text-pink-500", darkColor: "text-pink-400" },
-        ].map(({ href, icon, color, darkColor }) => (
-          <a
-            key={href}
-            href={href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={` text-3xl transition transform hover:scale-110 ${color} dark:${darkColor}`}
-          >
-            <i className={icon}></i>
-          </a>
-        ))}
-      </div>
+                    </div>
+                </div>
+                <div className="about-text-reveal -mx-6 md:-mx-12 lg:mx-0 pt-8 border-t border-gray-200">
 
-
-      <div className="text-center md:text-left my-15 ">
-        <h1 className="text-4xl font-bold  inline-block pb-2">
-          Education
-        </h1>
-
-        {/* College Section */}
-        <div className="mt-6 ">
-          <h1 className="text-3xl font-bold text-blue-600 dark:text-blue-500">College</h1>
-          <p className="text-gray-700 dark:text-gray-300 text-lg md:text-xl">
-            B.E. in Computer Science and Engineering (2022-2026)
-          </p>
-          <p className="text-gray-800 dark:text-gray-200 font-medium text-lg md:text-xl mt-1 md:pl-6">
-            I am currently in my final year of Bachelor of Engineering in Computer Science and Engineering at Dhirajlal Gandhi College of Technology, Salem, TamilNadu, India.
-          </p>
-          <p className="text-blue-500 dark:text-gray-100 font-semibold text-xl mt-2 md:pl-6">Current CGPA: 8.18</p>
-        </div>
-
-        {/* Schooling Section */}
-        <div className="mt-6">
-          <h1 className="text-3xl font-bold text-blue-600 dark:text-blue-500">Schooling</h1>
-          <p className="text-gray-700 dark:text-gray-200 text-lg md:text-xl md:pl-6">
-            I have completed my schooling at <span className="font-semibold">St Paul&apos;s Higher Secondary School</span>, Salem, Tamil Nadu, India.
-          </p>
-          <p className="text-blue-500 dark:text-gray-100 text-xl font-medium md:pl-6">SSLC Percentage: 74.6%</p>
-          <p className="text-blue-500 dark:text-gray-100 text-xl font-medium md:pl-6">HSC Percentage: 78.3%</p>
-        </div>
-
-        {/* Professional Summary */}
-        <div className="mt-6 ">
-          <h1 className="text-3xl font-bold text-blue-600 dark:text-blue-500">Professional Summary</h1>
-          <ul className="list-disc text-lg md:text-xl ml-6 mt-2 text-gray-700 dark:text-gray-200 md:p-6">
-            <li>MERN Stack Developer with hands-on project experience.</li>
-            <li>
-              Completed <span className="font-semibold">FullStackOpen</span> - University of Helsinki.
-            </li>
-            <li>
-              Completed <span className="font-semibold">Google Cybersecurity Certification</span>.
-            </li>
-          </ul>
-        </div>
-
-        {/* Future Goals */}
-        <div className="mt-6 ">
-          <h1 className="text-3xl font-bold text-blue-600 dark:text-blue-500">Future Goals</h1>
-          <p className="text-gray-700 dark:text-gray-200 text-lg md:text-xl mt-2 md:p-6">
-            My future goal is to <span className="font-semibold">dive deep into Cybersecurity and Generative AI</span>, exploring advanced security mechanisms and AI-driven innovations.
-          </p>
-        </div>
-      </div>
-
-
-
-
-
-
-      {/* Skills Section */}
-      <div className="text-center md:text-left">
-        <h1 className="text-4xl font-bold pb-6">Skills</h1>
-        <h1 className="text-2xl sm:text-3xl text-gray-600 dark:text-gray-200 md:pl-6">
-          Proficient in
-          <span className="text-green-500"> MongoDB</span>,
-          <span className="text-yellow-500"> Express</span>,
-          <span className="text-blue-500"> React</span>, and
-          <span className="text-green-700"> Node.js</span>.
-          <br /> Explore my full skill set below!
-        </h1>
-
-        <div className="ml-0 md:ml-6 mt-4">
-          <button
-            onClick={() => navigate("/skills")}
-            className="mt-4 px-6 py-3 border-1 button-shadow cursor-pointer hover:text-white  hover:bg-blue-600 transition transform hover:scale-105">
-            View My Skills
-          </button>
-          <button
-            onClick={() => navigate("/projects")}
-            className="mt-4 mx-5 px-6 py-3 border-1 button-shadow cursor-pointer hover:text-white  hover:bg-blue-600 transition transform hover:scale-105">
-            View Projects
-          </button>
-        </div>
-      </div>
-
-      {/* Experience & Certifications */}
-      <div className="mt-15 text-center md:text-left">
-        <h1 className="mb-5 text-4xl  font-bold">Certifications</h1>
-        <p className="mb-10 text-lg md:text-xl text-gray-600 dark:text-gray-300 md:p-6">
-          I have successfully completed the <span className="text-blue-600 dark:text-blue-500 font-medium">FullStack Open course (7 ECTS)</span> from the
-          <span className="font-semibold text-blue-600 dark:text-blue-500"> University of Helsinki</span>, gaining in-depth knowledge of modern web development with the
-          MERN stack. Additionally, I have completed
-          <span className="text-blue-600 dark:text-blue-500 font-medium"> FreeCodeCamp&apos;s
-            Responsive Web Design,
-            JavaScript Data Structures and Algorithms, and
-            Front-End Libraries</span> certifications. These have further strengthened my expertise in both
-          front-end and
-          full-stack development, equipping me with hands-on experience in building scalable and responsive web applications.
-        </p>
-
-        <ExperienceTimeline />
-      </div>
-
-      {/* ExtraCurricular Activities  */}
-      <div className="text-center md:text-left my-10">
-        <h1 className="text-4xl font-bold inline-block pb-2">Extra Curricular Activities</h1>
-
-        <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div className="p-4 ">
-            <h2 className="text-2xl font-bold text-blue-600 dark:text-blue-500">KRIYA 2025</h2>
-            <p className="text-gray-700 dark:text-gray-200 mt-1">Attended a workshop on AI-Driven Resilient Cybersecurity at PSG College of Technology.
-            </p>
-          </div>
-
-          <div className="p-4 ">
-            <h2 className="text-2xl font-bold text-blue-600 dark:text-blue-500">KNOWMEET 2K24</h2>
-            <p className="text-gray-700 dark:text-gray-200 mt-1">Attended a workshop on AWS Cloud at Knowledge Institute of Technology.
-            </p>
-          </div>
-          <div className="p-4 ">
-            <h2 className="text-2xl font-bold text-blue-600 dark:text-blue-500">KNOWMEET 2K23</h2>
-            <p className="text-gray-700 dark:text-gray-200 mt-1">Secured 3rd place in the 2023 Incognito Tech Challenge at Knowledge Institute of Technology, which featured two rounds: Canva design in the first round and programming in the second round.
-            </p>
-          </div>
-
-          <div className="p-4 ">
-            <h2 className="text-2xl font-bold text-blue-600 dark:text-blue-500">SAMHITA&apos;24</h2>
-            <p className="text-gray-700 dark:text-gray-200 mt-1">Attended a workshop on Deep Learning with Quantum Computing at Madras Institute of Technology.
-            </p>
-          </div>
-
-          <div className="p-4 ">
-            <h2 className="text-2xl font-bold text-blue-600 dark:text-blue-500">GENIO 2K23</h2>
-            <p className="text-gray-700 dark:text-gray-200 mt-1">Participated in a symposium at Anna University Regional Campus, Coimbatore, engaging in various technical and non-technical events.
-            </p>
-          </div>
-
-          <div className="p-4 ">
-            <h2 className="text-2xl font-bold text-blue-600 dark:text-blue-500">TIETSYMPO 2K23</h2>
-            <p className="text-gray-700 dark:text-gray-200 mt-1">Secured 1st place in the 2023 Paper Presentation at Tagore Institute of Engineering and Technology for presenting a paper on Intelligent Automation.
-            </p>
-          </div>
-        </div>
-
-      </div>
-
-
-
-      {/* Hobbies */}
-      <div className="text-center md:text-left my-10 ">
-        <h1 className="text-4xl font-bold  inline-block pb-2">
-          Hobbies & Interests
-        </h1>
-
-        <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
-          {/* Hobby Card - Music */}
-          <div className="p-4 ">
-            <h2 className="text-2xl font-bold text-blue-600 dark:text-blue-500"> Listening to Music</h2>
-            <p className="text-gray-700 dark:text-gray-200 mt-1">I enjoy exploring different genres and discovering new artists.</p>
-          </div>
-
-          {/* Hobby Card - Movies */}
-          <div className="p-4 ">
-            <h2 className="text-2xl font-bold text-blue-600 dark:text-blue-500"> Watching Movies</h2>
-            <p className="text-gray-700 dark:text-gray-200 mt-1">I love watching sci-fi, thrillers, and classic movies.</p>
-          </div>
-
-          {/* Hobby Card - Cooking */}
-          <div className="p-4 ">
-            <h2 className="text-2xl font-bold text-blue-600 dark:text-blue-500"> Cooking</h2>
-            <p className="text-gray-700 dark:text-gray-200 mt-1">Experimenting with new recipes and flavors is something I truly enjoy.</p>
-          </div>
-        </div>
-      </div>
-
-
-    </div >
-  );
+                    <MarqueeRow items={skillsRow1} reference={marqueeRef1} />
+                    <MarqueeRow items={skillsRow2} reference={marqueeRef2} />
+                </div>
+            </div>
+        </section>
+    );
 };
 
 export default About;
