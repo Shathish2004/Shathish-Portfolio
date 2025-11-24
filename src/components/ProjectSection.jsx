@@ -1,13 +1,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ArrowUpRight, Github, Layers, Cpu, Globe } from "lucide-react";
-
-// Images
-import EcommerceAppImg from "/assets/projectImg/ecommerce-app.png";
-import AiSaasApp from "/assets/projectImg/ai-saas-app.png";
-import WeatherApp from "/assets/projectImg/weather-app.png";
-import IMDBApp from "/assets/projectImg/imdb-app.png";
+import { Cpu, Globe } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -16,11 +10,11 @@ const projectsData = [
     {
         id: "01",
         year: "2025",
-        title: "E-Commerce Site", // Restored
+        title: "E-Commerce Site",
         category: "Full Stack",
         description: "A complete e-commerce application with secure OTP verification, real-time order tracking (Shipped, Delivered), and a smart return-management workflow. Includes a comprehensive Admin Dashboard.",
         tech: ["React", "Node.js", "MongoDB", "Redux Toolkit", "NodeMailer"],
-        image: EcommerceAppImg,
+        video: "https://res.cloudinary.com/dxdqojwlo/video/upload/v1763959657/EcommerceAPP_lgaau5.mp4",
         github: "https://github.com/SHATHISH-07/Ecommerce-App",
         live: "https://shathish-07.github.io/ecommerce-frontend/#/",
         color: "#2a0878"
@@ -28,11 +22,11 @@ const projectsData = [
     {
         id: "02",
         year: "2025",
-        title: "ReactIQ AI Saas", // Restored
+        title: "ReactIQ AI Saas",
         category: "AI & Real-time",
         description: "A voice AI-powered learning platform where an intelligent tutor teaches through natural conversation. Features real-time voice communication, dynamic lesson generation, and progress tracking.",
         tech: ["Next.js", "TypeScript", "Supabase", "Clerk", "Vapi (Voice AI)"],
-        image: AiSaasApp,
+        video: "https://res.cloudinary.com/dxdqojwlo/video/upload/v1763959653/ReactIQ_bqpdgb.mp4",
         github: "https://github.com/SHATHISH-07/ai-saas-app",
         live: "https://ai-saas-app-bice-one.vercel.app/",
         color: "#1a1a1a"
@@ -40,11 +34,11 @@ const projectsData = [
     {
         id: "03",
         year: "2025",
-        title: "Weather App", // Restored
+        title: "Weather App",
         category: "Data Visualization",
         description: "Dynamic weather application providing real-time temperature, conditions, and insights for any global location. Optimized for speed and handles complex API data integration seamlessly.",
         tech: ["React", "TypeScript", "Tailwind", "LocationIQ API", "Redux"],
-        image: WeatherApp,
+        video: "https://res.cloudinary.com/dxdqojwlo/video/upload/v1763959668/WeatherApp_jrtumf.mp4",
         github: "https://github.com/SHATHISH-07/Weather-app",
         live: "https://shathish-07.github.io/weatherapp-frontend/#/",
         color: "#4a1d96"
@@ -52,11 +46,11 @@ const projectsData = [
     {
         id: "04",
         year: "2024",
-        title: "IMDB Clone", // Restored
+        title: "IMDB Clone",
         category: "Media Platform",
         description: "A movie exploration platform allowing users to browse trending titles and actor bios. Features secure authentication, protected routes, and a responsive browsing experience.",
         tech: ["MERN Stack", "Tailwind CSS", "JWT Auth", "TMDB API"],
-        image: IMDBApp,
+        video: "https://res.cloudinary.com/dxdqojwlo/video/upload/v1763959673/IMDBApp_tcdcjx.mp4",
         github: "https://github.com/SHATHISH-07/Projects/tree/main/FullStack_Project/IMDB-CLONE",
         live: "https://shathish-07.github.io/IMDB-frontend/#/",
         color: "#0f172a"
@@ -65,35 +59,35 @@ const projectsData = [
 
 const Projects = () => {
     const containerRef = useRef(null);
-    const imagesRef = useRef([]);
+    const mediaRef = useRef([]);
 
     useEffect(() => {
         const ctx = gsap.context(() => {
             const textSections = gsap.utils.toArray(".project-text-section");
 
             textSections.forEach((section, index) => {
-                const targetImage = imagesRef.current[index];
+                const targetMedia = mediaRef.current[index];
 
                 ScrollTrigger.create({
                     trigger: section,
                     start: "top center",
                     end: "bottom center",
                     onEnter: () => {
-                        gsap.to(targetImage, {
+                        gsap.to(targetMedia, {
                             clipPath: "inset(0% 0% 0% 0%)",
                             duration: 0.8,
                             ease: "power3.inOut",
                             zIndex: 10
                         });
-                        // Lower z-index of others
-                        imagesRef.current.forEach((img, i) => {
+                        // Lower z-index of others so the new one sits on top nicely
+                        mediaRef.current.forEach((media, i) => {
                             if (i !== index) {
-                                gsap.to(img, { zIndex: 1, delay: 0.4 });
+                                gsap.to(media, { zIndex: 1, delay: 0.4 });
                             }
                         });
                     },
                     onEnterBack: () => {
-                        gsap.to(targetImage, {
+                        gsap.to(targetMedia, {
                             clipPath: "inset(0% 0% 0% 0%)",
                             duration: 0.8,
                             ease: "power3.inOut",
@@ -101,7 +95,7 @@ const Projects = () => {
                         });
                     },
                     onLeaveBack: () => {
-                        gsap.to(targetImage, {
+                        gsap.to(targetMedia, {
                             clipPath: "inset(100% 0% 0% 0%)",
                             duration: 0.8,
                             ease: "power3.inOut",
@@ -171,6 +165,7 @@ const Projects = () => {
                                     <a
                                         href={project.live}
                                         target="_blank"
+                                        rel="noreferrer"
                                         className="flex items-center gap-2 px-6 py-3 bg-[#2a0878] text-white rounded-lg font-bold hover:bg-[#1a0550] transition-all shadow-md"
                                     >
                                         <Globe size={18} /> View
@@ -178,48 +173,57 @@ const Projects = () => {
                                     <a
                                         href={project.github}
                                         target="_blank"
+                                        rel="noreferrer"
                                         className="flex items-center gap-2 px-6 py-3 bg-white text-[#1a1a1a] border border-gray-300 rounded-lg font-bold hover:border-[#2a0878] transition-all"
                                     >
                                         <FaGithub size={18} /> Code
                                     </a>
                                 </div>
 
-                                {/* Mobile Image (Visible only on small screens) */}
-                                <div className="lg:hidden mt-10 w-full rounded-2xl overflow-hidden shadow-xl border-4 border-white">
-                                    <img src={project.image} alt={project.title} className="w-full h-auto" />
+                                {/* Mobile Video (Visible only on small screens) */}
+                                <div className="lg:hidden mt-10 w-full rounded-2xl overflow-hidden shadow-xl border-4 border-white bg-white">
+                                    <video
+                                        src={project.video}
+                                        autoPlay
+                                        muted
+                                        loop
+                                        playsInline
+                                        className="w-full h-auto object-cover"
+                                    />
                                 </div>
                             </div>
                         ))}
                     </div>
                 </div>
 
-                {/* === RIGHT COLUMN: PINNED IMAGES (Desktop Only) === */}
-                {/* Updated bg to #eaeaea to match user theme */}
+                {/* === RIGHT COLUMN: PINNED VIDEO STACK (Desktop Only) === */}
                 <div className="hidden lg:block w-1/2 h-screen sticky top-0 right-0 overflow-hidden bg-[#eaeaea]">
                     <div className="relative w-full h-full flex items-center justify-center p-12">
 
-                        {/* Image Stack */}
+                        {/* Video Stack */}
                         <div className="relative w-full h-[70vh] max-w-[650px]">
                             {projectsData.map((project, index) => (
                                 <div
                                     key={index}
-                                    ref={(el) => (imagesRef.current[index] = el)}
-                                    // Initial State: First image visible, others clipped to top
-                                    className="absolute inset-0 w-full h-full overflow-hidden rounded-2xl bg-white border-8 border-white"
+                                    ref={(el) => (mediaRef.current[index] = el)}
+                                    className="absolute inset-0 w-full h-full overflow-hidden rounded-2xl bg-white border-8 border-white "
                                     style={{
+                                        // Initial State: 1st visible, others hidden
                                         clipPath: index === 0 ? "inset(0% 0% 0% 0%)" : "inset(100% 0% 0% 0%)",
                                         zIndex: projectsData.length - index
                                     }}
                                 >
-                                    {/* Actual Image */}
-                                    <img
-                                        src={project.image}
-                                        alt={project.title}
-                                        className="w-full h-full object-cover object-top"
+                                    {/* Video Element */}
+                                    <video
+                                        src={project.video}
+                                        autoPlay
+                                        muted
+                                        loop
+                                        playsInline
+                                        className="w-full h-full object-cover"
                                     />
-
-                                    {/* Subtle Overlay for Depth */}
-                                    <div className="absolute inset-0 bg-linear-to-t from-black/10 to-transparent pointer-events-none"></div>
+                                    {/* Overlay */}
+                                    <div className="absolute inset-0 bg-black/5 pointer-events-none"></div>
                                 </div>
                             ))}
                         </div>
