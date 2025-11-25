@@ -101,22 +101,22 @@ const Skills = () => {
             id="skills"
             ref={containerRef}
             className="w-full min-h-screen py-10 flex flex-col justify-center overflow-hidden relative z-10 mt-5 md:mt-10"
-            style={{ backgroundColor: "#eaeaea" }}
+
         >
             <div className="max-w-[1400px] mx-auto px-6 md:px-8 w-full h-full">
 
                 {/* Header */}
                 <div className="mb-12 md:mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
                     <div>
-                        <h4 className="text-[#2a0878] font-mono text-sm tracking-widest uppercase mb-4 opacity-80">
+                        <h4 className="text-[#2a0878] dark:text-[#5412ee] font-mono text-sm tracking-widest uppercase mb-4 opacity-80">
                             02. My Expertise
                         </h4>
-                        <h2 className="text-5xl md:text-7xl font-bold text-[#1a1a1a] tracking-tight">
-                            Technical <span className="text-[#2a0878] ">Arsenal</span>
+                        <h2 className="text-5xl md:text-7xl font-bold text-[#1a1a1a] dark:text-[#b1afaf] tracking-tight">
+                            Technical <span className="text-[#2a0878] dark:text-[#5412ee] ">Arsenal</span>
                         </h2>
                     </div>
-                    <div className="hidden md:flex items-center gap-2 text-gray-500 text-sm font-mono">
-                        <div className="w-2 h-2 rounded-full bg-[#2a0878] animate-pulse"></div>
+                    <div className="hidden md:flex items-center gap-2 text-gray-500 dark:text-gray-300 text-sm font-mono">
+                        <div className="w-2 h-2 rounded-full bg-[#2a0878] dark:bg-[#5412ee] animate-pulse"></div>
                         Hover to expand
                     </div>
                 </div>
@@ -130,11 +130,11 @@ const Skills = () => {
                             // On Mobile/Tablet: Click to expand. On Desktop: Hover to expand.
                             onClick={() => setActiveId(cat.id)}
                             onMouseEnter={() => window.innerWidth >= 1024 && setActiveId(cat.id)}
-                            className={`skill-panel relative rounded-3xl overflow-hidden transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] cursor-pointer lg:cursor-default border border-white/50 shadow-sm
+                            className={`skill-panel relative rounded-3xl overflow-hidden transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] cursor-pointer lg:cursor-default border border-white/50 dark:border-[#1a1a1a]/50 shadow-sm
                 ${activeId === cat.id
-                                    ? "lg:flex-[3] max-h-[800px]"
-                                    : "lg:flex-[1] max-h-[200px] min-h-[160px] lg:max-h-full lg:min-h-0"} 
-                bg-white/40 backdrop-blur-md group
+                                    ? "lg:flex-3 max-h-[800px]"
+                                    : "lg:flex-1 max-h-[200px] min-h-40 lg:max-h-full lg:min-h-0"} 
+                bg-white/40 dark:bg-[#1a1a1a] backdrop-blur-md group
                 flex flex-col
               `}
                         >
@@ -150,14 +150,14 @@ const Skills = () => {
                                 {/* Top: Number & Title */}
                                 <div className="flex justify-between items-start mb-4 lg:mb-0">
                                     <div className="flex flex-col">
-                                        <span className="block text-3xl md:text-5xl font-light text-gray-300 mb-2 group-hover:text-[#2a0878] transition-colors duration-300">
+                                        <span className="block text-3xl md:text-5xl font-light text-gray-300 mb-2 group-hover:text-[#2a0878] dark:group-hover:text-[#5412ee] transition-colors duration-300">
                                             0{cat.id}
                                         </span>
-                                        <h3 className={`text-2xl md:text-3xl font-bold text-[#1a1a1a] transition-transform duration-500 origin-left whitespace-nowrap
+                                        <h3 className={`text-2xl md:text-3xl font-bold text-[#1a1a1a] dark:text-[#b1afaf] transition-transform duration-500 origin-left whitespace-nowrap
                       ${activeId === cat.id ? "scale-100" : "lg:scale-75 lg:opacity-70"}
                     `}>
                                             {cat.title} <br className="hidden lg:block" />
-                                            <span className="font-light italic text-gray-600 block lg:inline">{cat.subtitle}</span>
+                                            <span className="font-light italic text-gray-600 dark:text-gray-400 block lg:inline">{cat.subtitle}</span>
                                         </h3>
                                     </div>
 
@@ -173,7 +173,7 @@ const Skills = () => {
                                 <div className={`transition-all duration-700 delay-100 overflow-hidden flex-1
                   ${activeId === cat.id ? "opacity-100 mt-4" : "lg:opacity-0 lg:max-h-0 hidden lg:block"}
                 `}>
-                                    <p className="text-base md:text-lg text-gray-600 mb-8 max-w-md leading-relaxed">
+                                    <p className="text-base md:text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-md leading-relaxed">
                                         {cat.desc}
                                     </p>
 
@@ -181,13 +181,13 @@ const Skills = () => {
                                         {cat.skills.map((skill, idx) => (
                                             <div
                                                 key={idx}
-                                                className="flex items-center gap-2 px-3 py-2 md:px-4 md:py-2.5 rounded-xl border border-gray-100 shadow-sm transition-transform hover:-translate-y-1 bg-black/5 backdrop-blur-md"
+                                                className="flex items-center gap-2 px-3 py-2 md:px-4 md:py-2.5 rounded-xl border border-gray-100 shadow-sm transition-transform hover:-translate-y-1 bg-black/5 dark:bg-white/30 backdrop-blur-md"
                                             >
                                                 {/* Adjusted text sizes based on your preference */}
                                                 <span style={{ color: skill.color }} className="text-lg md:text-5xl">
                                                     {skill.icon}
                                                 </span>
-                                                <span className="font-medium text-gray-800 text-xs md:text-xl">
+                                                <span className="font-medium text-gray-800 dark:text-[#cecccc] text-xs md:text-xl">
                                                     {skill.name}
                                                 </span>
                                             </div>

@@ -110,7 +110,7 @@ const Projects = () => {
     }, []);
 
     return (
-        <section ref={containerRef} id="projects" className="bg-[#eaeaea] relative">
+        <section ref={containerRef} id="projects" className=" relative">
 
             <div className="max-w-7xl mx-auto flex flex-col lg:flex-row">
 
@@ -119,11 +119,11 @@ const Projects = () => {
 
                     {/* Section Title */}
                     <div className="mb-24">
-                        <h4 className="text-[#2a0878] font-mono text-sm tracking-widest uppercase mb-4 opacity-80">
+                        <h4 className="text-[#2a0878] dark:text-[#5412ee] font-mono text-sm tracking-widest uppercase mb-4 opacity-80">
                             03. Selected Works
                         </h4>
-                        <h2 className="text-5xl md:text-7xl font-bold text-[#1a1a1a] tracking-tight">
-                            Featured <br /><span className="text-[#2a0878]">Projects</span>
+                        <h2 className="text-5xl md:text-7xl font-bold text-[#1a1a1a] dark:text-[#b1afaf] tracking-tight">
+                            Featured <br /><span className="text-[#2a0878] dark:text-[#5412ee]">Projects</span>
                         </h2>
                     </div>
 
@@ -134,29 +134,29 @@ const Projects = () => {
 
                                 {/* Header Line */}
                                 <div className="flex items-center gap-4 mb-6 border-b border-gray-300 pb-4">
-                                    <span className="text-4xl font-light text-[#2a0878]">
+                                    <span className="text-4xl font-light text-[#2a0878] dark:text-[#5412ee]">
                                         {project.id}
                                     </span>
                                     <div className="h-px bg-gray-300 flex-1"></div>
-                                    <span className="font-mono text-xs text-gray-500">{project.category}</span>
+                                    <span className="font-mono text-xs text-gray-500 dark:text-gray-300">{project.category}</span>
                                 </div>
 
                                 {/* Title */}
-                                <h3 className="text-3xl md:text-5xl font-bold text-[#1a1a1a] mb-6 leading-tight">
+                                <h3 className="text-3xl md:text-5xl font-bold text-[#1a1a1a] dark:text-[#b1afaf] mb-6 leading-tight">
                                     {project.title}
                                 </h3>
 
                                 {/* Tech Tags */}
                                 <div className="flex flex-wrap gap-2 mb-8">
                                     {project.tech.map((t, i) => (
-                                        <div key={i} className="px-3 py-1 rounded-lg border border-gray-300 text-xs font-medium text-gray-600 bg-white flex items-center gap-1">
-                                            <Cpu size={12} className="text-[#2a0878]" /> {t}
+                                        <div key={i} className="px-3 py-1 rounded-lg border border-gray-300 dark:border-[#1a1a1a] text-xs font-medium text-gray-600 dark:text-gray-100 bg-white dark:bg-white/30 flex items-center gap-1">
+                                            {t}
                                         </div>
                                     ))}
                                 </div>
 
                                 {/* Desc */}
-                                <p className="text-gray-600 text-lg leading-relaxed mb-10 max-w-md">
+                                <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed mb-10 max-w-md">
                                     {project.description}
                                 </p>
 
@@ -174,7 +174,7 @@ const Projects = () => {
                                         href={project.github}
                                         target="_blank"
                                         rel="noreferrer"
-                                        className="flex items-center gap-2 px-6 py-3 bg-white text-[#1a1a1a] border border-gray-300 rounded-lg font-bold hover:border-[#2a0878] transition-all"
+                                        className="flex items-center gap-2 px-6 py-3 bg-white dark:bg-white/80 text-[#1a1a1a] border border-gray-300 rounded-lg font-bold hover:border-[#2a0878] transition-all"
                                     >
                                         <FaGithub size={18} /> Code
                                     </a>
@@ -197,11 +197,11 @@ const Projects = () => {
                 </div>
 
                 {/* === RIGHT COLUMN: PINNED VIDEO STACK (Desktop Only) === */}
-                <div className="hidden lg:block w-1/2 h-screen sticky top-0 right-0 overflow-hidden bg-[#eaeaea]">
+                <div className="hidden lg:block w-1/2 h-screen sticky top-0 right-0 overflow-hidden ">
                     <div className="relative w-full h-full flex items-center justify-center p-12">
 
                         {/* Video Stack */}
-                        <div className="relative w-full h-[70vh] max-w-[650px]">
+                        <div className="relative w-full h-[50vh] max-w-[650px]">
                             {projectsData.map((project, index) => (
                                 <div
                                     key={index}
@@ -220,7 +220,7 @@ const Projects = () => {
                                         muted
                                         loop
                                         playsInline
-                                        className="w-full h-full object-cover"
+                                        className="w-full h-full object-contain"
                                     />
                                     {/* Overlay */}
                                     <div className="absolute inset-0 bg-black/5 pointer-events-none"></div>

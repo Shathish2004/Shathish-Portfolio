@@ -114,23 +114,23 @@ const Contact = () => {
                 <div className="absolute right-0 bottom-0 w-[50vw] h-[50vw] bg-[#2a0878] rounded-full blur-[150px]"></div>
             </div> */}
 
-            <div className="max-w-[1400px] mx-auto px-6 md:px-12 w-full h-full flex-grow flex flex-col lg:flex-row pt-10  pb-12">
+            <div className="max-w-[1400px] mx-auto px-6 md:px-12 w-full h-full grow flex flex-col lg:flex-row pt-10  pb-12">
 
                 {/* === LEFT: HUGE TYPOGRAPHY === */}
                 <div className="w-full lg:w-1/2 flex flex-col justify-between mb-16 lg:mb-0 z-10">
                     <div>
                         <div className="flex items-center gap-4 mb-8 opacity-60">
                             {/* <div className="w-12 h-[1px] bg-[#2a0878]"></div> */}
-                            <span className="text-[#2a0878] font-mono text-sm tracking-widest uppercase">06. Contact</span>
+                            <span className="text-[#2a0878] dark:text-[#5412ee] font-mono text-sm tracking-widest uppercase">06. Contact</span>
                         </div>
 
                         <h2 className="text-7xl md:text-8xl lg:text-[10rem] font-black leading-[0.85] tracking-tighter overflow-hidden select-none">
                             {"LETS".split("").map((char, i) => (
-                                <span key={i} className="contact-title-char inline-block">{char}</span>
+                                <span key={i} className="contact-title-char inline-block text-black dark:text-[#b1afaf]">{char}</span>
                             ))}
                             <br />
                             {"TALK".split("").map((char, i) => (
-                                <span key={`2-${i}`} className="contact-title-char inline-block text-[#2a0878]">{char}</span>
+                                <span key={`2-${i}`} className="contact-title-char inline-block text-[#2a0878] dark:text-[#5412ee]">{char}</span>
                             ))}
                         </h2>
                     </div>
@@ -140,7 +140,7 @@ const Contact = () => {
                             <p className="text-gray-400 text-sm font-mono uppercase tracking-widest mb-2">Email Me</p>
                             <button
                                 onClick={handleCopy}
-                                className="group flex items-center gap-3 text-xl md:text-3xl font-bold hover:text-[#2a0878] transition-colors text-left"
+                                className="group flex items-center gap-3 text-xl md:text-3xl font-bold hover:text-[#2a0878] dark:hover:text-[#5412ee] transition-colors text-black dark:text-[#b1afaf] text-left"
                             >
                                 <span className="truncate max-w-[300px] md:max-w-none">{myEmail}</span>
                                 {copied ? <Check size={24} className="text-green-400" /> : <Copy size={24} className="opacity-50 group-hover:opacity-100 transition-opacity" />}
@@ -148,13 +148,13 @@ const Contact = () => {
                         </div>
 
                         <div className="form-item flex gap-6">
-                            <a href="https://github.com/SHATHISH-07" target="_blank" rel="noreferrer" className="w-12 h-12 rounded-full border border-gray-700 flex items-center justify-center hover:bg-white hover:text-black hover:border-white transition-all duration-300">
+                            <a href="https://github.com/SHATHISH-07" target="_blank" rel="noreferrer" className="w-12 h-12 rounded-full text-black dark:text-[#b1afaf] border border-gray-700 dark:border-gray-500 flex items-center justify-center hover:bg-white hover:text-black hover:border-white transition-all duration-300">
                                 <FaGithub size={20} />
                             </a>
-                            <a href="https://www.linkedin.com/in/shathish-kumaran/" target="_blank" rel="noreferrer" className="w-12 h-12 rounded-full border border-gray-700 flex items-center justify-center hover:bg-[#0077b5] hover:text-white hover:border-[#0077b5] transition-all duration-300">
+                            <a href="https://www.linkedin.com/in/shathish-kumaran/" target="_blank" rel="noreferrer" className="w-12 h-12 rounded-full border border-gray-700 dark:border-gray-500 text-black dark:text-[#b1afaf] flex items-center justify-center hover:bg-[#0077b5] hover:text-white hover:border-[#0077b5] transition-all duration-300">
                                 <FaLinkedin size={20} />
                             </a>
-                            <a href={`mailto:${myEmail}`} className="w-12 h-12 rounded-full border border-gray-700 flex items-center justify-center hover:bg-[#2a0878] hover:text-white hover:border-[#2a0878] transition-all duration-300">
+                            <a href={`mailto:${myEmail}`} className="w-12 h-12 rounded-full border border-gray-700 dark:border-gray-500 text-black dark:text-[#b1afaf] flex items-center justify-center hover:bg-[#2a0878] hover:text-white hover:border-[#2a0878] transition-all duration-300">
                                 <Mail size={20} />
                             </a>
                         </div>
@@ -173,9 +173,9 @@ const Contact = () => {
                                 onChange={handleChange}
                                 required
                                 placeholder=" "
-                                className="peer w-full bg-transparent border-b border-gray-700 py-4 text-xl md:text-2xl  focus:outline-none focus:border-[#2a0878] transition-colors"
+                                className="peer w-full bg-transparent border-b border-gray-700 dark:border-gray-500 py-4 text-xl md:text-2xl  focus:outline-none focus:border-[#2a0878] transition-colors text-black dark:text-[#b1afaf]"
                             />
-                            <label htmlFor="name" className="absolute left-0 top-4 text-gray-500 text-xl transition-all peer-focus:-top-6 peer-focus:text-sm peer-focus:text-[#2a0878] peer-[:not(:placeholder-shown)]:-top-6 peer-[:not(:placeholder-shown)]:text-sm peer-[:not(:placeholder-shown)]:text-gray-400 pointer-events-none">
+                            <label htmlFor="name" className="absolute left-0 top-4 text-gray-500 dark:text-gray-300 text-xl transition-all peer-focus:-top-6 peer-focus:text-sm peer-focus:text-[#2a0878] dark:peer-focus:text-[#5412ee] peer-[:not(:placeholder-shown)]:-top-6 peer-[:not(:placeholder-shown)]:text-sm peer-[:not(:placeholder-shown)]:text-gray-400 pointer-events-none">
                                 What's your name?
                             </label>
                         </div>
@@ -189,9 +189,9 @@ const Contact = () => {
                                 onChange={handleChange}
                                 required
                                 placeholder=" "
-                                className="peer w-full bg-transparent border-b border-gray-700 py-4 text-xl md:text-2xl  focus:outline-none focus:border-[#2a0878] transition-colors"
+                                className="peer w-full bg-transparent border-b border-gray-700 dark:border-gray-500 py-4 text-xl md:text-2xl  focus:outline-none focus:border-[#2a0878] transition-colors text-black dark:text-[#b1afaf]"
                             />
-                            <label htmlFor="email" className="absolute left-0 top-4 text-gray-500 text-xl transition-all peer-focus:-top-6 peer-focus:text-sm peer-focus:text-[#2a0878] peer-[:not(:placeholder-shown)]:-top-6 peer-[:not(:placeholder-shown)]:text-sm peer-[:not(:placeholder-shown)]:text-gray-400 pointer-events-none">
+                            <label htmlFor="email" className="absolute left-0 top-4 text-gray-500 dark:text-gray-300 text-xl transition-all peer-focus:-top-6 peer-focus:text-sm peer-focus:text-[#2a0878] dark:peer-focus:text-[#5412ee] peer-[:not(:placeholder-shown)]:-top-6 peer-[:not(:placeholder-shown)]:text-sm peer-[:not(:placeholder-shown)]:text-gray-400 pointer-events-none">
                                 Your email
                             </label>
                         </div>
@@ -205,10 +205,10 @@ const Contact = () => {
                                 required
                                 rows="1"
                                 placeholder=" "
-                                className="peer w-full bg-transparent border-b border-gray-700 py-4 text-xl md:text-2xl  focus:outline-none focus:border-[#2a0878] transition-colors resize-none"
+                                className="peer w-full bg-transparent border-b border-gray-700 dark:border-gray-500 text-black dark:text-[#b1afaf] py-4 text-xl md:text-2xl  focus:outline-none focus:border-[#2a0878] transition-colors resize-none"
                                 style={{ minHeight: "100px" }}
                             ></textarea>
-                            <label htmlFor="message" className="absolute left-0 top-4 text-gray-500 text-xl transition-all peer-focus:-top-6 peer-focus:text-sm peer-focus:text-[#2a0878] peer-[:not(:placeholder-shown)]:-top-6 peer-[:not(:placeholder-shown)]:text-sm peer-[:not(:placeholder-shown)]:text-gray-400 pointer-events-none">
+                            <label htmlFor="message" className="absolute left-0 top-4 text-gray-500 dark:text-gray-300 text-xl transition-all peer-focus:-top-6 peer-focus:text-sm peer-focus:text-[#2a0878] dark:peer-focus:text-[#5412ee] peer-[:not(:placeholder-shown)]:-top-6 peer-[:not(:placeholder-shown)]:text-sm peer-[:not(:placeholder-shown)]:text-gray-400 pointer-events-none">
                                 Tell me about your project
                             </label>
                         </div>
@@ -217,10 +217,10 @@ const Contact = () => {
                             <button
                                 type="submit"
                                 disabled={isSubmitting}
-                                className="group flex items-center gap-4 text-2xl md:text-4xl font-bold  hover:text-[#2a0878] transition-colors disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
+                                className="group flex items-center gap-4 text-2xl md:text-4xl font-bold  hover:text-[#2a0878] dark:hover:text-[#5412ee] transition-colors disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer text-black dark:text-[#b1afaf]"
                             >
                                 {isSubmitting ? "Sending..." : "Send Message"}
-                                <span className="w-12 h-12 rounded-full  text-black flex items-center justify-center group-hover:bg-[#2a0878] group-hover:text-white transition-all duration-300">
+                                <span className="w-12 h-12 rounded-full  text-black dark:text-[#b1afaf] flex items-center justify-center group-hover:bg-[#2a0878] dark:group-hover:bg-[#5412ee] group-hover:text-white transition-all duration-300">
                                     {isSubmitting ? <Loader2 className="animate-spin" /> : <ArrowUp className="rotate-45" />}
                                 </span>
                             </button>
@@ -234,14 +234,14 @@ const Contact = () => {
             </div>
 
             {/* === FOOTER BAR === */}
-            <div className="border-t border-gray-700/20  relative z-20">
+            <div className="border-t border-gray-700/20 dark:border-gray-500/60 relative z-20">
                 <div className="max-w-[1400px] mx-auto px-6 md:px-12 py-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                    <p className="text-gray-500 text-sm font-mono text-center md:text-left">
+                    <p className="text-gray-500 dark:text-gray-300 text-sm font-mono text-center md:text-left">
                         © {new Date().getFullYear()} Shathish Kumaran. All Rights Reserved.
                     </p>
                     <button
                         onClick={scrollToTop}
-                        className="text-gray-500 hover:text-[#2a0878] cursor-pointer text-sm font-mono uppercase tracking-widest flex items-center gap-2 transition-colors"
+                        className="text-gray-500 hover:text-[#2a0878] dark:text-[#b1afaf] dark:hover:text-[#5412ee] cursor-pointer text-sm font-mono uppercase tracking-widest flex items-center gap-2 transition-colors"
                     >
                         Back to Top <ArrowUp size={14} />
                     </button>

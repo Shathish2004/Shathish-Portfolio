@@ -61,22 +61,22 @@ const Certifications = () => {
         <section
             id="certifications"
             ref={sectionRef}
-            className="w-full relative bg-[#eaeaea] min-h-screen flex flex-col pt-10 md:pt-10"
+            className="w-full relative min-h-screen flex flex-col pt-10 md:pt-10"
         >
             <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10 w-full">
 
                 {/* Header */}
                 <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-gray-300 pb-8 mb-8">
                     <div>
-                        <h4 className="text-[#2a0878] font-mono text-sm tracking-widest uppercase mb-4 opacity-80">
+                        <h4 className="text-[#2a0878] dark:text-[#5412ee] font-mono text-sm tracking-widest uppercase mb-4 opacity-80">
                             04. Credentials
                         </h4>
-                        <h2 className="text-4xl md:text-7xl font-bold text-[#1a1a1a] tracking-tight">
+                        <h2 className="text-4xl md:text-7xl font-bold text-[#1a1a1a] dark:text-[#b1afaf] tracking-tight">
                             Certifications
                         </h2>
                     </div>
-                    <div className="hidden md:flex items-center gap-2 text-gray-500">
-                        <Award className="text-[#2a0878]" />
+                    <div className="hidden md:flex items-center gap-2 text-gray-500 dark:text-gray-300">
+                        <Award className="text-[#2a0878] dark:text-[#5412ee]" />
                         <span className="font-mono text-sm">Hover to view credential</span>
                     </div>
                     <div className="md:hidden flex items-center gap-2 text-gray-500">
@@ -97,20 +97,20 @@ const Certifications = () => {
                                 // On mobile: Click logic
                                 onClick={() => handleMobileToggle(index)}
                                 className={`cert-row group relative flex flex-col border-b border-gray-300 transition-colors duration-300 cursor-pointer
-                                    ${activeIndex === index ? 'bg-white/40 md:bg-transparent' : ''}
+                                    ${activeIndex === index ? 'bg-white/40 dark:bg-[#1a1a1a]/40 md:bg-transparent' : ''}
                                 `}
                             >
                                 {/* List Item Header (Always Visible) */}
                                 <div className="flex items-center justify-between py-6 px-2 md:px-0">
                                     <div className="flex items-center gap-6">
                                         {/* Number */}
-                                        <span className="hidden md:block text-gray-400 font-mono text-lg w-8 group-hover:text-[#2a0878] transition-colors">
+                                        <span className="hidden md:block text-gray-400 font-mono text-lg w-8 group-hover:text-[#2a0878] dark:group-hover:text-[#5412ee] transition-colors">
                                             {String(index + 1).padStart(2, '0')}
                                         </span>
 
                                         {/* Title & Mobile Subtitle */}
                                         <div>
-                                            <h3 className={`text-lg md:text-2xl font-bold transition-colors ${activeIndex === index ? 'text-[#2a0878]' : 'text-[#1a1a1a] group-hover:text-[#2a0878]'}`}>
+                                            <h3 className={`text-lg md:text-2xl font-bold transition-colors ${activeIndex === index ? 'text-[#2a0878] dark:text-[#5412ee]' : 'text-[#1a1a1a] dark:text-[#b1afaf] group-hover:text-[#2a0878] dark:group-hover:text-[#5412ee]'}`}>
                                                 {cert.title}
                                             </h3>
                                             <p className="text-gray-500 text-xs md:hidden mt-1">
@@ -129,7 +129,7 @@ const Certifications = () => {
                                             className="hidden md:flex w-10 h-10 rounded-full border border-gray-300 items-center justify-center hover:bg-[#2a0878] hover:border-[#2a0878] group-hover:border-[#2a0878] transition-all duration-300"
                                             onClick={(e) => e.stopPropagation()} // Prevent row click on desktop
                                         >
-                                            <ArrowUpRight size={18} className="text-gray-400 hover:text-white group-hover:text-[#2a0878] " />
+                                            <ArrowUpRight size={18} className="text-gray-400 hover:text-white group-hover:text-[#2a0878] dark:group-hover:text-[#5412ee] " />
                                         </a>
 
                                         {/* Mobile Chevron */}
@@ -147,7 +147,7 @@ const Certifications = () => {
                                     `}
                                 >
                                     <div className="overflow-hidden px-2">
-                                        <div className="bg-white rounded-xl p-3 shadow-sm border border-gray-100">
+                                        <div className="bg-white dark:bg-[#1a1a1a] rounded-xl p-3 shadow-sm border border-gray-100 dark:border-gray-800">
                                             {/* Image */}
                                             <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-gray-100 mb-4 border border-gray-200">
                                                 <img
@@ -178,9 +178,9 @@ const Certifications = () => {
                     {/* === RIGHT: FIXED PREVIEW IMAGE (Desktop Only) === */}
                     {/* Unchanged from your original code, just ensured hidden lg:flex is kept */}
                     <div className="hidden lg:flex w-[50%] h-[400px] sticky top-32 flex-col justify-center items-center">
-                        <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-gray-200">
+                        <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl border-4 border-white dark:border-[#b1afaf] bg-gray-200 dark:bg-[#1a1a1a]">
                             {/* Placeholder */}
-                            <div className={`absolute inset-0 flex items-center justify-center bg-gray-100 transition-opacity duration-500 ${activeIndex !== null ? 'opacity-0' : 'opacity-100'}`}>
+                            <div className={`absolute inset-0 flex items-center justify-center bg-gray-100 dark:bg-[#1a1a1a] transition-opacity duration-500 ${activeIndex !== null ? 'opacity-0' : 'opacity-100'}`}>
                                 <img src={certifications[0].image} alt="placeholder" className="opacity-30" />
                             </div>
 

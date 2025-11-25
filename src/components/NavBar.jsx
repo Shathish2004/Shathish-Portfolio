@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { ArrowUpRight, Menu, X } from "lucide-react";
+import ThemeToggle from "./ThemeToggle";
 
 const NavBar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -52,22 +53,22 @@ const NavBar = () => {
         <>
             {/* Main Navbar */}
             <nav
-                className={`w-full fixed top-0 left-0 bg-[#eaeaea]/80 backdrop-blur-md shadow-sm z-40 transition-transform duration-300 ${isVisible ? "translate-y-0" : "-translate-y-full"
+                className={`w-full fixed top-0 left-0 bg-[#eaeaea]/80 dark:bg-[#212121]/80  backdrop-blur-md shadow-sm z-40 transition-transform duration-300 ${isVisible ? "translate-y-0" : "-translate-y-full"
                     }`}
             >
                 <section className="max-w-7xl mx-auto flex justify-between items-center p-6 md:px-8">
                     {/* Logo */}
-                    <a href="#" className="text-xl md:text-2xl font-bold text-gray-900/70 tracking-tight">
+                    <a href="#" className="text-xl md:text-2xl font-bold text-gray-900/70  dark:text-gray-200/70 tracking-tight">
                         Shathish
                     </a>
 
                     {/* Desktop Menu */}
-                    <ul className="hidden md:flex items-center space-x-8 lg:space-x-10 text-gray-600 font-medium text-sm lg:text-base">
+                    <ul className="hidden md:flex items-center space-x-8 lg:space-x-10 text-gray-600 dark:text-gray-400 font-medium text-sm lg:text-base">
                         {deskNavItems.slice(1).map((item) => ( // Skip "Shathish" for desktop list
                             <li key={item.name} className="relative group">
                                 <a
                                     href={item.href}
-                                    className="transition-colors duration-300 hover:text-[#2a0878]"
+                                    className="transition-colors duration-300 hover:text-[#2a0878] "
                                 >
                                     {item.name}
                                 </a>
@@ -76,11 +77,13 @@ const NavBar = () => {
                         ))}
                     </ul>
 
+                    <div className="hidden md:block"><ThemeToggle /></div>
+
                     {/* Desktop CTA */}
                     <div className="hidden md:flex items-center space-x-6">
                         <a
                             href="#contact"
-                            className="flex items-center gap-1 text-[#2a0878] font-semibold underline underline-offset-4 hover:text-blue-900 transition-colors"
+                            className="flex items-center gap-1 text-[#2a0878] dark:text-[#3f0db3] font-semibold underline underline-offset-4 hover:text-blue-900 transition-colors"
                         >
                             Hire Me <ArrowUpRight size={18} />
                         </a>
@@ -89,7 +92,7 @@ const NavBar = () => {
                     {/* Mobile Menu Button */}
                     <button
                         onClick={() => setIsOpen(true)}
-                        className="md:hidden text-gray-800 focus:outline-none p-1"
+                        className="md:hidden text-gray-800 dark:text-gray-300 focus:outline-none p-1"
                         aria-label="Open Menu"
                     >
                         <Menu size={28} />
@@ -107,15 +110,15 @@ const NavBar = () => {
 
             {/* Sliding Menu Panel */}
             <div
-                className={`fixed top-0 right-0 h-full w-[85%] max-w-[320px] bg-white shadow-2xl z-50 transform transition-transform duration-300 ease-in-out flex flex-col ${isOpen ? "translate-x-0" : "translate-x-full"
+                className={`fixed top-0 right-0 h-full w-[85%] max-w-[320px] bg-[#eaeaea] dark:bg-[#212121] shadow-2xl z-50 transform transition-transform duration-300 ease-in-out flex flex-col ${isOpen ? "translate-x-0" : "translate-x-full"
                     }`}
             >
                 {/* Mobile Header */}
                 <div className="flex justify-between items-center p-6 border-b border-gray-100">
-                    <span className="text-xl font-bold text-gray-900">Menu</span>
+                    <span className="text-xl font-bold text-gray-900 dark:text-gray-300">Menu</span>
                     <button
                         onClick={() => setIsOpen(false)}
-                        className="text-gray-500 hover:text-gray-900 transition-colors p-1"
+                        className="text-gray-500 dark:text-gray-300 hover:text-gray-900  dark:hover:text-gray-700 cursor-pointer transition-colors p-1"
                         aria-label="Close Menu"
                     >
                         <X size={28} />
@@ -130,7 +133,7 @@ const NavBar = () => {
                                 <a
                                     href={item.href}
                                     onClick={() => setIsOpen(false)}
-                                    className="block text-2xl font-medium text-gray-800 hover:text-[#2a0878] transition-colors"
+                                    className="block text-2xl font-medium text-gray-800  dark:text-gray-300 hover:text-[#2a0878] transition-colors"
                                 >
                                     {item.name}
                                 </a>
@@ -139,8 +142,12 @@ const NavBar = () => {
                     </ul>
                 </div>
 
+                <div className="flex justify-center pb-3">
+                    <ThemeToggle />
+                </div>
+
                 {/* Mobile Footer CTA */}
-                <div className="p-6 border-t border-gray-100 bg-gray-50">
+                <div className="p-6 border-t border-gray-100 bg-[#eaeaea]/80 dark:bg-[#212121]/80">
                     <a
                         href="#contact"
                         onClick={() => setIsOpen(false)}

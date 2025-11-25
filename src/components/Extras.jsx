@@ -123,10 +123,10 @@ const Extras = () => {
 
                 {/* Header */}
                 <div className="mb-12 fade-in">
-                    <h4 className="text-[#2a0878] font-mono text-xs md:text-sm tracking-widest uppercase mb-2">
+                    <h4 className="text-[#2a0878] dark:text-[#5412ee] font-mono text-xs md:text-sm tracking-widest uppercase mb-2">
                         05. Beyond the Code
                     </h4>
-                    <h2 className="text-3xl md:text-5xl font-bold text-[#1a1a1a] tracking-tight">
+                    <h2 className="text-3xl md:text-5xl font-bold text-[#1a1a1a] dark:text-[#b1afaf] tracking-tight">
                         Activities & Interests
                     </h2>
                 </div>
@@ -144,24 +144,24 @@ const Extras = () => {
                                     onClick={() => setActiveTab(index)}
                                     className={`group relative w-full text-left p-6 rounded-2xl transition-all duration-300 border-2
                                         ${isActive
-                                            ? 'bg-white border-[#2a0878] shadow-lg scale-[1.02]'
-                                            : 'bg-white border-transparent hover:border-gray-300 hover:bg-gray-50 opacity-70 hover:opacity-100'
+                                            ? 'bg-white dark:bg-[#1a1a1a] border-[#2a0878] dark:border-[#5412ee] shadow-lg scale-[1.02]'
+                                            : 'bg- dark:bg-none border-transparent hover:border-gray-300 hover:bg-black/10 opacity-70 hover:opacity-100'
                                         }
                                     `}
                                 >
                                     <div className="flex items-center justify-between relative z-10">
                                         <div className="flex items-center gap-4">
-                                            <div className={`p-2 rounded-lg transition-colors duration-300 ${isActive ? 'bg-[#2a0878] text-white' : 'bg-gray-100 text-gray-400'}`}>
+                                            <div className={`p-2 rounded-lg transition-colors duration-300 ${isActive ? 'bg-[#2a0878] dark:bg-[#5412ee] text-white' : 'bg-gray-100 text-gray-400'}`}>
                                                 <cat.icon size={20} />
                                             </div>
                                             <div>
-                                                <h3 className={`font-bold text-lg ${isActive ? 'text-[#2a0878]' : 'text-gray-600'}`}>
+                                                <h3 className={`font-bold text-lg ${isActive ? 'text-[#2a0878] dark:text-[#5412ee]' : 'text-gray-600'}`}>
                                                     {cat.title}
                                                 </h3>
                                                 <p className="text-xs text-gray-400 hidden md:block">{cat.subtitle}</p>
                                             </div>
                                         </div>
-                                        {isActive && <ArrowRight size={18} className="text-[#2a0878]" />}
+                                        {isActive && <ArrowRight size={18} className="text-[#2a0878] dark:text-[#5412ee]" />}
                                     </div>
                                 </button>
                             );

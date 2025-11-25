@@ -74,7 +74,7 @@ const HeroSection = () => {
         <section
             id="hero"
             ref={container}
-            className="relative min-h-screen lg:h-screen w-full overflow-hidden bg-[#eaeaea] flex flex-col justify-center lg:block lg:pt-32 pt-28 pb-10"
+            className="relative min-h-screen lg:h-screen w-full overflow-hidden  flex flex-col justify-center lg:block lg:pt-32 pt-28 pb-10"
         >
 
             {/* === BACKGROUND TYPOGRAPHY === */}
@@ -82,7 +82,7 @@ const HeroSection = () => {
                 ref={bgTextRef}
                 className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden opacity-5"
             >
-                <h1 className="text-[10vw] font-black text-[#1a1a1a] whitespace-nowrap leading-none">
+                <h1 className="text-[10vw] font-black text-[#1a1a1a] dark:text-[#f1f1f1]/40 whitespace-nowrap leading-none">
                     MERN DEVELOPER
                 </h1>
             </div>
@@ -99,12 +99,12 @@ const HeroSection = () => {
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                             <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
                         </div>
-                        <span className="font-mono text-xs lg:text-sm tracking-widest text-gray-500 uppercase">Available for work</span>
+                        <span className="font-mono text-xs lg:text-sm tracking-widest text-gray-500 dark:text-gray-300 uppercase">Available for work</span>
                     </div>
 
                     {/* Main Heading */}
                     <div className="hero-reveal mb-4 lg:mb-6 relative">
-                        <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-[#1a1a1a] leading-[0.9] tracking-tighter">
+                        <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-[#1a1a1a] dark:text-[#f1f1f1]/70 leading-[0.9] tracking-tighter">
                             SHATHISH <br />
                             <span className="text-transparent bg-clip-text bg-linear-to-r from-[#2a0878] to-[#4a1d96] sm:pl-30">
                                 KUMARAN
@@ -113,8 +113,8 @@ const HeroSection = () => {
                     </div>
 
                     {/* Subheading */}
-                    <p className="hero-reveal text-base md:text-xl text-gray-600 font-light leading-relaxed max-w-lg mb-8 lg:mb-10">
-                        Engineering pixel-perfect digital experiences with the <span className="font-semibold text-[#2a0878]">MERN Stack</span>.
+                    <p className="hero-reveal text-base md:text-xl text-gray-600 dark:text-gray-400 font-light leading-relaxed max-w-lg mb-8 lg:mb-10">
+                        Engineering pixel-perfect digital experiences with the <span className="font-semibold text-[#2a0878] dark:text-[#4a1d96]">MERN Stack</span>.
                         Obsessed with performance, scalability, and design.
                     </p>
 
@@ -122,7 +122,7 @@ const HeroSection = () => {
                     <div className="hero-reveal flex flex-col sm:flex-row items-center lg:items-start gap-5 lg:gap-6 w-full sm:w-auto">
                         <a
                             href="#projects"
-                            className="group relative px-7 py-3.5 bg-[#1a1a1a] text-white rounded-full overflow-hidden shadow-lg hover:shadow-xl transition-all w-full sm:w-auto flex justify-center items-center"
+                            className="group relative px-7 py-3.5 bg-[#1a1a1a] dark:bg-[#424242] text-white rounded-full overflow-hidden shadow-lg hover:shadow-xl transition-all w-full sm:w-auto flex justify-center items-center"
                         >
                             <div className="absolute inset-0 w-full h-full bg-[#2a0878] translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out"></div>
                             <span className="relative font-semibold flex items-center gap-2 text-sm lg:text-base">
@@ -143,7 +143,7 @@ const HeroSection = () => {
                                     href={Item.link}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="w-10 h-10 lg:w-12 lg:h-12 rounded-full border border-gray-300 flex items-center justify-center text-gray-600 hover:text-white hover:bg-[#2a0878] hover:border-[#2a0878] transition-all duration-300"
+                                    className="w-10 h-10 lg:w-12 lg:h-12 rounded-full border border-gray-300 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:text-white hover:bg-[#2a0878] hover:border-[#2a0878] transition-all duration-300"
                                 >
                                     <Item.icon size={18} className="lg:w-5 lg:h-5" />
                                 </a>
@@ -153,33 +153,33 @@ const HeroSection = () => {
                 </div>
 
                 {/* === RIGHT IMAGE === */}
-                <div className="lg:col-span-5 relative order-2 lg:order-2 flex justify-center lg:justify-end lg:items-start mt-8 lg:mt-0">
+                <div className="lg:col-span-5 relative order-2 lg:order-2 flex justify-center lg:justify-end lg:items-start mt-8 lg:mt-0 ">
                     {/* UPDATED IMAGE WIDTH HERE: w-full max-w-[380px] for mobile */}
-                    <div ref={imageRef} className="relative w-full max-w-[380px] lg:max-w-[480px] h-[450px] lg:h-[65vh]">
+                    <div ref={imageRef} className="relative w-full max-w-[380px] lg:max-w-[450px] h-[450px] lg:h-[65vh] ">
 
                         {/* Main Image */}
-                        <div className="hero-img-reveal w-full h-full rounded-4xl overflow-hidden relative shadow-2xl z-10 border-[6px] lg:border-8 border-white bg-gray-200">
+                        <div className="hero-img-reveal w-full h-full rounded-4xl overflow-hidden relative shadow-2xl z-10 border-[6px] lg:border-8 border-white bg-gray-200/20 dark:border-[#424242] dark:bg-[#121212]/20">
                             <img
                                 src={myImage}
                                 alt="Shathish Kumaran"
-                                className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
+                                className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700 pt-2"
                             />
                         </div>
 
 
 
                         {/* Stats Card - Hidden on small mobile */}
-                        <div className="hero-reveal absolute -bottom-6 -left-6 lg:-bottom-10 lg:-left-16 bg-white/80 backdrop-blur-xl border border-white/40 p-4 lg:p-6 rounded-2xl shadow-xl z-30 max-w-[180px] lg:max-w-[220px] hidden sm:block rotate-6">
+                        <div className="hero-reveal absolute -bottom-6 -left-6 lg:-bottom-10 lg:-left-16 bg-white/80 dark:bg-[#1a1a1a]/90 backdrop-blur-xl border border-white/40 dark:border-[#424242]/40 p-4 lg:p-6 rounded-2xl shadow-xl z-30 max-w-[180px] lg:max-w-[220px] hidden sm:block rotate-6">
                             <div className="flex items-center gap-3 mb-2">
                                 <div className="p-2 lg:p-3 bg-[#2a0878] rounded-full text-white">
                                     <ArrowUpRight size={16} className="lg:w-5 lg:h-5" />
                                 </div>
                                 <div>
-                                    <p className="text-2xl lg:text-3xl font-bold text-[#1a1a1a]">4+</p>
+                                    <p className="text-2xl lg:text-3xl font-bold text-[#1a1a1a] dark:text-gray-300">3+</p>
                                     <p className="text-[10px] lg:text-xs text-gray-500 uppercase tracking-wide font-bold">Years of hands-on Exp.</p>
                                 </div>
                             </div>
-                            <p className="text-[10px] lg:text-xs text-gray-600 leading-tight">
+                            <p className="text-[10px] lg:text-xs text-gray-600 dark:text-gray-400 leading-tight">
                                 Building scalable web apps.
                             </p>
                         </div>
@@ -190,7 +190,7 @@ const HeroSection = () => {
             </div>
 
             {/* Scroll Indicator */}
-            <div className="absolute bottom-6 lg:bottom-10 left-1/2 -translate-x-1/2 flex-col items-center gap-2 text-gray-400 opacity-60 animate-bounce pointer-events-none hidden lg:flex">
+            <div className="absolute bottom-6 lg:bottom-10 left-1/2 -translate-x-1/2 flex-col items-center gap-2 text-gray-400 dark:text-gray-300 opacity-60 animate-bounce pointer-events-none hidden lg:flex">
                 <span className="text-[10px] font-mono uppercase tracking-widest">Scroll</span>
                 <ArrowDown size={16} />
             </div>
