@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ArrowUp, Copy, Check, Github, Linkedin, Mail, Send, Loader2 } from "lucide-react";
+import { ArrowUp, Copy, Check, Github, Linkedin, Mail, Send, Loader2, Download } from "lucide-react";
 import emailjs from "@emailjs/browser";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
@@ -140,11 +140,22 @@ const Contact = () => {
                             <p className="text-gray-400 text-sm font-mono uppercase tracking-widest mb-2">Email Me</p>
                             <button
                                 onClick={handleCopy}
-                                className="group flex items-center gap-3 text-xl md:text-3xl font-bold hover:text-[#2a0878] dark:hover:text-[#5412ee] transition-colors text-black dark:text-[#b1afaf] text-left"
+                                className="group flex items-center gap-3 text-md sm:text-xl md:text-3xl font-bold hover:text-[#2a0878] dark:hover:text-[#5412ee] transition-colors text-black dark:text-[#b1afaf] text-left"
                             >
                                 <span className="truncate max-w-[300px] md:max-w-none">{myEmail}</span>
                                 {copied ? <Check size={24} className="text-green-400" /> : <Copy size={24} className="opacity-50 group-hover:opacity-100 transition-opacity" />}
                             </button>
+                        </div>
+
+                        <div className="">
+                            <a
+                                href="https://drive.google.com/file/d/122-XW1Ux8_RpgAnEyY0BXDkX6efh1oko/view"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="px-8 py-3 rounded-full bg-[#2a0878] dark:bg-[#5412ee] text-white font-bold text-sm uppercase tracking-widest hover:scale-105 hover:shadow-lg hover:shadow-[#2a0878]/20 transition-all duration-300"
+                            >
+                                 Resume
+                            </a>
                         </div>
 
                         <div className="form-item flex gap-6">
@@ -231,21 +242,6 @@ const Contact = () => {
                     </form>
                 </div>
 
-            </div>
-
-            {/* === FOOTER BAR === */}
-            <div className="border-t border-gray-700/20 dark:border-gray-500/60 relative z-20">
-                <div className="max-w-[1400px] mx-auto px-6 md:px-12 py-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                    <p className="text-gray-500 dark:text-gray-300 text-sm font-mono text-center md:text-left">
-                        © {new Date().getFullYear()} Shathish Kumaran. All Rights Reserved.
-                    </p>
-                    <button
-                        onClick={scrollToTop}
-                        className="text-gray-500 hover:text-[#2a0878] dark:text-[#b1afaf] dark:hover:text-[#5412ee] cursor-pointer text-sm font-mono uppercase tracking-widest flex items-center gap-2 transition-colors"
-                    >
-                        Back to Top <ArrowUp size={14} />
-                    </button>
-                </div>
             </div>
         </section>
     );

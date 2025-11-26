@@ -12,7 +12,7 @@ const projectsData = [
         year: "2025",
         title: "E-Commerce Site",
         category: "Full Stack",
-        description: "A complete e-commerce application with secure OTP verification, real-time order tracking (Shipped, Delivered), and a smart return-management workflow. Includes a comprehensive Admin Dashboard.",
+        description: "A production-ready e-commerce platform featuring OTP-secured authentication, real-time order tracking, and an intelligent return-management system. Includes a full admin dashboard for managing products, users, orders, and analytics.",
         tech: ["React", "Node.js", "MongoDB", "Redux Toolkit", "NodeMailer"],
         video: "https://res.cloudinary.com/dxdqojwlo/video/upload/v1763959657/EcommerceAPP_lgaau5.mp4",
         github: "https://github.com/SHATHISH-07/Ecommerce-App",
@@ -24,7 +24,7 @@ const projectsData = [
         year: "2025",
         title: "ReactIQ AI Saas",
         category: "AI & Real-time",
-        description: "A voice AI-powered learning platform where an intelligent tutor teaches through natural conversation. Features real-time voice communication, dynamic lesson generation, and progress tracking.",
+        description: "A responsive weather intelligence app offering real-time forecasts, air quality data, and geo-based insights for global locations. Optimized for performance with advanced API integration and state management.",
         tech: ["Next.js", "TypeScript", "Supabase", "Clerk", "Vapi (Voice AI)"],
         video: "https://res.cloudinary.com/dxdqojwlo/video/upload/v1763959653/ReactIQ_bqpdgb.mp4",
         github: "https://github.com/SHATHISH-07/ai-saas-app",
@@ -36,7 +36,7 @@ const projectsData = [
         year: "2025",
         title: "Weather App",
         category: "Data Visualization",
-        description: "Dynamic weather application providing real-time temperature, conditions, and insights for any global location. Optimized for speed and handles complex API data integration seamlessly.",
+        description: "A movie and series discovery platform powered by the TMDB API, featuring trending titles, cast details, and secure user authentication. Designed with responsive UI and protected routes for a seamless browsing experience.",
         tech: ["React", "TypeScript", "Tailwind", "LocationIQ API", "Redux"],
         video: "https://res.cloudinary.com/dxdqojwlo/video/upload/v1763959668/WeatherApp_jrtumf.mp4",
         github: "https://github.com/SHATHISH-07/Weather-app",
@@ -110,7 +110,7 @@ const Projects = () => {
     }, []);
 
     return (
-        <section ref={containerRef} id="projects" className=" relative">
+        <section ref={containerRef} id="projects" className="pt-10 relative">
 
             <div className="max-w-7xl mx-auto flex flex-col lg:flex-row">
 

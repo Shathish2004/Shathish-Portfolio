@@ -18,6 +18,7 @@ import {
 import { ArrowUpRight } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { TbApi } from "react-icons/tb";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -52,6 +53,7 @@ const Skills = () => {
             skills: [
                 { name: "Node.js", icon: <FaNodeJs />, color: "#68A063" },
                 { name: "GraphQL", icon: <SiGraphql />, color: "#E535AB" },
+                { name: "REST API", icon: <TbApi />, color: "#000000 dark:text-white" },
                 { name: "Express", icon: <SiExpress />, color: "#000000" },
                 { name: "MongoDB", icon: <SiMongodb />, color: "#47A248" },
                 { name: "PostgreSQL", icon: <SiPostgresql />, color: "#336791" },

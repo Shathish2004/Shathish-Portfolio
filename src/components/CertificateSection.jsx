@@ -142,7 +142,7 @@ const Certifications = () => {
                                 {/* === MOBILE ONLY: EXPANDABLE CONTENT === */}
                                 {/* Used a grid transition trick for smooth height animation */}
                                 <div
-                                    className={`md:hidden grid overflow-hidden transition-all duration-500 ease-in-out
+                                    className={`lg:hidden grid overflow-hidden transition-all duration-500 ease-in-out
                                         ${activeIndex === index ? 'grid-rows-[1fr] opacity-100 pb-6' : 'grid-rows-[0fr] opacity-0'}
                                     `}
                                 >

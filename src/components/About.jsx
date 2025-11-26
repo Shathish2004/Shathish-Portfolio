@@ -161,10 +161,28 @@ const About = () => {
                                     <span className="text-[#2a0878] dark:text-[#5412ee] font-mono text-sm tracking-widest uppercase">01. About Me</span>
                                 </div>
 
-                                <h2 className="text-5xl md:text-7xl  xl:text-8xl font-black tracking-tighter leading-[0.9] mb-6 text-black dark:text-[#b1afaf]">
-                                    CRAFTING <br />
-                                    <span className="text-[#2a0878] dark:text-[#5412ee]">DIGITAL</span> <br />
-                                    REALITY
+                                <h2 className="flex flex-col font-black tracking-tighter leading-[0.85] text-black dark:text-[#b1afaf]">
+
+                                    {/* 1. FULL */}
+                                    <span className="text-6xl md:text-8xl lg:text-7xl xl:text-8xl 2xl:text-9xl">
+                                        FULL
+                                    </span>
+
+                                    {/* 2. STACK */}
+                                    <span className="text-6xl md:text-8xl lg:text-7xl xl:text-8xl 2xl:text-9xl">
+                                        STACK
+                                    </span>
+
+                                    {/* 3. MERN (Highlighted & Largest) */}
+                                    <span className="text-[#2a0878] dark:text-[#5412ee] text-7xl md:text-9xl lg:text-8xl xl:text-9xl 2xl:text-[10rem]">
+                                        MERN
+                                    </span>
+
+                                    {/* 4. DEV */}
+                                    <span className="text-6xl md:text-8xl lg:text-7xl xl:text-8xl 2xl:text-9xl">
+                                        DEV<span className="text-[#2a0878] dark:text-[#5412ee]">.</span>
+                                    </span>
+
                                 </h2>
 
                                 <p className="text-gray-500 dark:text-gray-300 font-mono text-sm max-w-xs leading-relaxed">
@@ -177,13 +195,32 @@ const About = () => {
                         {/* === RIGHT COLUMN === */}
                         <div className="w-full lg:w-[60%] flex flex-col justify-center lg:py-32 gap-16 lg:gap-24">
                             {/* Intro Text */}
-                            <div className="about-text-reveal">
+                            <div className="about-text-reveal flex flex-col gap-8">
+
+                                {/* Paragraph 1: The Hook (Kept larger) */}
                                 <p className="text-lg md:text-3xl leading-relaxed font-light text-gray-800 dark:text-gray-400">
-                                    I transform complex problems into <strong className="text-[#2a0878] dark:text-[#5412ee] font-semibold">elegant solutions</strong>.
-                                    Specializing in the <span className="border-b-2 border-[#5412ee]/50">MERN Stack</span> and
+                                    I am a passionate <strong className="text-[#2a0878] dark:text-[#5412ee] font-semibold">Full Stack Developer</strong> specializing in
+                                    <span className="border-b-2 border-[#5412ee]/50 mx-2">MERN</span>,
                                     <span className="border-b-2 border-[#5412ee]/50 mx-2">TypeScript</span>,
-                                    I build scalable, high-performance applications that live on the web.
+                                    <span className="border-b-2 border-[#5412ee]/50 mx-2">GraphQL</span>, and
+                                    <span className="border-b-2 border-[#5412ee]/50 mx-2">Next.js</span>.
+                                    I enjoy designing clean backend architectures and implementing secure authentication.
                                 </p>
+
+                                {/* Paragraph 2: Projects (Slightly smaller for readability) */}
+                                <p className="text-base md:text-xl leading-relaxed font-light text-gray-700 dark:text-gray-400">
+                                    I have built multiple full-stack projects including an <strong className="font-medium text-gray-900 dark:text-gray-200">IMDB clone</strong>,
+                                    a <strong className="font-medium text-gray-900 dark:text-gray-200">weather forecasting platform</strong>,
+                                    and a complete <strong className="font-medium text-gray-900 dark:text-gray-200">e-commerce system</strong>.
+                                    Through these, I have gained strong skills in API development, real-time features, and modern UI/UX practices.
+                                </p>
+
+                                {/* Paragraph 3: Goals */}
+                                <p className="text-base md:text-xl leading-relaxed font-light text-gray-700 dark:text-gray-400">
+                                    I am constantly improving my problem-solving skills through <span className="border-b-2 border-[#5412ee]/50">DSA</span> and exploring system design fundamentals.
+                                    I am looking for an opportunity to contribute to <strong className="text-[#2a0878] dark:text-[#5412ee] font-semibold">impactful products</strong> and grow into a strong software engineer within an MNC or product-based company.
+                                </p>
+
                             </div>
 
                             {/* Education Section */}

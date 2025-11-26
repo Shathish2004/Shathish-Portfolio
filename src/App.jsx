@@ -8,6 +8,7 @@ import ProjectSection from "./components/ProjectSection";
 import CertificateSection from "./components/CertificateSection";
 import Extras from "./components/Extras";
 import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 
 const App = () => {
@@ -24,6 +25,7 @@ const App = () => {
       <CertificateSection />
       <Extras />
       <Contact />
+      <Footer />
     </main>
   )
 }
