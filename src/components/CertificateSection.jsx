@@ -26,9 +26,9 @@ const certifications = [
     { id: 5, title: "Full Stack GraphQL", issuer: "University of Helsinki", date: "2024", link: "https://studies.cs.helsinki.fi/stats/api/certificate/fs-graphql/en/df48667bbea50625d29e380c989bef59", image: FSGQLCert },
     { id: 6, title: "Full Stack TypeScript", issuer: "University of Helsinki", date: "2024", link: "https://studies.cs.helsinki.fi/stats/api/certificate/fs-typescript/en/7ea08dcfee9c28f7d82c0777405d2f0a", image: FSTSCert },
     { id: 7, title: "Meta Front End Dev", issuer: "Coursera", date: "2023", link: "https://coursera.org/share/331fb3664e0903bec4044dba6b322ddd", image: MetaFECert },
-    { id: 8, title: "Responsive Web Design", issuer: "freeCodeCamp", date: "2022", link: "https://www.freecodecamp.org/certification/Shathish07/responsive-web-design", image: RWDcert },
-    { id: 9, title: "JS Algorithms & Data", issuer: "freeCodeCamp", date: "2022", link: "https://www.freecodecamp.org/certification/Shathish07/javascript-algorithms-and-data-structures-v8", image: JSAlgCert },
-    { id: 10, title: "Front End Libraries", issuer: "freeCodeCamp", date: "2023", link: "https://www.freecodecamp.org/certification/Shathish07/front-end-development-libraries", image: FELCert },
+    { id: 8, title: "Responsive Web Design", issuer: "freeCodeCamp", date: "2022", link: "https://www.freecodecamp.org/certification/shathish07/responsive-web-design", image: RWDcert },
+    { id: 9, title: "JS Algorithms & Data", issuer: "freeCodeCamp", date: "2022", link: "https://www.freecodecamp.org/certification/shathish07/javascript-algorithms-and-data-structures-v8", image: JSAlgCert },
+    { id: 10, title: "Front End Libraries", issuer: "freeCodeCamp", date: "2023", link: "https://www.freecodecamp.org/certification/shathish07/front-end-development-libraries", image: FELCert },
     { id: 11, title: "IBM Bootstrap", issuer: "Coursera", date: "2022", link: "https://coursera.org/share/59dcb5b7ee96b354b747160db6f8e11b", image: BootstrapCert },
 ];
 
