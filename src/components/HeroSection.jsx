@@ -158,7 +158,7 @@ const HeroSection = () => {
                     <div ref={imageRef} className="relative w-full max-w-[380px] lg:max-w-[450px] h-[450px] lg:h-[65vh] ">
 
                         {/* Main Image */}
-                        <div className="hero-img-reveal w-full h-full rounded-4xl overflow-hidden relative shadow-2xl z-10 border-[6px] lg:border-8 border-white bg-gray-200/20 dark:border-[#424242] dark:bg-[#121212]/20">
+                        <div className="hero-img-reveal w-full h-full rounded-4xl overflow-hidden relative shadow-2xl z-10 border-[6px] lg:border-8 border-gray-700/50 bg-gray-200/20 dark:border-[#424242] dark:bg-[#121212]/20">
                             <img
                                 src={myImage}
                                 alt="Shathish Kumaran"

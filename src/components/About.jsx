@@ -262,7 +262,7 @@ const About = () => {
                     </div>
                 </div>
 
-                <div className="about-text-reveal -mx-6 md:-mx-12 lg:mx-0 relative z-10 mt-10 md:mt-0 bg-[#eaeaea] dark:bg-[#000000]/50">
+                <div className="about-text-reveal -mx-6 md:-mx-12 lg:mx-0 relative z-10 mt-10 md:mt-0 bg-[#ffffff] dark:bg-[#000000]/50">
                     <div className="border-t-5 border-b-2 border-black/60 dark:border-white/30">
                         <MarqueeRow items={skillsRow1} reference={marqueeRef1} />
                     </div>

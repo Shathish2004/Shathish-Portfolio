@@ -43,7 +43,7 @@ const Footer = () => {
     ];
 
     return (
-        <footer className="w-full bg-white dark:bg-[#050505] text-[#1a1a1a] dark:text-[#b1afaf] relative overflow-hidden z-20">
+        <footer className="w-full bg-[#fdfafa] dark:bg-[#050505] text-[#1a1a1a] dark:text-[#b1afaf] relative overflow-hidden z-20">
 
             {/* Top Gradient Line */}
             <div className="w-full h-px bg-linear-to-r from-transparent via-gray-300 dark:via-gray-700 to-transparent opacity-50"></div>
