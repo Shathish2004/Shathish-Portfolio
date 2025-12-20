@@ -206,7 +206,7 @@ const Projects = () => {
                                 <div
                                     key={index}
                                     ref={(el) => (mediaRef.current[index] = el)}
-                                    className="absolute inset-0 w-full h-full overflow-hidden rounded-2xl bg-white border-8 border-white "
+                                    className="absolute inset-0 w-full h-full overflow-hidden rounded-2xl bg-white border-8 border-black/30 dark:border-black/70 "
                                     style={{
                                         // Initial State: 1st visible, others hidden
                                         clipPath: index === 0 ? "inset(0% 0% 0% 0%)" : "inset(100% 0% 0% 0%)",
@@ -222,8 +222,6 @@ const Projects = () => {
                                         playsInline
                                         className="w-full h-full object-contain"
                                     />
-                                    {/* Overlay */}
-                                    <div className="absolute inset-0 bg-black/5 pointer-events-none"></div>
                                 </div>
                             ))}
                         </div>
@@ -232,7 +230,7 @@ const Projects = () => {
                 </div>
 
             </div>
-        </section>
+        </section >
     );
 };
 
