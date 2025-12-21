@@ -6,7 +6,6 @@ import {
     SiTailwindcss,
     SiNextdotjs,
     SiExpress,
-    SiPostgresql,
     SiRedux,
     SiDocker,
     SiPostman,
@@ -14,6 +13,7 @@ import {
     SiGraphql,
     SiHtml5,
     SiCss3,
+    SiMysql,
 } from "react-icons/si";
 import { ArrowUpRight } from "lucide-react";
 import gsap from "gsap";
@@ -56,7 +56,8 @@ const Skills = () => {
                 { name: "REST API", icon: <TbApi />, color: "#000000 dark:text-white" },
                 { name: "Express", icon: <SiExpress />, color: "#000000" },
                 { name: "MongoDB", icon: <SiMongodb />, color: "#47A248" },
-                { name: "PostgreSQL", icon: <SiPostgresql />, color: "#336791" },
+                // { name: "PostgreSQL", icon: <SiPostgresql />, color: "#336791" },
+                { name: "MySQL", icon: <SiMysql />, color: "#336791" },
                 { name: "Java", icon: <FaJava />, color: "#F80000" },
             ],
         },
