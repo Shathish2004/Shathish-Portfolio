@@ -159,6 +159,9 @@ const HeroSection = () => {
 
                         {/* Main Image */}
                         <div className="hero-img-reveal w-full h-full rounded-4xl overflow-hidden relative shadow-2xl z-10 border-[6px] lg:border-8 border-gray-700/50 bg-gray-200/20 dark:border-[#424242] dark:bg-[#121212]/20">
+
+                            <div className="absolute top-4 left-4 w-8 h-8 border-t-4 border-l-4 border-[#2a0878] dark:border-[#7c3aed] z-20 rounded-tl-lg animate-pulse"></div>
+                            <div className="absolute bottom-4 right-4 w-8 h-8 border-b-4 border-r-4 border-[#2a0878] dark:border-[#7c3aed] z-20 rounded-br-lg animate-pulse"></div>
                             <img
                                 src={myImage}
                                 alt="Shathish Kumaran"
