@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Monitor, Moon, Sun } from "lucide-react";
+import { Moon, Sun } from "lucide-react";
 
 const ThemeToggle = () => {
     // 1. Default to "system" initially to prevent hydration mismatch

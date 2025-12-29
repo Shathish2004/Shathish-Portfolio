@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ArrowUp, Copy, Check, Github, Linkedin, Mail, Send, Loader2, Download } from "lucide-react";
+import { ArrowUp, Copy, Check, Mail, Loader2 } from "lucide-react";
 import emailjs from "@emailjs/browser";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
@@ -17,7 +17,7 @@ const Contact = () => {
         message: ""
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
-    const [submitStatus, setSubmitStatus] = useState(null); // null | 'success' | 'error'
+    const [submitStatus, setSubmitStatus] = useState(null);
     const [copied, setCopied] = useState(false);
 
     const myEmail = "shathishkumaran07@gmail.com";
@@ -72,7 +72,6 @@ const Contact = () => {
 
     useEffect(() => {
         const ctx = gsap.context(() => {
-            // Reveal Title characters
             gsap.from(".contact-title-char", {
                 y: 100,
                 opacity: 0,
@@ -85,7 +84,6 @@ const Contact = () => {
                 }
             });
 
-            // Reveal Form Inputs
             gsap.from(".form-item", {
                 x: 50,
                 opacity: 0,
@@ -154,12 +152,12 @@ const Contact = () => {
                                 rel="noopener noreferrer"
                                 className="px-8 py-3 rounded-full bg-[#2a0878] dark:bg-[#5412ee] text-white font-bold text-sm uppercase tracking-widest hover:scale-105 hover:shadow-lg hover:shadow-[#2a0878]/20 transition-all duration-300"
                             >
-                                 Resume
+                                Resume
                             </a>
                         </div>
 
                         <div className="form-item flex gap-6">
-                            <a href="https://github.com/SHATHISH-07" target="_blank" rel="noreferrer" className="w-12 h-12 rounded-full text-black dark:text-[#b1afaf] border border-gray-700 dark:border-gray-500 flex items-center justify-center hover:bg-white hover:text-black hover:border-white transition-all duration-300">
+                            <a href="https://github.com/SHATHISH-07" target="_blank" rel="noreferrer" className="w-12 h-12 rounded-full text-black dark:text-[#b1afaf] border border-gray-700 dark:border-gray-500 flex items-center justify-center hover:bg-[#555555] dark:hover:bg-white hover:text-black hover:border-white transition-all duration-300">
                                 <FaGithub size={20} />
                             </a>
                             <a href="https://www.linkedin.com/in/shathish-kumaran/" target="_blank" rel="noreferrer" className="w-12 h-12 rounded-full border border-gray-700 dark:border-gray-500 text-black dark:text-[#b1afaf] flex items-center justify-center hover:bg-[#0077b5] hover:text-white hover:border-[#0077b5] transition-all duration-300">

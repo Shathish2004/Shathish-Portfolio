@@ -1,5 +1,5 @@
-import { ArrowUp, MapPin, Mail, } from "lucide-react";
-import { SiGithub, SiLinkedin } from "react-icons/si";
+import { ArrowUp, MapPin } from "lucide-react";
+import { sitemap, projects, socials } from "../data/footerData";
 
 const Footer = () => {
 
@@ -10,42 +10,9 @@ const Footer = () => {
         });
     };
 
-    const sitemap = [
-        { name: "Home", href: "#" },
-        { name: "About", href: "#about" },
-        { name: "Skills", href: "#skills" },
-        { name: "Contact", href: "#contact" },
-    ];
-
-    const projects = [
-        { name: "IMDB Clone", href: "#projects" },
-        { name: "Weather App", href: "#projects" },
-        { name: "E-Commerce", href: "#projects" },
-        { name: "AI Learning App", href: "#projects" },
-    ];
-
-    const socials = [
-        {
-            name: "LinkedIn",
-            icon: <SiLinkedin size={20} />,
-            href: "https://www.linkedin.com/in/shathish-kumaran/"
-        },
-        {
-            name: "GitHub",
-            icon: <SiGithub size={20} />,
-            href: "https://github.com/SHATHISH-07"
-        },
-        {
-            name: "Email",
-            icon: <Mail size={20} />,
-            href: "mailto:shathishkumaran07@gmail.com"
-        },
-    ];
-
     return (
         <footer className="w-full bg-[#fdfafa] dark:bg-[#050505] text-[#1a1a1a] dark:text-[#b1afaf] relative overflow-hidden z-20">
 
-            {/* Top Gradient Line */}
             <div className="w-full h-px bg-linear-to-r from-transparent via-gray-300 dark:via-gray-700 to-transparent opacity-50"></div>
 
             <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 pt-20 pb-10 relative z-10">
@@ -53,7 +20,6 @@ const Footer = () => {
                 {/* === TOP SECTION: Content Grid === */}
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-8 mb-24">
 
-                    {/* Left: Bio & Location (Spans 4 columns) */}
                     <div className="md:col-span-4 flex flex-col justify-between h-full">
                         <div className="space-y-6">
                             <div className="flex items-center gap-2">
@@ -71,7 +37,6 @@ const Footer = () => {
                         </div>
                     </div>
 
-                    {/* Middle: Links (Spans 4 columns) */}
                     <div className="md:col-span-4 flex justify-between md:justify-around">
                         <div className="flex flex-col gap-6">
                             <h4 className="font-mono text-xs uppercase tracking-widest text-gray-400">Menu</h4>
@@ -103,19 +68,23 @@ const Footer = () => {
                     <div className="md:col-span-4 flex flex-col items-start md:items-end gap-6">
                         <h4 className="font-mono text-xs uppercase tracking-widest text-gray-400">Connect</h4>
                         <div className="flex gap-4">
-                            {socials.map((social, i) => (
-                                <a
-                                    key={i}
-                                    href={social.href}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="w-12 h-12 flex items-center justify-center border border-gray-200 dark:border-gray-800 rounded-full text-black dark:text-white hover:bg-[#2a0878] hover:text-white hover:border-[#2a0878] dark:hover:bg-[#5412ee] dark:hover:text-white dark:hover:border-[#5412ee] transition-all duration-300 group"
-                                >
-                                    <span className="group-hover:scale-110 transition-transform duration-300">
-                                        {social.icon}
-                                    </span>
-                                </a>
-                            ))}
+                            {socials.map((social, i) => {
+                                const IconComponent = social.icon;
+
+                                return (
+                                    <a
+                                        key={i}
+                                        href={social.href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="w-12 h-12 flex items-center justify-center border border-gray-200 dark:border-gray-800 rounded-full text-black dark:text-white hover:bg-[#2a0878] hover:text-white hover:border-[#2a0878] dark:hover:bg-[#5412ee] dark:hover:text-white dark:hover:border-[#5412ee] transition-all duration-300 group"
+                                    >
+                                        <span className="group-hover:scale-110 transition-transform duration-300">
+                                            <IconComponent size={24} />
+                                        </span>
+                                    </a>
+                                )
+                            })}
                         </div>
 
                         <div className="flex items-center justify-center">
@@ -145,12 +114,10 @@ const Footer = () => {
                 {/* === BOTTOM SECTION: Massive Signature === */}
                 <div className="relative pt-10 border-t border-gray-400 dark:border-gray-600 flex flex-col md:flex-row justify-between items-end md:items-center gap-6">
 
-                    {/* Copyright (Small) */}
                     <div className="text-xs font-mono text-gray-400 text-center mx-auto md:mx-0 order-2 md:order-1">
                         © {new Date().getFullYear()} Shathish Kumaran.<br className="md:hidden" /> All Rights Reserved.
                     </div>
 
-                    {/* Massive Name (Creative Element) */}
                     <div className="order-1 md:order-2 w-full md:w-auto text-center md:text-right">
                         <h1 className="text-[12vw] md:text-[10vw] leading-[0.8] font-black tracking-tighter text-gray-200 dark:text-[#111] select-none pointer-events-none transition-colors duration-500">
                             MERN DEV.

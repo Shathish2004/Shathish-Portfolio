@@ -1,40 +1,21 @@
 import { useState, useEffect } from "react";
-import { ArrowUpRight, Menu, X, FileText } from "lucide-react";
+import { ArrowUpRight, Menu, X } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
+import { deskNavItems, mobNavItems } from "../data/navBarData";
 
 const NavBar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [isVisible, setIsVisible] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
 
-    const resumeUrl = "https://drive.google.com/file/d/122-XW1Ux8_RpgAnEyY0BXDkX6efh1oko/view";
-
-    const deskNavItems = [
-        { name: "Shathish", href: "#" },
-        { name: "About Me", href: "#about" },
-        { name: "Skills", href: "#skills" },
-        { name: "Projects", href: "#projects" },
-        { name: "Certifications", href: "#certifications" },
-        { name: "Resume", href: resumeUrl, isExternal: true },
-    ];
-
-    const mobNavItems = [
-        { name: "About Me", href: "#about" },
-        { name: "Skills", href: "#skills" },
-        { name: "Projects", href: "#projects" },
-        { name: "Certifications", href: "#certifications" },
-        { name: "Resume", href: resumeUrl, isExternal: true },
-    ];
-
-    // Scroll Logic
     useEffect(() => {
         const handleScroll = () => {
             const currentScrollY = window.scrollY;
 
             if (currentScrollY > lastScrollY && currentScrollY > 50) {
-                setIsVisible(false); // Hide on scroll down
+                setIsVisible(false);
             } else {
-                setIsVisible(true); // Show on scroll up
+                setIsVisible(true);
             }
 
             setLastScrollY(currentScrollY);
@@ -44,7 +25,6 @@ const NavBar = () => {
         return () => window.removeEventListener("scroll", handleScroll);
     }, [lastScrollY]);
 
-    // Prevent body scroll when menu is open
     useEffect(() => {
         if (isOpen) {
             document.body.style.overflow = "hidden";
@@ -68,7 +48,7 @@ const NavBar = () => {
 
                     {/* Desktop Menu */}
                     <ul className="hidden md:flex items-center space-x-8 lg:space-x-10 text-gray-600 dark:text-gray-300 font-medium text-sm lg:text-base">
-                        {deskNavItems.slice(1).map((item) => ( // Skip "Shathish" for desktop list
+                        {deskNavItems.slice(1).map((item) => (
                             <li key={item.name} className="relative group">
                                 <a
                                     href={item.href}
@@ -108,11 +88,10 @@ const NavBar = () => {
             </nav>
 
             {/* Mobile Menu Overlay */}
-            {/* Background Backdrop */}
             <div
                 className={`fixed inset-0 bg-black/40 backdrop-blur-sm z-50 transition-opacity duration-300 ${isOpen ? "opacity-100 visible" : "opacity-0 invisible"
                     }`}
-                onClick={() => setIsOpen(false)} // Close when clicking outside
+                onClick={() => setIsOpen(false)}
             ></div>
 
             {/* Sliding Menu Panel */}

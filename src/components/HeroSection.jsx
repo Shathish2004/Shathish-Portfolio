@@ -80,9 +80,9 @@ const HeroSection = () => {
             {/* === BACKGROUND TYPOGRAPHY === */}
             <div
                 ref={bgTextRef}
-                className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden opacity-5"
+                className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden opacity-5 dark:opacity-6"
             >
-                <h1 className="text-[10vw] font-black text-[#1a1a1a] dark:text-[#f1f1f1]/40 whitespace-nowrap leading-none">
+                <h1 className="text-[10vw] font-black text-[#1a1a1a] dark:text-[#ffffff] whitespace-nowrap leading-none">
                     MERN DEVELOPER
                 </h1>
             </div>

@@ -1,69 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import {
-    Award,
-    ShieldCheck,
-    Cloud,
-    BrainCircuit,
-    Zap,
-    Music,
-    ChefHat,
-    Film,
-    Sparkles
-} from "lucide-react";
-
-const categories = [
-    {
-        id: "achievements",
-        title: "Glory & Wins",
-        subtitle: "01 / Competitions",
-        description: "Recognized for innovation and technical excellence.",
-        // Warm Gold/Amber Theme
-        accentColor: "group-hover:text-amber-600 dark:group-hover:text-amber-400",
-        // Subtle gradient background on hover instead of a card background
-        bgHover: "group-hover:bg-gradient-to-r group-hover:from-amber-50/50 group-hover:to-transparent dark:group-hover:from-amber-900/10",
-        items: [
-            {
-                title: "Intelligent Automation Paper",
-                desc: "1st Place Winner @ TIETSYMPO 2K23.",
-                icon: Award
-            },
-            {
-                title: "Incognito Tech Challenge",
-                desc: "3rd Place @ KNOWMEET 2K23.",
-                icon: Zap
-            }
-        ]
-    },
-    {
-        id: "learning",
-        title: "Knowledge Base",
-        subtitle: "02 / Workshops",
-        description: "Continuous learning through hands-on technical gatherings.",
-        // Electric Cyan/Blue Theme
-        accentColor: "group-hover:text-cyan-600 dark:group-hover:text-cyan-400",
-        bgHover: "group-hover:bg-gradient-to-r group-hover:from-cyan-50/50 group-hover:to-transparent dark:group-hover:from-cyan-900/10",
-        items: [
-            { title: "AI Cybersecurity", desc: "Workshop @ PSG Tech", icon: ShieldCheck },
-            { title: "AWS Cloud Computing", desc: "Workshop @ Knowledge Inst.", icon: Cloud },
-            { title: "Deep Learning", desc: "SAMHITA'24 @ MIT India", icon: BrainCircuit },
-            { title: "GENIO 2K23", desc: "Symposium Participation", icon: Zap }
-        ]
-    },
-    {
-        id: "hobbies",
-        title: "Life & Soul",
-        subtitle: "03 / Passions",
-        description: "Fueling creativity through arts and culture.",
-        // Rose/Pink Theme
-        accentColor: "group-hover:text-rose-600 dark:group-hover:text-rose-400",
-        bgHover: "group-hover:bg-gradient-to-r group-hover:from-rose-50/50 group-hover:to-transparent dark:group-hover:from-rose-900/10",
-        items: [
-            { title: "Music Enthusiast", desc: "Exploring genres daily.", icon: Music },
-            { title: "Cooking", desc: "Like to Cook and Eat.", icon: ChefHat },
-            { title: "Cinephile", desc: "Sci-fi & Thrillers.", icon: Film }
-        ]
-    }
-];
+import { categories } from "../data/extraData";
 
 const Extras = () => {
     const sectionRef = useRef(null);
@@ -122,12 +58,10 @@ const Extras = () => {
                             `}
                             style={{ transitionDelay: `${index * 150}ms` }}
                         >
-                            {/* Ambient Hover Background (Subtle Gradient) */}
                             <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 -z-10 ${cat.bgHover}`}></div>
 
                             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-start">
 
-                                {/* 1. Category Title (Typography Only) */}
                                 <div className="lg:col-span-5 flex flex-col gap-4">
                                     <span className={` text-xs font-bold tracking-widest uppercase text-gray-400 transition-colors duration-300 ${cat.accentColor}`}>
                                         {cat.subtitle}
@@ -142,7 +76,6 @@ const Extras = () => {
                                     </p>
                                 </div>
 
-                                {/* 2. Items List (Clean Grid with Icons) */}
                                 <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10 pt-2">
                                     {cat.items.map((item, i) => (
                                         <div key={i} className="flex gap-5 group/item">
@@ -151,7 +84,6 @@ const Extras = () => {
                                                 <item.icon size={28} strokeWidth={1.5} />
                                             </div>
 
-                                            {/* Item Text */}
                                             <div>
                                                 <h4 className="font-bold text-lg text-gray-900 dark:text-gray-100 mb-1 leading-tight group-hover/item:underline decoration-2 underline-offset-4 decoration-transparent hover:decoration-current transition-all">
                                                     {item.title}

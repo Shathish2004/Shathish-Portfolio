@@ -1,81 +1,14 @@
 import { useState, useRef, useEffect } from "react";
-import { FaReact, FaNodeJs, FaGitAlt, FaJava, FaFigma, FaGithub } from "react-icons/fa";
-import {
-    SiMongodb,
-    SiTypescript,
-    SiTailwindcss,
-    SiNextdotjs,
-    SiExpress,
-    SiRedux,
-    SiDocker,
-    SiPostman,
-    SiJavascript,
-    SiGraphql,
-    SiHtml5,
-    SiCss3,
-    SiMysql,
-} from "react-icons/si";
 import { ArrowUpRight } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { TbApi } from "react-icons/tb";
+import { categories } from "../data/skillData";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Skills = () => {
     const [activeId, setActiveId] = useState(1);
     const containerRef = useRef(null);
-
-    const categories = [
-        {
-            id: 1,
-            title: "Frontend",
-            subtitle: "Engineering",
-            desc: "Crafting pixel-perfect, accessible, and performant user interfaces.",
-            bgPattern: "radial-gradient(circle at 50% 50%, #61DBFB20 0%, transparent 70%)",
-            skills: [
-                { name: "React", icon: <FaReact />, color: "#61DBFB" },
-                { name: "Next.js", icon: <SiNextdotjs />, color: "#000000" },
-                { name: "TypeScript", icon: <SiTypescript />, color: "#3178C6" },
-                { name: "Tailwind", icon: <SiTailwindcss />, color: "#06B6D4" },
-                { name: "Redux", icon: <SiRedux />, color: "#764ABC" },
-                { name: "JavaScript", icon: <SiJavascript />, color: "#F7DF1E" },
-                { name: "HTML", icon: <SiHtml5 />, color: "#E34F26" },
-                { name: "CSS", icon: <SiCss3 />, color: "#1572B6" },
-            ],
-        },
-        {
-            id: 2,
-            title: "Backend",
-            subtitle: "Architecture",
-            desc: "Building scalable server-side systems and secure APIs.",
-            bgPattern: "radial-gradient(circle at 50% 50%, #68A06320 0%, transparent 70%)",
-            skills: [
-                { name: "Node.js", icon: <FaNodeJs />, color: "#68A063" },
-                { name: "GraphQL", icon: <SiGraphql />, color: "#E535AB" },
-                { name: "REST API", icon: <TbApi />, color: "#000000 dark:text-white" },
-                { name: "Express", icon: <SiExpress />, color: "#000000" },
-                { name: "MongoDB", icon: <SiMongodb />, color: "#47A248" },
-                // { name: "PostgreSQL", icon: <SiPostgresql />, color: "#336791" },
-                { name: "MySQL", icon: <SiMysql />, color: "#336791" },
-                { name: "Java", icon: <FaJava />, color: "#F80000" },
-            ],
-        },
-        {
-            id: 3,
-            title: "DevOps",
-            subtitle: "& Tools",
-            desc: "Streamlining deployment, testing, and collaboration workflows.",
-            bgPattern: "radial-gradient(circle at 50% 50%, #F0503220 0%, transparent 70%)",
-            skills: [
-                { name: "Git", icon: <FaGitAlt />, color: "#F05032" },
-                { name: "GitHub", icon: <FaGithub />, color: "#181717" },
-                { name: "Docker", icon: <SiDocker />, color: "#2496ED" },
-                { name: "Postman", icon: <SiPostman />, color: "#FF6C37" },
-                { name: "Figma", icon: <FaFigma />, color: "#F24E1E" },
-            ],
-        },
-    ];
 
     useEffect(() => {
         const ctx = gsap.context(() => {
@@ -181,20 +114,23 @@ const Skills = () => {
                                     </p>
 
                                     <div className="flex flex-wrap gap-3">
-                                        {cat.skills.map((skill, idx) => (
-                                            <div
-                                                key={idx}
-                                                className="flex items-center gap-2 px-3 py-2 md:px-4 md:py-2.5 rounded-xl border border-gray-100 shadow-sm transition-transform hover:-translate-y-1 bg-black/5 dark:bg-white/30 backdrop-blur-md"
-                                            >
-                                                {/* Adjusted text sizes based on your preference */}
-                                                <span style={{ color: skill.color }} className="text-lg md:text-5xl">
-                                                    {skill.icon}
-                                                </span>
-                                                <span className="font-medium text-gray-800 dark:text-[#cecccc] text-xs md:text-xl">
-                                                    {skill.name}
-                                                </span>
-                                            </div>
-                                        ))}
+                                        {cat.skills.map((skill, idx) => {
+                                            const Icon = skill.icon;
+                                            return (
+                                                <div
+                                                    key={idx}
+                                                    className="flex items-center gap-2 px-3 py-2 md:px-4 md:py-2.5 rounded-xl border border-gray-100 shadow-sm transition-transform hover:-translate-y-1 bg-black/5 dark:bg-white/30 backdrop-blur-md"
+                                                >
+                                                    {/* Adjusted text sizes based on your preference */}
+                                                    <span style={{ color: skill.color }} className="text-lg md:text-5xl">
+                                                        <Icon />
+                                                    </span>
+                                                    <span className="font-medium text-gray-800 dark:text-[#cecccc] text-xs md:text-xl">
+                                                        {skill.name}
+                                                    </span>
+                                                </div>
+                                            )
+                                        })}
                                     </div>
                                 </div>
 

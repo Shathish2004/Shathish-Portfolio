@@ -2,41 +2,14 @@ import { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowUpRight, Award, ChevronDown, ExternalLink } from "lucide-react";
-
-// Image Imports (Keep your existing imports)
-import FSDCert from "/assets/certificateImg/certificate-fullstack.png";
-import FSReactNativeCert from "/assets/certificateImg/certificate-reactnative-fullstackOpen.png";
-import GCyberSecCert from "/assets/certificateImg/cyberSecurityCertificate-1.png";
-import GAIESSCert from "/assets/certificateImg/AI-Essentials Certificate-1.png";
-import FSGQLCert from "/assets/certificateImg/certificate-graphql-fullstack.png";
-import FSTSCert from "/assets/certificateImg/Fullstackopen-Typescript-cert.png";
-import MetaFECert from "/assets/certificateImg/META frontend developer certificate-1.png";
-import RWDcert from "/assets/certificateImg/Responsive web design certificate.jpg";
-import JSAlgCert from "/assets/certificateImg/JavaScript FCC certificate.png";
-import FELCert from "/assets/certificateImg/FRONT_END_LIBRARY CERTIFICATE.png";
-import BootstrapCert from "/assets/certificateImg/Bootstrap certificate-1.png";
+import { certifications } from "../data/CertificationData";
 
 gsap.registerPlugin(ScrollTrigger);
-
-const certifications = [
-    { id: 1, title: "Full Stack Open", issuer: "University of Helsinki", date: "2024", link: "https://studies.cs.helsinki.fi/stats/api/certificate/fullstackopen/en/f34a9e582200b1904db94ba9b646caa8", image: FSDCert },
-    { id: 2, title: "Full Stack React Native", issuer: "University of Helsinki", date: "2024", link: "https://studies.cs.helsinki.fi/stats/api/certificate/fs-react-native-2020/en/a4a3a478bbf192085b78aad53abf636a", image: FSReactNativeCert },
-    { id: 3, title: "Google CyberSecurity", issuer: "Coursera", date: "2024", link: "https://coursera.org/share/9a52f4b038bfe34967f6daffd70d431b", image: GCyberSecCert },
-    { id: 4, title: "Google AI Essentials", issuer: "Coursera", date: "2024", link: "https://coursera.org/share/17dd536c1214808f3316485a3180fb95", image: GAIESSCert },
-    { id: 5, title: "Full Stack GraphQL", issuer: "University of Helsinki", date: "2024", link: "https://studies.cs.helsinki.fi/stats/api/certificate/fs-graphql/en/df48667bbea50625d29e380c989bef59", image: FSGQLCert },
-    { id: 6, title: "Full Stack TypeScript", issuer: "University of Helsinki", date: "2024", link: "https://studies.cs.helsinki.fi/stats/api/certificate/fs-typescript/en/7ea08dcfee9c28f7d82c0777405d2f0a", image: FSTSCert },
-    { id: 7, title: "Meta Front End Dev", issuer: "Coursera", date: "2023", link: "https://coursera.org/share/331fb3664e0903bec4044dba6b322ddd", image: MetaFECert },
-    { id: 8, title: "Responsive Web Design", issuer: "freeCodeCamp", date: "2022", link: "https://www.freecodecamp.org/certification/shathish07/responsive-web-design", image: RWDcert },
-    { id: 9, title: "JS Algorithms & Data", issuer: "freeCodeCamp", date: "2022", link: "https://www.freecodecamp.org/certification/shathish07/javascript-algorithms-and-data-structures-v8", image: JSAlgCert },
-    { id: 10, title: "Front End Libraries", issuer: "freeCodeCamp", date: "2023", link: "https://www.freecodecamp.org/certification/shathish07/front-end-development-libraries", image: FELCert },
-    { id: 11, title: "IBM Bootstrap", issuer: "Coursera", date: "2022", link: "https://coursera.org/share/59dcb5b7ee96b354b747160db6f8e11b", image: BootstrapCert },
-];
 
 const Certifications = () => {
     const sectionRef = useRef(null);
     const [activeIndex, setActiveIndex] = useState(null);
 
-    // Function to handle toggle on mobile
     const handleMobileToggle = (index) => {
         setActiveIndex(activeIndex === index ? null : index);
     };
@@ -91,12 +64,10 @@ const Certifications = () => {
                         {certifications.map((cert, index) => (
                             <div
                                 key={cert.id}
-                                // On desktop: Hover logic
                                 onMouseEnter={() => window.innerWidth >= 768 && setActiveIndex(index)}
                                 onMouseLeave={() => window.innerWidth >= 768 && setActiveIndex(null)}
-                                // On mobile: Click logic
                                 onClick={() => handleMobileToggle(index)}
-                                className={`cert-row group relative flex flex-col border-b border-gray-300 transition-colors duration-300 cursor-pointer
+                                className={`cert-row group relative flex flex-col border-b border-gray-300 transition-colors duration-300
                                     ${activeIndex === index ? 'bg-white/40 dark:bg-[#1a1a1a]/40 md:bg-transparent' : ''}
                                 `}
                             >
@@ -127,7 +98,7 @@ const Certifications = () => {
                                             target="_blank"
                                             rel="noreferrer"
                                             className="hidden md:flex w-10 h-10 rounded-full border border-gray-300 items-center justify-center hover:bg-[#2a0878] hover:border-[#2a0878] group-hover:border-[#2a0878] transition-all duration-300"
-                                            onClick={(e) => e.stopPropagation()} // Prevent row click on desktop
+                                            onClick={(e) => e.stopPropagation()}
                                         >
                                             <ArrowUpRight size={18} className="text-gray-400 hover:text-white group-hover:text-[#2a0878] dark:group-hover:text-[#5412ee] " />
                                         </a>
@@ -140,7 +111,6 @@ const Certifications = () => {
                                 </div>
 
                                 {/* === MOBILE ONLY: EXPANDABLE CONTENT === */}
-                                {/* Used a grid transition trick for smooth height animation */}
                                 <div
                                     className={`lg:hidden grid overflow-hidden transition-all duration-500 ease-in-out
                                         ${activeIndex === index ? 'grid-rows-[1fr] opacity-100 pb-6' : 'grid-rows-[0fr] opacity-0'}
@@ -176,7 +146,6 @@ const Certifications = () => {
                     </div>
 
                     {/* === RIGHT: FIXED PREVIEW IMAGE (Desktop Only) === */}
-                    {/* Unchanged from your original code, just ensured hidden lg:flex is kept */}
                     <div className="hidden lg:flex w-[50%] h-[400px] sticky top-32 flex-col justify-center items-center">
                         <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl border-4 border-white dark:border-[#b1afaf] bg-gray-200 dark:bg-[#1a1a1a]">
                             {/* Placeholder */}
