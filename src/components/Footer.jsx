@@ -1,5 +1,6 @@
 import { ArrowUp, MapPin } from "lucide-react";
 import { sitemap, projects, socials } from "../data/footerData";
+import { resumeUrl } from "../data/navBarData";
 
 const Footer = () => {
 
@@ -89,7 +90,7 @@ const Footer = () => {
 
                         <div className="flex items-center justify-center">
                             <a
-                                href="https://drive.google.com/file/d/122-XW1Ux8_RpgAnEyY0BXDkX6efh1oko/view"
+                                href={resumeUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="px-8 py-3 rounded-full bg-[#2a0878] dark:bg-[#5412ee] text-white font-bold text-sm uppercase tracking-widest hover:scale-105 hover:shadow-lg hover:shadow-[#2a0878]/20 transition-all duration-300"

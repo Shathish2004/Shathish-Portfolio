@@ -1,5 +1,5 @@
-const resumeUrl =
-  "https://drive.google.com/file/d/122-XW1Ux8_RpgAnEyY0BXDkX6efh1oko/view";
+export const resumeUrl =
+  "https://drive.google.com/file/d/1XLa03oG7SM5BLRtzamDfVcwLgGcC2M_L/view?usp=sharing";
 
 export const deskNavItems = [
   { name: "Shathish", href: "#" },

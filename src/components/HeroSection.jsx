@@ -3,6 +3,8 @@ import { ArrowDown, ArrowUpRight, Download, Mail } from "lucide-react";
 import myImage from "/assets/img/myImage.png";
 import { gsap } from "gsap";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { resumeUrl } from "../data/navBarData";
+
 
 const HeroSection = () => {
     const container = useRef(null);
@@ -136,7 +138,7 @@ const HeroSection = () => {
                                 { icon: FaGithub, link: "https://github.com/SHATHISH-07" },
                                 { icon: FaLinkedin, link: "https://www.linkedin.com/in/shathish-kumaran/" },
                                 { icon: Mail, link: "mailto:shathishkumaran07@gmail.com" },
-                                { icon: Download, link: "https://drive.google.com/file/d/122-XW1Ux8_RpgAnEyY0BXDkX6efh1oko/view?usp=sharing" }
+                                { icon: Download, link: resumeUrl }
                             ].map((Item, i) => (
                                 <a
                                     key={i}
