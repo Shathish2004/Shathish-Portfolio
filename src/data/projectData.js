@@ -84,7 +84,7 @@ export const projectsData = [
     color: "#4a1d96",
   },
   {
-    id: "04",
+    id: "05",
     year: "2024",
     title: "IMDB Clone",
     category: "Media Platform",

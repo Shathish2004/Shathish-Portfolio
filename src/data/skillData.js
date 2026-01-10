@@ -99,7 +99,7 @@ export const categories = [
       { name: "REST API", icon: TbApi, color: "#000000 dark:text-white" },
       { name: "Express", icon: SiExpress, color: "#000000" },
       { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
-      { name: "Nest.js", Icon: SiNestjs, color: "#E0234E" },
+      { name: "Nest.js", icon: SiNestjs, color: "#E0234E" },
       { name: "MySQL", icon: SiMysql, color: "#336791" },
       { name: "Java", icon: FaJava, color: "#F80000" },
     ],
