@@ -36,6 +36,7 @@ import {
   SiHtml5,
   SiCss3,
   SiMysql,
+  SiNestjs,
 } from "react-icons/si";
 
 import { TbApi } from "react-icons/tb";
@@ -45,11 +46,12 @@ import { TbApi } from "react-icons/tb";
 export const skillsRow1 = [
   { name: "JAVASCRIPT", Icon: SiJavascript, color: "#F7DF1E" },
   { name: "REACT", Icon: FaReact, color: "#61DBFB" },
-  { name: "NEXT", Icon: SiNextdotjs, color: "#000000" },
+  { name: "NEXT", Icon: SiNextdotjs, color: "#000000 dark:text-white" },
   { name: "TYPESCRIPT", Icon: SiTypescript, color: "#3178C6" },
   { name: "NODE", Icon: FaNodeJs, color: "#68A063" },
   { name: "TAILWIND", Icon: SiTailwindcss, color: "#06B6D4" },
   { name: "JAVA", Icon: FaJava, color: "#F80000" },
+  { name: "Nest", Icon: SiNestjs, color: "#E0234E" },
 ];
 
 export const skillsRow2 = [
@@ -60,6 +62,7 @@ export const skillsRow2 = [
   { name: "HTML", Icon: SiHtml5, color: "#E34F26" },
   { name: "CSS", Icon: SiCss3, color: "#1572B6" },
   { name: "REST API", Icon: TbApi, color: "#000000" },
+  { name: "MYSQL", Icon: SiMysql, color: "#336791" },
 ];
 
 // Skill Section Data
@@ -96,7 +99,7 @@ export const categories = [
       { name: "REST API", icon: TbApi, color: "#000000 dark:text-white" },
       { name: "Express", icon: SiExpress, color: "#000000" },
       { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
-      // { name: "PostgreSQL", icon: SiPostgresql , color: "#336791" },
+      { name: "Nest.js", Icon: SiNestjs, color: "#E0234E" },
       { name: "MySQL", icon: SiMysql, color: "#336791" },
       { name: "Java", icon: FaJava, color: "#F80000" },
     ],

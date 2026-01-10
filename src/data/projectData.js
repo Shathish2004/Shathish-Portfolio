@@ -1,8 +1,34 @@
 export const projectsData = [
   {
     id: "01",
+    year: "2026",
+    title: "Personal AI Knowledge Assistant",
+    category: "Full Stack / AI",
+    description:
+      "An intelligent personal knowledge assistant that enables users to upload documents and ask contextual questions using AI-powered retrieval. Supports secure authentication, semantic search with embeddings, real-time chat responses, and efficient knowledge indexing for fast and accurate answers.",
+    tech: [
+      "React",
+      "TypeScript",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "LangChain",
+      "Groq API",
+      "Vector Database",
+      "JWT Auth",
+      "OAuth",
+      "Tailwind CSS",
+    ],
+    video:
+      "https://res.cloudinary.com/dylmrhy5h/video/upload/v1768038144/Personal_AI_Knowledge_Assistant_c2wzfz.mp4",
+    github: "https://github.com/SHATHISH-07/Personal-AI-Knowledge-Assistant",
+    live: "https://personal-ai-knowledge-assistant.vercel.app/",
+    color: "#0f172a",
+  },
+  {
+    id: "02",
     year: "2025",
-    title: "E-Commerce Site",
+    title: "NxKart - E-Commerce Site",
     category: "Full Stack",
     description:
       "A production-ready e-commerce platform featuring OTP-secured authentication, real-time order tracking, and an intelligent return-management system. Includes a full admin dashboard for managing products, users, orders, and analytics.",
@@ -23,7 +49,7 @@ export const projectsData = [
     color: "#2a0878",
   },
   {
-    id: "02",
+    id: "03",
     year: "2025",
     title: "ReactIQ AI Saas",
     category: "AI & Real-time",
@@ -37,7 +63,7 @@ export const projectsData = [
     color: "#1a1a1a",
   },
   {
-    id: "03",
+    id: "04",
     year: "2025",
     title: "Weather App",
     category: "Data Visualization",
