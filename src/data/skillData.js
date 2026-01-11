@@ -61,7 +61,7 @@ export const skillsRow2 = [
   { name: "GITHUB", Icon: FaGithub, color: "#181719 dark:text-white" },
   { name: "HTML", Icon: SiHtml5, color: "#E34F26" },
   { name: "CSS", Icon: SiCss3, color: "#1572B6" },
-  { name: "REST API", Icon: TbApi, color: "#000000" },
+  { name: "REST API", Icon: TbApi, color: "#000000 dark:text-white" },
   { name: "MYSQL", Icon: SiMysql, color: "#336791" },
 ];
 
