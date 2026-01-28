@@ -29,14 +29,14 @@ const Extras = () => {
             id="extras"
             className="w-full pt-20 lg:pt-30 relative overflow-hidden"
         >
-            <div className="max-w-7xl mx-auto px-6 md:px-12">
+            <div className="max-w-[1300px] mx-auto px-6 md:px-12">
 
                 {/* Header */}
                 <div className={`mb-20 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
                     <div className="flex items-center gap-3 mb-6">
 
                         <span className="text-[#2a0878] dark:text-[#5412ee] font-mono text-sm tracking-widest uppercase">
-                            05. Beyond Code
+                            06. Beyond Code
                         </span>
                     </div>
                     <h2 className="text-5xl md:text-7xl font-black text-[#1a1a1a] dark:text-[#b1afaf] tracking-tighter leading-[0.9]">

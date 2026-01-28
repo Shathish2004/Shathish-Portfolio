@@ -9,6 +9,7 @@ import CertificateSection from "./components/CertificateSection";
 import Extras from "./components/Extras";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import ExperienceSection from "./components/ExperienceSection";
 
 
 const App = () => {
@@ -21,6 +22,7 @@ const App = () => {
       <HeroSection />
       <About />
       <SkillSection />
+      <ExperienceSection />
       <ProjectSection />
       <CertificateSection />
       <Extras />

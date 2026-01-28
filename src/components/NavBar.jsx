@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
-import { deskNavItems, mobNavItems } from "../data/navBarData";
+import { navItems } from "../data/navBarData";
 
 const NavBar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -11,16 +11,13 @@ const NavBar = () => {
     useEffect(() => {
         const handleScroll = () => {
             const currentScrollY = window.scrollY;
-
             if (currentScrollY > lastScrollY && currentScrollY > 50) {
                 setIsVisible(false);
             } else {
                 setIsVisible(true);
             }
-
             setLastScrollY(currentScrollY);
         };
-
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, [lastScrollY]);
@@ -35,39 +32,47 @@ const NavBar = () => {
 
     return (
         <>
-            {/* Main Navbar */}
             <nav
                 className={`w-full fixed top-0 left-0 bg-white/80 dark:bg-[#050505]/90 backdrop-blur-md shadow-sm z-40 transition-transform duration-300 ${isVisible ? "translate-y-0" : "-translate-y-full"
                     }`}
             >
-                <section className="max-w-7xl mx-auto flex justify-between items-center p-6 md:px-8">
-                    {/* Logo */}
+                <section className="max-w-[1300px] mx-auto flex justify-between items-center p-6 md:px-8">
+
                     <a href="#" className="text-xl md:text-2xl font-bold text-gray-900 dark:text-gray-100 tracking-tight">
                         Shathish
                     </a>
 
-                    {/* Desktop Menu */}
-                    <ul className="hidden md:flex items-center space-x-8 lg:space-x-10 text-gray-600 dark:text-gray-300 font-medium text-sm lg:text-base">
-                        {deskNavItems.slice(1).map((item) => (
-                            <li key={item.name} className="relative group">
-                                <a
-                                    href={item.href}
-                                    target={item.isExternal ? "_blank" : "_self"}
-                                    rel={item.isExternal ? "noopener noreferrer" : ""}
-                                    className={`transition-colors duration-300 hover:text-[#2a0878] dark:hover:text-[#5412ee] flex items-center gap-1 ${item.name === "Resume" ? "text-[#2a0878] dark:text-[#5412ee] font-semibold" : ""}`}
-                                >
-                                    {item.name}
-                                    {item.name === "Resume" && <ArrowUpRight size={17} className="opacity-70" />}
-                                </a>
-                                <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-[#2a0878] dark:bg-[#5412ee] transition-all duration-300 group-hover:w-full"></span>
-                            </li>
-                        ))}
-                    </ul>
+                    <div className="flex items-center gap-8">
 
-                    <div className="hidden md:block"><ThemeToggle /></div>
+                        <ul className="hidden xl:flex items-center space-x-10 text-gray-600 dark:text-gray-300 font-medium text-base">
+                            {navItems.slice(0).map((item) => (
+                                <NavItem key={item.name} item={item} />
+                            ))}
+                        </ul>
 
-                    {/* Desktop CTA */}
-                    <div className="hidden md:flex items-center space-x-6">
+                        <ul className="hidden lg:flex xl:hidden items-center space-x-8 text-gray-600 dark:text-gray-300 font-medium text-md">
+                            {navItems.slice(0, 6).map((item) => (
+                                <NavItem key={item.name} item={item} />
+                            ))}
+                        </ul>
+
+                        <ul className="hidden md:flex lg:hidden items-center space-x-6 text-gray-600 dark:text-gray-300 font-medium text-md">
+                            {navItems.slice(1, 6).map((item) => (
+                                <NavItem key={item.name} item={item} />
+                            ))}
+                        </ul>
+
+                        <button
+                            onClick={() => setIsOpen(true)}
+                            className="xl:hidden text-gray-800 dark:text-gray-200 focus:outline-none p-1"
+                            aria-label="Open Menu"
+                        >
+                            <Menu size={28} />
+                        </button>
+                    </div>
+
+                    <div className="hidden xl:flex items-center space-x-6">
+                        <ThemeToggle />
                         <a
                             href="#contact"
                             className="flex items-center gap-1 text-[#2a0878] dark:text-[#5412ee] font-semibold underline underline-offset-4 hover:text-blue-900 dark:hover:text-[#7c3aed] transition-colors"
@@ -75,31 +80,20 @@ const NavBar = () => {
                             Hire Me <ArrowUpRight size={18} />
                         </a>
                     </div>
-
-                    {/* Mobile Menu Button */}
-                    <button
-                        onClick={() => setIsOpen(true)}
-                        className="md:hidden text-gray-800 dark:text-gray-200 focus:outline-none p-1"
-                        aria-label="Open Menu"
-                    >
-                        <Menu size={28} />
-                    </button>
                 </section>
             </nav>
 
-            {/* Mobile Menu Overlay */}
             <div
                 className={`fixed inset-0 bg-black/40 backdrop-blur-sm z-50 transition-opacity duration-300 ${isOpen ? "opacity-100 visible" : "opacity-0 invisible"
                     }`}
                 onClick={() => setIsOpen(false)}
             ></div>
 
-            {/* Sliding Menu Panel */}
             <div
                 className={`fixed top-0 right-0 h-full w-[85%] max-w-[320px] bg-[#f5f5f5] dark:bg-[#0a0a0a] shadow-2xl z-50 transform transition-transform duration-300 ease-in-out flex flex-col ${isOpen ? "translate-x-0" : "translate-x-full"
                     }`}
             >
-                {/* Mobile Header */}
+
                 <div className="flex justify-between items-center p-6 border-b border-gray-200 dark:border-gray-800">
                     <span className="text-xl font-bold text-gray-900 dark:text-gray-100">Menu</span>
                     <button
@@ -111,10 +105,9 @@ const NavBar = () => {
                     </button>
                 </div>
 
-                {/* Mobile Links */}
                 <div className="flex-1 overflow-y-auto py-8 px-6">
                     <ul className="flex flex-col space-y-6">
-                        {mobNavItems.map((item, index) => (
+                        {navItems.map((item, index) => (
                             <li key={index}>
                                 <a
                                     href={item.href}
@@ -140,7 +133,6 @@ const NavBar = () => {
                     <ThemeToggle />
                 </div>
 
-                {/* Mobile Footer CTA */}
                 <div className="p-6 border-t border-gray-200 dark:border-gray-800 bg-gray-100/50 dark:bg-[#111111]/80">
                     <a
                         href="#contact"
@@ -154,5 +146,20 @@ const NavBar = () => {
         </>
     );
 };
+
+const NavItem = ({ item }) => (
+    <li className="relative group">
+        <a
+            href={item.href}
+            target={item.isExternal ? "_blank" : "_self"}
+            rel={item.isExternal ? "noopener noreferrer" : ""}
+            className={`transition-colors duration-300 hover:text-[#2a0878] dark:hover:text-[#5412ee] flex items-center gap-1 ${item.name === "Resume" ? "text-[#2a0878] dark:text-[#5412ee] font-semibold" : ""}`}
+        >
+            {item.name}
+            {item.name === "Resume" && <ArrowUpRight size={17} className="opacity-70" />}
+        </a>
+        <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-[#2a0878] dark:bg-[#5412ee] transition-all duration-300 group-hover:w-full"></span>
+    </li>
+);
 
 export default NavBar;

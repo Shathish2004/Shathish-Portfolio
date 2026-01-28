@@ -39,7 +39,7 @@ const Skills = () => {
             className="w-full min-h-screen py-10 flex flex-col justify-center overflow-hidden relative z-10 mt-5 md:mt-10"
 
         >
-            <div className="max-w-[1400px] mx-auto px-6 md:px-8 w-full h-full">
+            <div className="max-w-[1300px] mx-auto px-6 md:px-8 w-full h-full">
 
                 {/* Header */}
                 <div className="mb-12 md:mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">

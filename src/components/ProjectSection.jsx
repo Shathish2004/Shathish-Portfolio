@@ -62,7 +62,7 @@ const Projects = () => {
     return (
         <section ref={containerRef} id="projects" className="pt-10 relative">
 
-            <div className="max-w-7xl mx-auto flex flex-col lg:flex-row">
+            <div className="max-w-[1300px] mx-auto flex flex-col lg:flex-row">
 
                 {/* === LEFT COLUMN: SCROLLABLE TEXT === */}
                 <div className="w-full lg:w-1/2 px-6 md:px-12 lg:px-20 md:py-10 z-10">
@@ -70,7 +70,7 @@ const Projects = () => {
                     {/* Section Title */}
                     <div className="mb-24">
                         <h4 className="text-[#2a0878] dark:text-[#5412ee] font-mono text-sm tracking-widest uppercase mb-4 opacity-80">
-                            03. Selected Works
+                            04. Selected Works
                         </h4>
                         <h2 className="text-5xl md:text-7xl font-bold text-[#1a1a1a] dark:text-[#b1afaf] tracking-tight">
                             Featured <br /><span className="text-[#2a0878] dark:text-[#5412ee]">Projects</span>

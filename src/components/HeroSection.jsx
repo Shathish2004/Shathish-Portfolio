@@ -79,7 +79,6 @@ const HeroSection = () => {
             className="relative min-h-screen lg:h-screen w-full overflow-hidden  flex flex-col justify-center lg:block lg:pt-38 pt-28 pb-10"
         >
 
-            {/* === BACKGROUND TYPOGRAPHY === */}
             <div
                 ref={bgTextRef}
                 className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden opacity-5 dark:opacity-6"
@@ -90,7 +89,7 @@ const HeroSection = () => {
             </div>
 
             {/* === MAIN GRID === */}
-            <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-12 px-6 md:px-12 relative z-20 h-full content-center lg:content-start">
+            <div className="max-w-[1300px] mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-12 px-6 md:px-12 relative z-20 h-full content-center lg:content-start">
 
                 {/* === LEFT CONTENT === */}
                 <div ref={contentRef} className="lg:col-span-7 flex flex-col justify-center lg:justify-start items-center lg:items-start text-center lg:text-left order-1 lg:order-1">

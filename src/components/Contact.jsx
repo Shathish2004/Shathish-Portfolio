@@ -113,14 +113,14 @@ const Contact = () => {
                 <div className="absolute right-0 bottom-0 w-[50vw] h-[50vw] bg-[#2a0878] rounded-full blur-[150px]"></div>
             </div> */}
 
-            <div className="max-w-[1400px] mx-auto px-6 md:px-12 w-full h-full grow flex flex-col lg:flex-row pt-10  pb-12">
+            <div className="max-w-[1300px] mx-auto px-6 md:px-12 w-full h-full grow flex flex-col lg:flex-row pt-10  pb-12">
 
                 {/* === LEFT: HUGE TYPOGRAPHY === */}
                 <div className="w-full lg:w-1/2 flex flex-col justify-between mb-16 lg:mb-0 z-10">
                     <div>
                         <div className="flex items-center gap-4 mb-8 opacity-60">
                             {/* <div className="w-12 h-[1px] bg-[#2a0878]"></div> */}
-                            <span className="text-[#2a0878] dark:text-[#5412ee] font-mono text-sm tracking-widest uppercase">06. Contact</span>
+                            <span className="text-[#2a0878] dark:text-[#5412ee] font-mono text-sm tracking-widest uppercase">07. Contact</span>
                         </div>
 
                         <h2 className="text-7xl md:text-8xl lg:text-[10rem] font-black leading-[0.85] tracking-tighter overflow-hidden select-none">

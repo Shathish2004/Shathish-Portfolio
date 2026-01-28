@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowUpRight, Award, ChevronDown, ExternalLink } from "lucide-react";
-import { certifications } from "../data/CertificationData";
+import { certifications } from "../data/certificationData";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -36,13 +36,13 @@ const Certifications = () => {
             ref={sectionRef}
             className="w-full relative min-h-screen flex flex-col pt-10 md:pt-10"
         >
-            <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10 w-full">
+            <div className="max-w-[1200px] mx-auto px-4 md:px-8 relative z-10 w-full">
 
                 {/* Header */}
                 <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-gray-300 pb-8 mb-8">
                     <div>
                         <h4 className="text-[#2a0878] dark:text-[#5412ee] font-mono text-sm tracking-widest uppercase mb-4 opacity-80">
-                            04. Credentials
+                            05. Credentials
                         </h4>
                         <h2 className="text-4xl md:text-7xl font-bold text-[#1a1a1a] dark:text-[#b1afaf] tracking-tight">
                             Certifications
