@@ -119,7 +119,7 @@ const Experience = () => {
                                         </div>
 
                                         <div className="grid grid-cols-1 gap-4 mb-8">
-                                            {exp.projects.map((proj, i) => (
+                                            {exp.projects && exp.projects.map((proj, i) => (
                                                 <a href={proj.source} key={i} target="_blank">
                                                     <div
                                                         className="flex flex-col gap-1 pb-4 border-b border-zinc-200 dark:border-zinc-800 last:border-0 last:pb-0">
