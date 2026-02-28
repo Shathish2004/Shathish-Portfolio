@@ -1,5 +1,5 @@
 export const resumeUrl =
-  "https://drive.google.com/file/d/1uGI1ilTqV5pkrrxOGLPaKq-8OGHUCSvA/view";
+  "https://drive.google.com/file/d/1lPbvDetAuu4W27ko-2Qbe3XNrU5GFQFt/view?usp=sharing";
 
 export const navItems = [
   { name: "About Me", href: "#about" },
