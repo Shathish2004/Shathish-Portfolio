@@ -144,13 +144,12 @@ const About = () => {
                                     <span className="border-b-2 border-[#5412ee]/50 mx-2">MERN</span>,
                                     <span className="border-b-2 border-[#5412ee]/50 mx-2">TypeScript</span>,
                                     <span className="border-b-2 border-[#5412ee]/50 mx-2">GraphQL</span>, and
-                                    <span className="border-b-2 border-[#5412ee]/50 mx-2">Next.js</span>.
+                                    <span className="border-b-2 border-[#5412ee]/50 mx-2">Nest.js</span>.
                                     I enjoy designing clean backend architectures and implementing secure authentication.
                                 </p>
 
                                 <p className="text-base md:text-xl leading-relaxed font-light text-gray-700 dark:text-gray-400">
-                                    I have built multiple full-stack projects including an <strong className="font-medium text-gray-900 dark:text-gray-200">IMDB clone</strong>,
-                                    a <strong className="font-medium text-gray-900 dark:text-gray-200">weather forecasting platform</strong>,
+                                    I have built multiple full-stack projects including an <strong className="font-medium text-gray-900 dark:text-gray-200">OpenLuma a Personal Knowledge Assistant</strong>,
                                     and a complete <strong className="font-medium text-gray-900 dark:text-gray-200">e-commerce system</strong>.
                                     Through these, I have gained strong skills in API development, real-time features, and modern UI/UX practices.
                                 </p>
