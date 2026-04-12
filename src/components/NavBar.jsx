@@ -5,22 +5,6 @@ import { navItems } from "../data/navBarData";
 
 const NavBar = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const [isVisible, setIsVisible] = useState(true);
-    const [lastScrollY, setLastScrollY] = useState(0);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            const currentScrollY = window.scrollY;
-            if (currentScrollY > lastScrollY && currentScrollY > 50) {
-                setIsVisible(false);
-            } else {
-                setIsVisible(true);
-            }
-            setLastScrollY(currentScrollY);
-        };
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, [lastScrollY]);
 
     useEffect(() => {
         if (isOpen) {
@@ -32,10 +16,7 @@ const NavBar = () => {
 
     return (
         <>
-            <nav
-                className={`w-full fixed top-0 left-0 bg-white/80 dark:bg-[#050505]/90 backdrop-blur-md shadow-sm z-40 transition-transform duration-300 ${isVisible ? "translate-y-0" : "-translate-y-full"
-                    }`}
-            >
+            <nav className="w-full bg-white/80 dark:bg-[#050505]/90 backdrop-blur-md shadow-sm z-40 relative">
                 <section className="max-w-[1300px] mx-auto flex justify-between items-center p-6 md:px-8">
 
                     <a href="#" className="text-xl md:text-2xl font-bold text-gray-900 dark:text-gray-100 tracking-tight">

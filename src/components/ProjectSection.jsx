@@ -1,186 +1,204 @@
-import { useEffect, useRef } from "react";
+import { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Globe } from "lucide-react";
+import { Globe, ArrowUpRight } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
-import { projectsData } from "../data/projectData";
+import { projectsData } from "../data/projectData"; // Adjust path as needed
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Projects = () => {
-    const containerRef = useRef(null);
-    const mediaRef = useRef([]);
+    const sectionRef = useRef(null);
+    const trackRef = useRef(null);
 
     useEffect(() => {
         const ctx = gsap.context(() => {
-            const textSections = gsap.utils.toArray(".project-text-section");
+            let mm = gsap.matchMedia();
 
-            textSections.forEach((section, index) => {
-                const targetMedia = mediaRef.current[index];
+            // --------------------------------------------------
+            // DESKTOP: Horizontal Scroll (Screens >= 1024px)
+            // --------------------------------------------------
+            mm.add("(min-width: 1024px)", () => {
+                const track = trackRef.current;
+                const scrollAmount = track.scrollWidth - window.innerWidth;
 
-                ScrollTrigger.create({
-                    trigger: section,
-                    start: "top center",
-                    end: "bottom center",
-                    onEnter: () => {
-                        gsap.to(targetMedia, {
-                            clipPath: "inset(0% 0% 0% 0%)",
-                            duration: 0.8,
-                            ease: "power3.inOut",
-                            zIndex: 10
-                        });
-                        // Lower z-index of others so the new one sits on top nicely
-                        mediaRef.current.forEach((media, i) => {
-                            if (i !== index) {
-                                gsap.to(media, { zIndex: 1, delay: 0.4 });
-                            }
-                        });
-                    },
-                    onEnterBack: () => {
-                        gsap.to(targetMedia, {
-                            clipPath: "inset(0% 0% 0% 0%)",
-                            duration: 0.8,
-                            ease: "power3.inOut",
-                            zIndex: 10
-                        });
-                    },
-                    onLeaveBack: () => {
-                        gsap.to(targetMedia, {
-                            clipPath: "inset(100% 0% 0% 0%)",
-                            duration: 0.8,
-                            ease: "power3.inOut",
-                            zIndex: 1
-                        });
+                // 1. Pin the section and scroll the track horizontally
+                const scrollTween = gsap.to(track, {
+                    x: -scrollAmount,
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: sectionRef.current,
+                        pin: true,
+                        scrub: 1,
+                        end: () => `+=${scrollAmount}`,
+                        invalidateOnRefresh: true,
                     }
+                });
+
+                // 2. Add fade-up animations INSIDE the horizontal scroll
+                const elements = gsap.utils.toArray(".fade-up");
+                elements.forEach((el) => {
+                    gsap.fromTo(el,
+                        { opacity: 0, y: 40 },
+                        {
+                            opacity: 1,
+                            y: 0,
+                            duration: 0.8,
+                            ease: "power3.out",
+                            scrollTrigger: {
+                                trigger: el,
+                                containerAnimation: scrollTween, // Tie to the horizontal scroll!
+                                start: "left 85%", // Triggers when element slides in from the right
+                                toggleActions: "play none none reverse"
+                            }
+                        }
+                    );
                 });
             });
 
-        }, containerRef);
+            // --------------------------------------------------
+            // MOBILE / TABLET: Vertical Scroll (Screens < 1024px)
+            // --------------------------------------------------
+            mm.add("(max-width: 1023px)", () => {
+                const elements = gsap.utils.toArray(".fade-up");
+
+                elements.forEach((el) => {
+                    gsap.fromTo(el,
+                        { opacity: 0, y: 40 },
+                        {
+                            opacity: 1,
+                            y: 0,
+                            duration: 0.8,
+                            ease: "power3.out",
+                            scrollTrigger: {
+                                trigger: el,
+                                start: "top 85%",
+                                toggleActions: "play none none reverse"
+                            }
+                        }
+                    );
+                });
+            });
+
+        }, sectionRef);
+
         return () => ctx.revert();
     }, []);
 
     return (
-        <section ref={containerRef} id="projects" className="pt-10 relative">
+        <section
+            ref={sectionRef}
+            id="projects"
+            className="w-full bg-white dark:bg-[#050505] text-zinc-900 dark:text-zinc-100 transition-colors duration-300 overflow-hidden"
+        >
+            <div
+                ref={trackRef}
+                className="flex flex-col lg:flex-row lg:w-max lg:h-screen gap-16 md:gap-24 lg:gap-0 pb-24 lg:py-0"
+            >
+                <div className="w-full lg:w-[55vw] lg:h-full flex flex-col justify-center px-6 md:px-12 shrink-0 lg:border-r lg:border-zinc-200 lg:dark:border-zinc-800/50">
+                    <div className="fade-up w-full lg:px-12">
+                        <div className="max-w-3xl">
+                            <h4 className="text-[#2a0878] dark:text-[#5412ee] font-mono text-sm tracking-widest uppercase mb-4 opacity-80 flex items-center gap-4">
+                                04. Selected Works
+                            </h4>
 
-            <div className="max-w-[1300px] mx-auto flex flex-col lg:flex-row">
+                            <h2 className="text-5xl md:text-7xl lg:text-[5.5rem] font-bold tracking-tight text-zinc-900 dark:text-zinc-100 mb-6 leading-none">
+                                Featured <br className="hidden md:block" />
+                                <span className="text-[#2a0878] dark:text-[#5412ee]">Projects.</span>
+                            </h2>
 
-                {/* === LEFT COLUMN: SCROLLABLE TEXT === */}
-                <div className="w-full lg:w-1/2 px-6 md:px-12 lg:px-20 md:py-10 z-10">
+                            <p className="text-lg md:text-xl text-zinc-500 dark:text-zinc-400 font-light leading-relaxed">
+                                A curated selection of my recent engineering projects, showcasing full-stack capabilities, system design, and AI solutions.
+                            </p>
 
-                    {/* Section Title */}
-                    <div className="mb-24">
-                        <h4 className="text-[#2a0878] dark:text-[#5412ee] font-mono text-sm tracking-widest uppercase mb-4 opacity-80">
-                            04. Selected Works
-                        </h4>
-                        <h2 className="text-5xl md:text-7xl font-bold text-[#1a1a1a] dark:text-[#b1afaf] tracking-tight">
-                            Featured <br /><span className="text-[#2a0878] dark:text-[#5412ee]">Projects</span>
-                        </h2>
+                            <div className="mt-16 hidden lg:flex items-center gap-4 text-sm font-mono tracking-widest uppercase text-zinc-400">
+                                <span className="animate-pulse">Explore</span>
+                                <div className="w-24 h-px bg-zinc-200 dark:bg-zinc-800 relative">
+                                    <div className="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 border-t border-r border-zinc-300 dark:border-zinc-700 rotate-45"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                </div>
 
-                    {/* Projects Loop */}
-                    <div className="flex flex-col gap-32 md:gap-48 pb-24">
-                        {projectsData.map((project, index) => (
-                            <div key={index} className="project-text-section flex flex-col justify-center min-h-[50vh]">
+                {projectsData.map((project, index) => (
+                    <div
+                        key={index}
+                        className="w-full lg:w-screen lg:h-full flex flex-col justify-center px-6 md:px-12 shrink-0"
+                    >
+                        <div className="max-w-7xl mx-auto w-full flex flex-col lg:flex-row items-center gap-12 lg:gap-16 group lg:px-12">
 
-                                {/* Header Line */}
-                                <div className="flex items-center gap-4 mb-6 border-b border-gray-300 pb-4">
-                                    <span className="text-4xl font-light text-[#2a0878] dark:text-[#5412ee]">
+                            <div className="fade-up lg:w-1/2 flex flex-col w-full">
+                                <div className="flex items-center gap-4 mb-6">
+                                    <span className="text-3xl lg:text-4xl font-light text-[#2a0878] dark:text-[#5412ee]">
                                         {project.id}
                                     </span>
-                                    <div className="h-px bg-gray-300 flex-1"></div>
-                                    <span className="font-mono text-xs text-gray-500 dark:text-gray-300">{project.category}</span>
+                                    <div className="h-px bg-zinc-200 dark:bg-zinc-800 flex-1"></div>
+                                    <span className="font-mono text-xs uppercase tracking-widest text-zinc-500 dark:text-zinc-400">
+                                        {project.category}
+                                    </span>
                                 </div>
 
-                                {/* Title */}
-                                <h3 className="text-3xl md:text-5xl font-bold text-[#1a1a1a] dark:text-[#b1afaf] mb-6 leading-tight">
+                                <h3 className="text-4xl md:text-5xl font-bold text-zinc-900 dark:text-zinc-100 mb-6 leading-tight">
                                     {project.title}
                                 </h3>
 
-                                {/* Tech Tags */}
                                 <div className="flex flex-wrap gap-2 mb-8">
                                     {project.tech.map((t, i) => (
-                                        <div key={i} className="px-3 py-1 rounded-lg border border-gray-300 dark:border-[#1a1a1a] text-xs font-medium text-gray-600 dark:text-gray-100 bg-white dark:bg-white/30 flex items-center gap-1">
+                                        <div key={i} className="px-3 py-1 rounded-full border border-zinc-200 dark:border-zinc-800 text-xs font-mono font-medium text-zinc-600 dark:text-zinc-400 bg-zinc-50 dark:bg-zinc-900 flex items-center gap-1">
                                             {t}
                                         </div>
                                     ))}
                                 </div>
 
-                                {/* Desc */}
-                                <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed mb-10 max-w-md">
+                                <p className="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed font-light mb-10 max-w-xl">
                                     {project.description}
                                 </p>
 
-                                {/* Buttons */}
                                 <div className="flex items-center gap-4">
                                     <a
                                         href={project.live}
                                         target="_blank"
                                         rel="noreferrer"
-                                        className="flex items-center gap-2 px-6 py-3 bg-[#2a0878] text-white rounded-lg font-bold hover:bg-[#1a0550] transition-all shadow-md"
+                                        className="flex items-center gap-2 px-6 py-3 bg-transparent text-zinc-900 dark:text-zinc-100 border border-zinc-300 dark:border-zinc-700 rounded-lg font-semibold hover:border-[#2a0878] dark:hover:border-[#5412ee] transition-colors"
                                     >
-                                        <Globe size={18} /> View
+                                        <ArrowUpRight size={18} />Live
                                     </a>
                                     <a
                                         href={project.github}
                                         target="_blank"
                                         rel="noreferrer"
-                                        className="flex items-center gap-2 px-6 py-3 bg-white dark:bg-white/80 text-[#1a1a1a] border border-gray-300 rounded-lg font-bold hover:border-[#2a0878] transition-all"
+                                        className="flex items-center gap-2 px-6 py-3 bg-transparent text-zinc-900 dark:text-zinc-100 border border-zinc-300 dark:border-zinc-700 rounded-lg font-semibold hover:border-[#2a0878] dark:hover:border-[#5412ee] transition-colors"
                                     >
-                                        <FaGithub size={18} /> Code
+                                        <FaGithub size={18} /> Source Code
                                     </a>
                                 </div>
+                            </div>
 
-                                {/* Mobile Video (Visible only on small screens) */}
-                                <div className="lg:hidden mt-10 w-full rounded-2xl overflow-hidden shadow-xl border-4 border-white bg-white">
+                            <div className="fade-up lg:w-1/2 w-full">
+                                <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-[#111]">
+                                    <div className="absolute top-0 left-0 w-full h-8 bg-zinc-200/50 dark:bg-zinc-800/50 backdrop-blur-md flex items-center px-4 gap-2 z-10 border-b border-zinc-300/50 dark:border-zinc-700/50">
+                                        <div className="w-2.5 h-2.5 rounded-full bg-red-500/80"></div>
+                                        <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></div>
+                                        <div className="w-2.5 h-2.5 rounded-full bg-green-500/80"></div>
+                                    </div>
+
                                     <video
                                         src={project.video}
                                         autoPlay
                                         muted
                                         loop
                                         playsInline
-                                        className="w-full h-auto object-cover"
+                                        className="w-full h-auto max-h-[60vh] object-cover pt-8"
                                     />
                                 </div>
                             </div>
-                        ))}
-                    </div>
-                </div>
 
-                {/* === RIGHT COLUMN: PINNED VIDEO STACK (Desktop Only) === */}
-                <div className="hidden lg:block w-1/2 h-screen sticky top-0 right-0 overflow-hidden ">
-                    <div className="relative w-full h-full flex items-center justify-center p-12">
-
-                        {/* Video Stack */}
-                        <div className="relative w-full h-[50vh] max-w-[650px]">
-                            {projectsData.map((project, index) => (
-                                <div
-                                    key={index}
-                                    ref={(el) => (mediaRef.current[index] = el)}
-                                    className="absolute inset-0 w-full h-full overflow-hidden rounded-2xl bg-white border-8 border-black/30 dark:border-black/70 "
-                                    style={{
-                                        // Initial State: 1st visible, others hidden
-                                        clipPath: index === 0 ? "inset(0% 0% 0% 0%)" : "inset(100% 0% 0% 0%)",
-                                        zIndex: projectsData.length - index
-                                    }}
-                                >
-                                    {/* Video Element */}
-                                    <video
-                                        src={project.video}
-                                        autoPlay
-                                        muted
-                                        loop
-                                        playsInline
-                                        className="w-full h-full object-contain"
-                                    />
-                                </div>
-                            ))}
                         </div>
-
                     </div>
-                </div>
-
+                ))}
             </div>
-        </section >
+        </section>
     );
 };
 

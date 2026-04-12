@@ -21,6 +21,7 @@ import {
   FaJava,
   FaFigma,
   FaGithub,
+  FaPython,
 } from "react-icons/fa";
 import {
   SiMongodb,
@@ -37,6 +38,7 @@ import {
   SiCss3,
   SiMysql,
   SiNestjs,
+  SiFastapi,
 } from "react-icons/si";
 
 import { TbApi } from "react-icons/tb";
@@ -52,6 +54,7 @@ export const skillsRow1 = [
   { name: "TAILWIND", Icon: SiTailwindcss, color: "#06B6D4" },
   { name: "JAVA", Icon: FaJava, color: "#F80000" },
   { name: "Nest", Icon: SiNestjs, color: "#E0234E" },
+  { name: "PYTHON", Icon: FaPython, color: "#3776AB" },
 ];
 
 export const skillsRow2 = [
@@ -63,6 +66,7 @@ export const skillsRow2 = [
   { name: "CSS", Icon: SiCss3, color: "#1572B6" },
   { name: "REST API", Icon: TbApi, color: "#000000 dark:text-white" },
   { name: "MYSQL", Icon: SiMysql, color: "#336791" },
+  { name: "FASTAPI", Icon: SiFastapi, color: "#009688" },
 ];
 
 // Skill Section Data
@@ -82,6 +86,7 @@ export const categories = [
       { name: "Tailwind", icon: SiTailwindcss, color: "#06B6D4" },
       { name: "Redux", icon: SiRedux, color: "#764ABC" },
       { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
+      { name: "Python", icon: FaPython, color: "#3776AB" },
       { name: "HTML", icon: SiHtml5, color: "#E34F26" },
       { name: "CSS", icon: SiCss3, color: "#1572B6" },
     ],
@@ -97,9 +102,10 @@ export const categories = [
       { name: "Node.js", icon: FaNodeJs, color: "#68A063" },
       { name: "GraphQL", icon: SiGraphql, color: "#E535AB" },
       { name: "REST API", icon: TbApi, color: "#000000 dark:text-white" },
-      { name: "Express", icon: SiExpress, color: "#000000" },
+      { name: "Express", icon: SiExpress, color: "#000000 dark:text-white" },
       { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
       { name: "Nest.js", icon: SiNestjs, color: "#E0234E" },
+      { name: "FastAPI", icon: SiFastapi, color: "#009688" },
       { name: "MySQL", icon: SiMysql, color: "#336791" },
       { name: "Java", icon: FaJava, color: "#F80000" },
     ],
