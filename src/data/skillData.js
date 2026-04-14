@@ -60,7 +60,7 @@ export const skillsRow1 = [
 export const skillsRow2 = [
   { name: "MONGODB", Icon: SiMongodb, color: "#10A37F" },
   { name: "GRAPHQL", Icon: SiGraphql, color: "#E535AB" },
-  { name: "EXPRESS", Icon: SiExpress, color: "#000000" },
+  { name: "EXPRESS", Icon: SiExpress, color: "#000000 dark:text-white" },
   { name: "GITHUB", Icon: FaGithub, color: "#181719 dark:text-white" },
   { name: "HTML", Icon: SiHtml5, color: "#E34F26" },
   { name: "CSS", Icon: SiCss3, color: "#1572B6" },
