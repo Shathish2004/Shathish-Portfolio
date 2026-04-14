@@ -76,7 +76,7 @@ const HeroSection = () => {
         <section
             id="hero"
             ref={container}
-            className="relative min-h-screen lg:h-screen w-full overflow-hidden  flex flex-col justify-center lg:block lg:pt-38 pt-28 pb-10"
+            className="relative min-h-screen lg:h-screen w-full overflow-hidden  flex flex-col justify-center lg:block pt-15 pb-10"
         >
 
             <div

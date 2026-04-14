@@ -1,3 +1,7 @@
+import itl from "/assets/experienceImg/itl.jpg";
+import besant from "/assets/experienceImg/besant.png";
+import amdox from "/assets/experienceImg/amdox.jpg";
+
 export const experiences = [
   {
     id: "idealtech",
@@ -5,21 +9,34 @@ export const experiences = [
     role: "Full Stack Developer",
     period: "Feb 2026 - Present",
     location: "Chennai, India",
+    imageId: itl,
     summary:
-      "Building scalable MERN applications and AI-powered systems using RAG and ML models. Developing robust REST APIs, optimizing backend performance, and contributing to deployment workflows for production-ready solutions.",
+      "Architecting scalable MERN applications and AI-powered systems utilizing RAG and ML models. Designing robust REST APIs, optimizing backend performance, and streamlining deployment workflows for production environments.",
 
     projects: [
       {
         name: "RAG AI Assistant",
-        desc: "Context-aware assistant with document ingestion, vector search, and secure APIs.",
+        desc: "Context-aware AI assistant featuring document ingestion, vector search, and secure REST APIs.",
       },
       {
         name: "ML Forecasting Engine",
-        desc: "Prediction system using regression and time-series models for trend analysis.",
+        desc: "Predictive engine leveraging regression and time-series ML models for data-driven trend analysis.",
       },
     ],
 
-    stack: ["React", "Node.js", "MongoDB", "REST APIs", "RAG", "ML", "Docker"],
+    stack: [
+      "React",
+      "Node.js",
+      "MongoDB",
+      "REST APIs",
+      "RAG",
+      "ML",
+      "Docker",
+      "Python",
+      "FastAPI",
+      "LLM",
+      "Vector DB",
+    ],
   },
 
   {
@@ -28,13 +45,14 @@ export const experiences = [
     role: "MERN Stack Intern",
     period: "Aug 2025 - Jan 2026",
     location: "Chennai, India",
+    imageId: besant,
     summary:
-      "Developed full-stack CRUD applications using the MERN stack with REST API architecture and MongoDB schema design. Implemented JWT-based authentication and gained hands-on experience in building responsive and dynamic user interfaces.",
+      "Engineered full-stack applications using the MERN stack, focusing on RESTful API architecture and optimized MongoDB schema design. Implemented secure JWT authentication and crafted responsive, dynamic user interfaces.",
 
     projects: [
       {
         name: "CRUD Management System",
-        desc: "Full-stack app with authentication, protected routes, and dynamic UI.",
+        desc: "Secure full-stack application featuring JWT authentication, protected routing, and a dynamic React frontend.",
       },
     ],
 
@@ -47,17 +65,18 @@ export const experiences = [
     role: "Web Development Intern",
     period: "Dec 2025 - Jan 2026",
     location: "Remote",
+    imageId: amdox,
     summary:
-      "Built scalable recruitment systems with role-based access control and optimized bulk data processing workflows. Focused on improving system efficiency, data handling, and secure application design.",
+      "Developed scalable recruitment platforms featuring role-based access control (RBAC) and optimized bulk-data processing workflows. Enhanced system efficiency, automated data handling, and ensured secure application architecture.",
 
     projects: [
       {
         name: "Job Listing Portal",
-        desc: "Recruitment dashboard with role-based access and real-time tracking.",
+        desc: "Dynamic recruitment dashboard featuring RBAC and real-time applicant tracking.",
       },
       {
         name: "Certificate Verification System",
-        desc: "Automated Excel processing and PDF generation system.",
+        desc: "Automated utility for bulk Excel data processing and dynamic PDF certificate generation.",
       },
     ],
 
