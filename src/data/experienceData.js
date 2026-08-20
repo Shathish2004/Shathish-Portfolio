@@ -10,32 +10,34 @@ export const experiences = [
     period: "Feb 2026 - Present",
     location: "Chennai, India",
     imageId: itl,
+
     summary:
-      "Architecting scalable MERN applications and AI-powered systems utilizing RAG and ML models. Designing robust REST APIs, optimizing backend performance, and streamlining deployment workflows for production environments.",
+      "Developing enterprise-grade full-stack applications for port and terminal operations using React, Node.js, TypeScript, and PostgreSQL. Building scalable REST APIs, real-time systems, geospatial visualizations, and machine learning–driven analytics for production environments.",
 
     projects: [
       {
-        name: "RAG AI Assistant",
-        desc: "Context-aware AI assistant featuring document ingestion, vector search, and secure REST APIs.",
+        name: "DeckOptimizer",
+        desc: "Developed an intelligent stowage planning and vessel analytics platform with stay-time prediction, crane utilization analysis, heatmaps, and operational dashboards for port optimization. A Real Time Terminal 3D map to View the Active Yard containers and vessels and recommendations.",
       },
       {
-        name: "ML Forecasting Engine",
-        desc: "Predictive engine leveraging regression and time-series ML models for data-driven trend analysis.",
+        name: "Terminal Tracker",
+        desc: "Built a real-time GPS tracking system featuring live device monitoring, WebSocket-based location updates, interactive terminal maps, XML yard layout parsing, and geospatial visualization.",
       },
     ],
 
     stack: [
       "React",
+      "TypeScript",
+      "Three.js",
       "Node.js",
-      "MongoDB",
-      "REST APIs",
-      "RAG",
-      "ML",
-      "Docker",
+      "Express.js",
+      "PostgreSQL",
+      "Drizzle ORM",
+      "WebSocket",
       "Python",
-      "FastAPI",
-      "LLM",
-      "Vector DB",
+      "Machine Learning",
+      "REST APIs",
+      "Git",
     ],
   },
 

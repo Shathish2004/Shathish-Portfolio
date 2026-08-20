@@ -39,6 +39,8 @@ import {
   SiMysql,
   SiNestjs,
   SiFastapi,
+  SiSocketdotio,
+  SiPostgresql,
 } from "react-icons/si";
 
 import { TbApi } from "react-icons/tb";
@@ -55,6 +57,7 @@ export const skillsRow1 = [
   { name: "JAVA", Icon: FaJava, color: "#F80000" },
   { name: "Nest", Icon: SiNestjs, color: "#E0234E" },
   { name: "PYTHON", Icon: FaPython, color: "#3776AB" },
+  { name: "POSTGRESQL", Icon: SiPostgresql, color: "#4169E1" },
 ];
 
 export const skillsRow2 = [
@@ -67,6 +70,7 @@ export const skillsRow2 = [
   { name: "REST API", Icon: TbApi, color: "#000000 dark:text-white" },
   { name: "MYSQL", Icon: SiMysql, color: "#336791" },
   { name: "FASTAPI", Icon: SiFastapi, color: "#009688" },
+  { name: "WEBSOCKET", Icon: SiSocketdotio, color: "#000000 dark:text-white" },
 ];
 
 // Skill Section Data
@@ -107,7 +111,9 @@ export const categories = [
       { name: "Nest.js", icon: SiNestjs, color: "#E0234E" },
       { name: "FastAPI", icon: SiFastapi, color: "#009688" },
       { name: "MySQL", icon: SiMysql, color: "#336791" },
+      { name: "PostgreSQL", icon: SiPostgresql, color: "#4169E1" },
       { name: "Java", icon: FaJava, color: "#F80000" },
+      { name: "WebSocket", icon: SiSocketdotio, color: "#000000" },
     ],
   },
   {

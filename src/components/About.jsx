@@ -113,13 +113,13 @@ const About = () => {
                                         FULL
                                     </span>
 
-                                    <span className="text-6xl md:text-8xl lg:text-7xl xl:text-8xl 2xl:text-9xl">
+                                    <span className="text-[#2a0878] dark:text-[#5412ee] text-6xl md:text-8xl lg:text-7xl xl:text-8xl 2xl:text-9xl">
                                         STACK
                                     </span>
 
-                                    <span className="text-[#2a0878] dark:text-[#5412ee] text-7xl md:text-9xl lg:text-8xl xl:text-9xl 2xl:text-[10rem]">
-                                        MERN
-                                    </span>
+                                    {/* <span className="text-[#2a0878] dark:text-[#5412ee] text-7xl md:text-9xl lg:text-8xl xl:text-9xl 2xl:text-[10rem]">
+                                        PERN
+                                    </span> */}
 
                                     <span className="text-6xl md:text-8xl lg:text-7xl xl:text-8xl 2xl:text-9xl">
                                         DEV<span className="text-[#2a0878] dark:text-[#5412ee]">.</span>
@@ -141,22 +141,22 @@ const About = () => {
 
                                 <p className="text-lg md:text-3xl leading-relaxed font-light text-gray-800 dark:text-gray-400">
                                     I am a passionate <strong className="text-[#2a0878] dark:text-[#5412ee] font-semibold">Full Stack Developer</strong> specializing in
-                                    <span className="border-b-2 border-[#5412ee]/50 mx-2">MERN</span>,
+                                    <span className="border-b-2 border-[#5412ee]/50 mx-2">React</span>,
                                     <span className="border-b-2 border-[#5412ee]/50 mx-2">TypeScript</span>,
-                                    <span className="border-b-2 border-[#5412ee]/50 mx-2">GraphQL</span>, and
-                                    <span className="border-b-2 border-[#5412ee]/50 mx-2">Nest.js</span>.
-                                    I enjoy designing clean backend architectures and implementing secure authentication.
+                                    <span className="border-b-2 border-[#5412ee]/50 mx-2">Node.js</span>, and
+                                    <span className="border-b-2 border-[#5412ee]/50 mx-2">PostgreSQL</span>.
+                                    I enjoy building scalable backend systems, real-time applications, and intuitive user experiences.
                                 </p>
 
                                 <p className="text-base md:text-xl leading-relaxed font-light text-gray-700 dark:text-gray-400">
-                                    I have built multiple full-stack projects including an <strong className="font-medium text-gray-900 dark:text-gray-200">OpenLuma a Personal Knowledge Assistant</strong>,
-                                    and a complete <strong className="font-medium text-gray-900 dark:text-gray-200">e-commerce system</strong>.
-                                    Through these, I have gained strong skills in API development, real-time features, and modern UI/UX practices.
+                                    At <strong className="font-medium text-gray-900 dark:text-gray-200">Ideal Tech Labs</strong>, I developed enterprise applications including
+                                    <strong className="font-medium text-gray-900 dark:text-gray-200"> DeckOptimizer</strong> for vessel analytics, 3D Terminal and Cargo visualizations, and stay-time prediction, and
+                                    <strong className="font-medium text-gray-900 dark:text-gray-200"> Terminal Tracker</strong>, a real-time GPS tracking platform with WebSocket updates, interactive terminal maps, and geospatial visualizations.
                                 </p>
 
                                 <p className="text-base md:text-xl leading-relaxed font-light text-gray-700 dark:text-gray-400">
-                                    I am constantly improving my problem-solving skills through <span className="border-b-2 border-[#5412ee]/50">DSA</span> and exploring system design fundamentals.
-                                    I am looking for an opportunity to contribute to <strong className="text-[#2a0878] dark:text-[#5412ee] font-semibold">impactful products</strong> and grow into a strong software engineer within an MNC or product-based company.
+                                    I am continuously strengthening my expertise in <span className="border-b-2 border-[#5412ee]/50">system design</span>,
+                                    <span className="border-b-2 border-[#5412ee]/50 mx-2">data structures & algorithms</span>, and machine learning while building production-ready software. My goal is to contribute to impactful products and grow as a software engineer in a product-based company.
                                 </p>
 
                             </div>

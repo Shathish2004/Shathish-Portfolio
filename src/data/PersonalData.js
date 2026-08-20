@@ -3,7 +3,7 @@ export const educationData = [
     degree: "B.E. Computer Science",
     institution: "Dhirajlal Gandhi College of Technology",
     year: "2022 — 2026",
-    score: "CGPA: 8.18",
+    score: "CGPA: 8.2",
   },
   {
     degree: "Higher Secondary (HSC)",
